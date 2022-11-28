@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+html{
+    font-size: 10px;
+}
+body{
+    background-color: #fcfcfc;
+}
+%borda-colada{
+    border-collapse: collapse;
+}
+.classificado{
+    color: #3737ff;
+}
+.sul-americana{
+    color: #FAA165;
+}
+.eliminado{
+    color: #c82b21;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.fases{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #c0c0c0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    h1{
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+    i{
+        font-size: 2.5rem;
+        color: #CCCCCC;
+        font-weight: 900;
+    }
+}
+
+.container-fases{
+    padding: 15px 0;    
+
+    h2{
+        font-size: 2.7rem;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+    }
+}
+.container-table-jogos{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+
+    table{
+        @extend %borda-colada;
+        border-right: 1px solid #a2a2a2;
+
+        thead tr th:nth-child(2){
+            width: 36%;
+            border-right: 1px solid #a2a2a2;
+        }
+        thead tr th:nth-child(2) ~ th{
+            width: 8%;
+        }
+        thead tr{
+            border-top: 1px solid #a2a2a2;
+            border-bottom: 1px solid #a2a2a2;
+        }
+        th{
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            text-align: left;
+            color: #a2a2a2;
+            font-weight: 400;
+            padding: 9px 0;
+        }
+        th:nth-child(2) ~ th{
+            text-align: center;
+        }
+
+        tbody{
+            position: relative;
+
+            tr{
+                border-bottom: 1px solid #cccccc91;
+            }
+            tr td:nth-child(1){
+                position: absolute;
+                left: 0;
+            }
+            td{
+                padding: 13px 0;
+                font-size: 1.7rem;
+                text-transform: capitalize;
+            }
+            td:nth-child(2){
+                border-right: 1px solid #a2a2a2;
+            }
+            td:nth-child(2) ~ td{
+                text-align: center;
+            }
+            tr td:nth-child(2){
+                padding-left: 25px;
+            }
+            tr td.classificado ~ td:nth-child(odd){
+                background-color: #f5f5f585;
+            }
+            tr td.sul-americana ~ td:nth-child(odd){
+                background-color: #f5f5f585;
+            }
+            tr td.eliminado ~ td:nth-child(odd){
+                background-color: #f5f5f5ce;
+            }
+        }
+    }
+
+    .jogos-fase-grupo{
+
+        .rodadas{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7.3px 5px;
+            border-top: 1px solid #a2a2a2;
+            border-bottom: 1px solid #a2a2a2;
+        }
+        h3{
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+        i{
+            font-size: 1.5rem;
+        }
+
+        .container-jogo-1,.container-jogo-2{
+            padding: 23.5px 0;
+            border-bottom: 1px solid #cccccc91;
+
+            p{
+                text-align: center;
+            }
+            p.information-jogo{
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                color: #808080;
+                font-weight: 800;
+                padding-bottom: 10px;
+            }
+            span.stadium{
+                font-weight: 400;
+            }
+            p.jogo-1,p.jogo-2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2rem;
+                text-transform: uppercase;
+
+                span{
+                    padding: 0 20px;
+                    font-weight: 300;
+                }
+                span:nth-child(2){
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
