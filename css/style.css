@@ -18,6 +18,12 @@ body {
   border-collapse: collapse;
 }
 
+button {
+  border: none;
+  background-color: #fcfcfc;
+  cursor: pointer;
+}
+
 .classificado {
   color: #3737ff;
 }
@@ -126,6 +132,18 @@ body {
 }
 .container-table-jogos table tbody tr td.eliminado ~ td:nth-child(odd) {
   background-color: rgba(245, 245, 245, 0.8078431373);
+}
+.container-table-jogos .container-jogos-fase-grupo {
+  overflow: hidden;
+}
+.container-table-jogos .jogos-fase-grupo .jogos {
+  position: relative;
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.container-table-jogos .jogos-fase-grupo .jogos .container-rodadas {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 530px 530px 530px 530px 530px 530px;
 }
 .container-table-jogos .jogos-fase-grupo .rodadas {
   display: flex;
