@@ -29,6 +29,13 @@ button{
 .eliminado{
     color: #c82b21;
 }
+.input-time-resultado{
+    width: 20px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+}
 
 .container{
     width: 1200px;
@@ -146,6 +153,34 @@ button{
                 position: absolute;
                 display: grid;
                 grid-template-columns: 530px 530px 530px 530px 530px 530px;
+            }
+            .rodada-1{
+                position: relative;
+            }
+            .rodada-2{
+                @extend .rodada-1;
+            }
+            .rodada-3{
+                @extend .rodada-1;
+            }
+            .rodada-4{
+                @extend .rodada-1;
+            }
+            .rodada-5{
+                @extend .rodada-1;
+            }
+            .rodada-6{
+                @extend .rodada-1;
+            }
+            .btn-result-jogos{
+                position: absolute;
+                right: 4%;
+                bottom: 0%;
+                border: 1px solid black;
+                padding: 3px 10px;
+                margin-bottom: 5px;
+                border-radius: 8px;
+                text-transform: uppercase;
             }
         }
         .rodadas{

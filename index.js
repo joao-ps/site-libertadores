@@ -10,24 +10,9 @@ let grupoE = [];
 let grupoF = [];
 let grupoG = [];
 let grupoH = [];
-let uniaoGrupos = []
+let uniaoGrupos = [];
 
 let tdTimes = document.querySelectorAll('td.time');
-
-//const divJogos = document.querySelector('.jogos');
-//const btnVoltarRodada = document.querySelector('.voltar-rodada');
-//const btnAvancarRodada = document.querySelector('.avancar-rodada');
-//let valorTranslate = 0;
-//
-////EVENTOS
-//btnVoltarRodada.addEventListener('click', function(){
-//    valorTranslate += 530;
-//    divJogos.style.transform = `TranslateX(${valorTranslate}px)`;
-//});
-//btnAvancarRodada.addEventListener('click', function(){
-//    valorTranslate += -530;
-//    divJogos.style.transform = `TranslateX(${valorTranslate}px)`;
-//});
 
 //FUNÇÕES SORTEIO DOS GRUPOS E ADD TIMES NA TABELA
 function innerHtmlGruposA(){

@@ -1,6 +1,31 @@
+let GrupoA = [
+    {
+        time: 'chivas',
+        p: 0,
+        j: 0,
+        v: 0,
+        e: 0,
+        d: 0,
+        gp: 0,
+        gc: 0,
+        sg: 0
+    }
+]
+
 const divJogos = document.querySelectorAll('.jogos');
 const btnVoltarRodada = document.querySelectorAll('.voltar-rodada');
 const btnAvancarRodada = document.querySelectorAll('.avancar-rodada');
+const btnSalvarResultJogos = document.querySelectorAll('.btn-result-jogos');
+const inputResultJogos = document.querySelectorAll('.input-time-resultado');
+const tdTime = document.querySelectorAll('.cedula-time');
+const tdPontos = document.querySelectorAll('.cedula-pontos');
+const tdJogos = document.querySelectorAll('.cedula-jogos');
+const tdVitorias = document.querySelectorAll('.cedula-vitorias');
+const tdEmpates = document.querySelectorAll('.cedula-empates');
+const tdDerrotas = document.querySelectorAll('.cedula-derrotas');
+const tdGolsPro = document.querySelectorAll('.cedula-gols-pro');
+const tdGolsContra = document.querySelectorAll('.cedula-gols-contra');
+const tdSaldoGols  = document.querySelectorAll('.cedula-saldo-gols');
 let valorTranslateRodada1 = 0;
 let valorTranslateRodada2 = 0;
 let valorTranslateRodada3 = 0;
@@ -88,4 +113,50 @@ btnAvancarRodada[7].addEventListener('click', function(){
     valorTranslateRodada8 += -530;
     divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
 
+});
+
+btnSalvarResultJogos[0].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[0].value);
+    resultJogos.push(inputResultJogos[1].value);
+    resultJogos.push(inputResultJogos[2].value);
+    resultJogos.push(inputResultJogos[3].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    console.log(resultJogos[0] + ' X ' + resultJogos[1]);
+    //console.log(resultJogos[2] + ' X ' + resultJogos[3]);
+
+    inputResultJogos.forEach(element => {
+        element.setAttribute('readonly', 'readonly');
+    })
+
+    GrupoA[0].j += 1;
+
+    if(resultJogos[0] > resultJogos[1]){
+        GrupoA[0].p += 3;
+        GrupoA[0].v += 1;
+    }else if(resultJogos[0] == resultJogos[1]){
+        GrupoA[0].pt += 1;
+        GrupoA[0].e += 1;
+    }else{
+        GrupoA[0].pt += 0;
+        GrupoA[0].d += 1;
+    }
+
+    console.log('result1 ' + resultJogos[0])
+    GrupoA[0].gp = resultJogos[0];
+    GrupoA[0].gc = resultJogos[1];
+    GrupoA[0].sg += GrupoA[0].gp - GrupoA[0].gc;
+   
+    tdPontos[0].innerText = GrupoA[0].p;
+    tdJogos[0].innerText = GrupoA[0].j
+    tdVitorias[0].innerText = GrupoA[0].v
+    tdEmpates[0].innerText = GrupoA[0].e
+    tdDerrotas[0].innerText = GrupoA[0].d
+    tdGolsPro[0].innerText = GrupoA[0].gp
+    tdGolsContra[0].innerText = GrupoA[0].gc
+    tdSaldoGols[0].innerText = GrupoA[0].sg
 });

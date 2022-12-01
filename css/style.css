@@ -36,6 +36,14 @@ button {
   color: #c82b21;
 }
 
+.input-time-resultado {
+  width: 20px;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  text-align: center;
+}
+
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -144,6 +152,19 @@ button {
   position: absolute;
   display: grid;
   grid-template-columns: 530px 530px 530px 530px 530px 530px;
+}
+.container-table-jogos .jogos-fase-grupo .jogos .rodada-1, .container-table-jogos .jogos-fase-grupo .jogos .rodada-6, .container-table-jogos .jogos-fase-grupo .jogos .rodada-5, .container-table-jogos .jogos-fase-grupo .jogos .rodada-4, .container-table-jogos .jogos-fase-grupo .jogos .rodada-3, .container-table-jogos .jogos-fase-grupo .jogos .rodada-2 {
+  position: relative;
+}
+.container-table-jogos .jogos-fase-grupo .jogos .btn-result-jogos {
+  position: absolute;
+  right: 4%;
+  bottom: 0%;
+  border: 1px solid black;
+  padding: 3px 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  text-transform: uppercase;
 }
 .container-table-jogos .jogos-fase-grupo .rodadas {
   display: flex;
