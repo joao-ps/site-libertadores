@@ -21,6 +21,9 @@ body {
 button {
   border: none;
   background-color: #fcfcfc;
+}
+
+.btn-result-jogos {
   cursor: pointer;
 }
 
@@ -42,6 +45,16 @@ button {
   border: 1px solid black;
   border-radius: 4px;
   text-align: center;
+}
+
+.disponivel {
+  color: #06aa48;
+  cursor: pointer;
+}
+
+.disabled {
+  color: #CCCCCC;
+  cursor: no-drop;
 }
 
 .container {
@@ -170,9 +183,28 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7.3px 5px;
   border-top: 1px solid #a2a2a2;
   border-bottom: 1px solid #a2a2a2;
+  overflow: hidden;
+  position: relative;
+  padding: 8.7px 0;
+}
+.container-table-jogos .jogos-fase-grupo .container-btns-rodadas {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container-table-jogos .jogos-fase-grupo .container-translate-rodada {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 530px 530px 530px 530px 530px 530px;
+  z-index: -1;
+  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  justify-content: center;
+}
+.container-table-jogos .jogos-fase-grupo .container-translate-rodada .rodada-1, .container-table-jogos .jogos-fase-grupo .container-translate-rodada .rodada-2, .container-table-jogos .jogos-fase-grupo .container-translate-rodada .rodada-3, .container-table-jogos .jogos-fase-grupo .container-translate-rodada .rodada-4, .container-table-jogos .jogos-fase-grupo .container-translate-rodada .rodada-5, .container-table-jogos .jogos-fase-grupo .container-translate-rodada .rodada-6 {
+  text-align: center;
 }
 .container-table-jogos .jogos-fase-grupo h3 {
   font-size: 1.5rem;
@@ -180,6 +212,7 @@ button {
 }
 .container-table-jogos .jogos-fase-grupo i {
   font-size: 1.5rem;
+  margin: 0 5px;
 }
 .container-table-jogos .jogos-fase-grupo .container-jogo-1, .container-table-jogos .jogos-fase-grupo .container-jogo-2 {
   padding: 23.5px 0;

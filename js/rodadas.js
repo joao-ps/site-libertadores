@@ -368,6 +368,7 @@ let GrupoH = [
 ];
 
 const divJogos = document.querySelectorAll('.jogos');
+const divRodadas =  document.querySelectorAll('.container-translate-rodada');
 const btnVoltarRodada = document.querySelectorAll('.voltar-rodada');
 const btnAvancarRodada = document.querySelectorAll('.avancar-rodada');
 const btnSalvarResultJogos = document.querySelectorAll('.btn-result-jogos');
@@ -486,75 +487,267 @@ function insertResultsArray1(resultadoPro, resultadoContra, grup,infoTime){
 }
 
 btnVoltarRodada[0].addEventListener('click', function(){
-    valorTranslateRodada1 += 530;
-    divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+    valorTranslateRodada1 >= 0 ?  valorTranslateRodada1 += 0
+        : valorTranslateRodada1 += 530;
+
+    if(valorTranslateRodada1 >= 0){
+        btnVoltarRodada[0].style.color = '#CCCCCC';
+        btnVoltarRodada[0].style.cursor = 'no-drop';
+        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+    }else{
+        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+        btnAvancarRodada[0].style.color = '#06aa48'; 
+        btnAvancarRodada[0].style.cursor = 'pointer';
+    }
 });
 btnAvancarRodada[0].addEventListener('click', function(){
-    valorTranslateRodada1 += -530;
-    divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+    valorTranslateRodada1 <= -2650 ? valorTranslateRodada1 = -2650
+        : valorTranslateRodada1 += -530
+
+    if(valorTranslateRodada1 == -2650){
+        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+        btnAvancarRodada[0].style.color = '#CCCCCC';
+        btnAvancarRodada[0].style.cursor = 'no-drop';
+    }else{
+        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+        btnVoltarRodada[0].style.color = '#06aa48'; 
+        btnVoltarRodada[0].style.cursor = 'pointer';
+    }
 });
 
 btnVoltarRodada[1].addEventListener('click', function(){
-    valorTranslateRodada2 += 530;
-    divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+    valorTranslateRodada2 >= 0 ?  valorTranslateRodada2 += 0
+        : valorTranslateRodada2 += 530;
+
+    if(valorTranslateRodada2 >= 0){
+        btnVoltarRodada[1].style.color = '#CCCCCC';
+        btnVoltarRodada[1].style.cursor = 'no-drop';
+        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+    }else{
+        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+        btnAvancarRodada[1].style.color = '#06aa48'; 
+        btnAvancarRodada[1].style.cursor = 'pointer';
+    }
 });
 btnAvancarRodada[1].addEventListener('click', function(){
-    valorTranslateRodada2 += -530;
-    divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+    valorTranslateRodada2 <= -2650 ? valorTranslateRodada2 = -2650
+        : valorTranslateRodada2 += -530
+
+    if(valorTranslateRodada2 == -2650){
+        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+        btnAvancarRodada[1].style.color = '#CCCCCC';
+        btnAvancarRodada[1].style.cursor = 'no-drop';
+    }else{
+        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+        btnVoltarRodada[1].style.color = '#06aa48'; 
+        btnVoltarRodada[1].style.cursor = 'pointer';
+    }
 });
 
 btnVoltarRodada[2].addEventListener('click', function(){
-    valorTranslateRodada3 += 530;
-    divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+    valorTranslateRodada3 >= 0 ?  valorTranslateRodada3 += 0
+        : valorTranslateRodada3 += 530;
+
+    if(valorTranslateRodada3 >= 0){
+        btnVoltarRodada[2].style.color = '#CCCCCC';
+        btnVoltarRodada[2].style.cursor = 'no-drop';
+        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+    }else{
+        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+        btnAvancarRodada[2].style.color = '#06aa48'; 
+        btnAvancarRodada[2].style.cursor = 'pointer';
+    }
 });
 btnAvancarRodada[2].addEventListener('click', function(){
-    valorTranslateRodada3 += -530;
-    divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+    valorTranslateRodada3 <= -2650 ? valorTranslateRodada3 = -2650
+        : valorTranslateRodada3 += -530
+
+    if(valorTranslateRodada3 == -2650){
+        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+        btnAvancarRodada[2].style.color = '#CCCCCC';
+        btnAvancarRodada[2].style.cursor = 'no-drop';
+    }else{
+        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+        btnVoltarRodada[2].style.color = '#06aa48'; 
+        btnVoltarRodada[2].style.cursor = 'pointer';
+    }
 });
 
 btnVoltarRodada[3].addEventListener('click', function(){
-    valorTranslateRodada4 += 530;
-    divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+    valorTranslateRodada4 >= 0 ?  valorTranslateRodada4 += 0
+        : valorTranslateRodada4 += 530;
+
+    if(valorTranslateRodada4 >= 0){
+        btnVoltarRodada[3].style.color = '#CCCCCC';
+        btnVoltarRodada[3].style.cursor = 'no-drop';
+        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+    }else{
+        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+        btnAvancarRodada[3].style.color = '#06aa48'; 
+        btnAvancarRodada[3].style.cursor = 'pointer';
+    }
 });
 btnAvancarRodada[3].addEventListener('click', function(){
-    valorTranslateRodada4 += -530;
-    divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+    valorTranslateRodada4 <= -2650 ? valorTranslateRodada4 = -2650
+        : valorTranslateRodada4 += -530
+
+    if(valorTranslateRodada4 == -2650){
+        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+        btnAvancarRodada[3].style.color = '#CCCCCC';
+        btnAvancarRodada[3].style.cursor = 'no-drop';
+    }else{
+        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+        btnVoltarRodada[3].style.color = '#06aa48'; 
+        btnVoltarRodada[3].style.cursor = 'pointer';
+    }
 });
 
 btnVoltarRodada[4].addEventListener('click', function(){
-    valorTranslateRodada5 += 530;
-    divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+    valorTranslateRodada5 >= 0 ?  valorTranslateRodada5 += 0
+        : valorTranslateRodada5 += 530;
+
+    if(valorTranslateRodada5 >= 0){
+        btnVoltarRodada[4].style.color = '#CCCCCC';
+        btnVoltarRodada[4].style.cursor = 'no-drop';
+        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+    }else{
+        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+        btnAvancarRodada[4].style.color = '#06aa48'; 
+        btnAvancarRodada[4].style.cursor = 'pointer';
+    }
 });
 btnAvancarRodada[4].addEventListener('click', function(){
-    valorTranslateRodada5 += -530;
-    divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+    valorTranslateRodada5 <= -2650 ? valorTranslateRodada5 = -2650
+        : valorTranslateRodada5 += -530
+
+    if(valorTranslateRodada5 == -2650){
+        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+        btnAvancarRodada[4].style.color = '#CCCCCC';
+        btnAvancarRodada[4].style.cursor = 'no-drop';
+    }else{
+        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+        btnVoltarRodada[4].style.color = '#06aa48'; 
+        btnVoltarRodada[4].style.cursor = 'pointer';
+    }
 });
 
 btnVoltarRodada[5].addEventListener('click', function(){
-    valorTranslateRodada6 += 530;
-    divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+    valorTranslateRodada6 >= 0 ?  valorTranslateRodada6 += 0
+        : valorTranslateRodada6 += 530;
+
+    if(valorTranslateRodada6 >= 0){
+        btnVoltarRodada[5].style.color = '#CCCCCC';
+        btnVoltarRodada[5].style.cursor = 'no-drop';
+        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+    }else{
+        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+        btnAvancarRodada[5].style.color = '#06aa48'; 
+        btnAvancarRodada[5].style.cursor = 'pointer';
+    }
 });
 btnAvancarRodada[5].addEventListener('click', function(){
-    valorTranslateRodada6 += -530;
-    divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+    valorTranslateRodada6 <= -2650 ? valorTranslateRodada6 = -2650
+        : valorTranslateRodada6 += -530
+
+    if(valorTranslateRodada6 == -2650){
+        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+        btnAvancarRodada[5].style.color = '#CCCCCC';
+        btnAvancarRodada[5].style.cursor = 'no-drop';
+    }else{
+        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+        btnVoltarRodada[5].style.color = '#06aa48'; 
+        btnVoltarRodada[5].style.cursor = 'pointer';
+    }
 });
 
 btnVoltarRodada[6].addEventListener('click', function(){
-    valorTranslateRodada7 += 530;
-    divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+    valorTranslateRodada7 >= 0 ?  valorTranslateRodada7 += 0
+        : valorTranslateRodada7 += 530;
+
+    if(valorTranslateRodada7 >= 0){
+        btnVoltarRodada[6].style.color = '#CCCCCC';
+        btnVoltarRodada[6].style.cursor = 'no-drop';
+        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+    }else{
+        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+        btnAvancarRodada[6].style.color = '#06aa48'; 
+        btnAvancarRodada[6].style.cursor = 'pointer';
+    }
 });
 btnAvancarRodada[6].addEventListener('click', function(){
-    valorTranslateRodada7 += -530;
-    divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+    valorTranslateRodada7 <= -2650 ? valorTranslateRodada7 = -2650
+        : valorTranslateRodada7 += -530
+
+    if(valorTranslateRodada7 == -2650){
+        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+        btnAvancarRodada[6].style.color = '#CCCCCC';
+        btnAvancarRodada[6].style.cursor = 'no-drop';
+    }else{
+        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+        btnVoltarRodada[6].style.color = '#06aa48'; 
+        btnVoltarRodada[6].style.cursor = 'pointer';
+    }
 });
 
 btnVoltarRodada[7].addEventListener('click', function(){
-    valorTranslateRodada8 += 530;
-    divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+    valorTranslateRodada8 >= 0 ?  valorTranslateRodada8 += 0
+        : valorTranslateRodada8 += 530;
+
+    if(valorTranslateRodada8 >= 0){
+        btnVoltarRodada[7].style.color = '#CCCCCC';
+        btnVoltarRodada[7].style.cursor = 'no-drop';
+        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+    }else{
+        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+        btnAvancarRodada[7].style.color = '#06aa48'; 
+        btnAvancarRodada[7].style.cursor = 'pointer';
+    }
 });
 btnAvancarRodada[7].addEventListener('click', function(){
-    valorTranslateRodada8 += -530;
-    divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+    valorTranslateRodada8 <= -2650 ? valorTranslateRodada8 = -2650
+        : valorTranslateRodada8 += -530
+
+    if(valorTranslateRodada8 == -2650){
+        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+        btnAvancarRodada[7].style.color = '#CCCCCC';
+        btnAvancarRodada[7].style.cursor = 'no-drop';
+    }else{
+        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+        btnVoltarRodada[7].style.color = '#06aa48'; 
+        btnVoltarRodada[7].style.cursor = 'pointer';
+    }
 });
 
 btnSalvarResultJogos[0].addEventListener('click', function(){
@@ -938,4 +1131,644 @@ btnSalvarResultJogos[17].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, 'peñarol');
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, 'zamora');
     positionTimes(GrupoC, 8,9,10,11);
+});
+
+//GRUPO D
+btnSalvarResultJogos[18].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[72].value);
+    resultJogos.push(inputResultJogos[73].value);
+    resultJogos.push(inputResultJogos[74].value);
+    resultJogos.push(inputResultJogos[75].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 72; i<76; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'grêmio');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'cruz azul');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'monarcas');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'lafc');
+    positionTimes(GrupoD, 12,13,14,15);
+});
+btnSalvarResultJogos[19].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[76].value);
+    resultJogos.push(inputResultJogos[77].value);
+    resultJogos.push(inputResultJogos[78].value);
+    resultJogos.push(inputResultJogos[79].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 76; i<80; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'lafc');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'grêmio');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'cruz azul');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'monarcas');
+    positionTimes(GrupoD, 12,13,14,15);
+});
+btnSalvarResultJogos[20].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[80].value);
+    resultJogos.push(inputResultJogos[81].value);
+    resultJogos.push(inputResultJogos[82].value);
+    resultJogos.push(inputResultJogos[83].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 80; i<84; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'lafc');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'cruz azul');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'monarcas');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'grêmio');
+    positionTimes(GrupoD, 12,13,14,15);
+});
+btnSalvarResultJogos[21].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[84].value);
+    resultJogos.push(inputResultJogos[85].value);
+    resultJogos.push(inputResultJogos[86].value);
+    resultJogos.push(inputResultJogos[87].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 84; i<88; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'cruz azul');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'lafc');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'grêmio');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'monarcas');
+    positionTimes(GrupoD, 12,13,14,15);
+});
+btnSalvarResultJogos[22].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[88].value);
+    resultJogos.push(inputResultJogos[89].value);
+    resultJogos.push(inputResultJogos[90].value);
+    resultJogos.push(inputResultJogos[91].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 88; i<92; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'grêmio');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'lafc');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'monarcas');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'cruz azul');
+    positionTimes(GrupoD, 12,13,14,15);
+});
+btnSalvarResultJogos[23].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[92].value);
+    resultJogos.push(inputResultJogos[93].value);
+    resultJogos.push(inputResultJogos[94].value);
+    resultJogos.push(inputResultJogos[95].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 92; i<96; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'cruz azul');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'grêmio');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'lafc');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'monarcas');
+    positionTimes(GrupoD, 12,13,14,15);
+});
+
+//GRUPO E
+btnSalvarResultJogos[24].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[96].value);
+    resultJogos.push(inputResultJogos[97].value);
+    resultJogos.push(inputResultJogos[98].value);
+    resultJogos.push(inputResultJogos[99].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 96; i<100; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'boca juniors');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'estudiantes');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'union española');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'ldu');
+    positionTimes(GrupoE, 16,17,18,19);
+});
+btnSalvarResultJogos[25].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[100].value);
+    resultJogos.push(inputResultJogos[101].value);
+    resultJogos.push(inputResultJogos[102].value);
+    resultJogos.push(inputResultJogos[103].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 100; i<104; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'ldu');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'boca juniors');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'estudiantes');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'union española');
+    positionTimes(GrupoE, 16,17,18,19);
+});
+btnSalvarResultJogos[26].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[104].value);
+    resultJogos.push(inputResultJogos[105].value);
+    resultJogos.push(inputResultJogos[106].value);
+    resultJogos.push(inputResultJogos[107].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 104; i<108; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'estudiantes');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'ldu');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'boca juniors');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'union española');
+    positionTimes(GrupoE, 16,17,18,19);
+});
+btnSalvarResultJogos[27].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[108].value);
+    resultJogos.push(inputResultJogos[109].value);
+    resultJogos.push(inputResultJogos[110].value);
+    resultJogos.push(inputResultJogos[111].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 108; i<112; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'union española');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'boca juniors');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'ldu');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'estudiantes');
+    positionTimes(GrupoE, 16,17,18,19);
+});
+btnSalvarResultJogos[28].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[112].value);
+    resultJogos.push(inputResultJogos[113].value);
+    resultJogos.push(inputResultJogos[114].value);
+    resultJogos.push(inputResultJogos[115].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 112; i<116; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'union española');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'estudiantes');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'boca juniors');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'ldu');
+    positionTimes(GrupoE, 16,17,18,19);
+});
+btnSalvarResultJogos[29].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[116].value);
+    resultJogos.push(inputResultJogos[117].value);
+    resultJogos.push(inputResultJogos[118].value);
+    resultJogos.push(inputResultJogos[119].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 116; i<120; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'estudiantes');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'boca juniors');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'ldu');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'union española');
+    positionTimes(GrupoE, 16,17,18,19);
+});
+
+//GRUPO F
+btnSalvarResultJogos[30].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[120].value);
+    resultJogos.push(inputResultJogos[121].value);
+    resultJogos.push(inputResultJogos[122].value);
+    resultJogos.push(inputResultJogos[123].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 120; i<124; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'austin');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'flamengo');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'junior barranquillha');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'club léon');
+    positionTimes(GrupoF, 20,21,22,23);
+});
+btnSalvarResultJogos[31].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[124].value);
+    resultJogos.push(inputResultJogos[125].value);
+    resultJogos.push(inputResultJogos[126].value);
+    resultJogos.push(inputResultJogos[127].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 124; i<128; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'flamengo');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'junior barranquillha');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'club léon');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'austin');
+    positionTimes(GrupoF, 20,21,22,23);
+});
+btnSalvarResultJogos[32].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[128].value);
+    resultJogos.push(inputResultJogos[129].value);
+    resultJogos.push(inputResultJogos[130].value);
+    resultJogos.push(inputResultJogos[131].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 128; i<132; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'austin');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'junior barranquillha');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'club léon');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'flamengo');
+    positionTimes(GrupoF, 20,21,22,23);
+});
+btnSalvarResultJogos[33].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[132].value);
+    resultJogos.push(inputResultJogos[133].value);
+    resultJogos.push(inputResultJogos[134].value);
+    resultJogos.push(inputResultJogos[135].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 132; i<136; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'flamengo');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'club léon');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'junior barranquillha');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'austin');
+    positionTimes(GrupoF, 20,21,22,23);
+});
+btnSalvarResultJogos[34].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[136].value);
+    resultJogos.push(inputResultJogos[137].value);
+    resultJogos.push(inputResultJogos[138].value);
+    resultJogos.push(inputResultJogos[139].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 136; i<140; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'austin');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'club léon');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'junior barranquillha');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'flamengo');
+    positionTimes(GrupoF, 20,21,22,23);
+});
+btnSalvarResultJogos[35].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[140].value);
+    resultJogos.push(inputResultJogos[141].value);
+    resultJogos.push(inputResultJogos[142].value);
+    resultJogos.push(inputResultJogos[143].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 140; i<144; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'club léon');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'junior barranquillha');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'flamengo');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'austin');
+    positionTimes(GrupoF, 20,21,22,23);
+});
+
+//GRUPO G
+btnSalvarResultJogos[36].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[144].value);
+    resultJogos.push(inputResultJogos[145].value);
+    resultJogos.push(inputResultJogos[146].value);
+    resultJogos.push(inputResultJogos[147].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 144; i<148; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'toluca');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'independiente del valle');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'cerro porteño');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'river plate');
+    positionTimes(GrupoG, 24,25,26,27);
+});
+btnSalvarResultJogos[37].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[148].value);
+    resultJogos.push(inputResultJogos[149].value);
+    resultJogos.push(inputResultJogos[150].value);
+    resultJogos.push(inputResultJogos[151].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 148; i<152; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'river plate');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'toluca');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'independiente del valle');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'cerro porteño');
+    positionTimes(GrupoG, 24,25,26,27);
+});
+btnSalvarResultJogos[38].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[152].value);
+    resultJogos.push(inputResultJogos[153].value);
+    resultJogos.push(inputResultJogos[154].value);
+    resultJogos.push(inputResultJogos[155].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 152; i<156; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'cerro porteño');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'toluca');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'independiente del valle');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'river plate');
+    positionTimes(GrupoG, 24,25,26,27);
+});
+btnSalvarResultJogos[39].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[156].value);
+    resultJogos.push(inputResultJogos[157].value);
+    resultJogos.push(inputResultJogos[158].value);
+    resultJogos.push(inputResultJogos[159].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 156; i<160; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'toluca');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'cerro porteño');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'river plate');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'independiente del valle');
+    positionTimes(GrupoG, 24,25,26,27);
+});
+btnSalvarResultJogos[40].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[160].value);
+    resultJogos.push(inputResultJogos[161].value);
+    resultJogos.push(inputResultJogos[162].value);
+    resultJogos.push(inputResultJogos[163].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 160; i<164; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'toluca');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'river plate');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'cerro porteño');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'independiente del valle');
+    positionTimes(GrupoG, 24,25,26,27);
+});
+btnSalvarResultJogos[41].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[164].value);
+    resultJogos.push(inputResultJogos[165].value);
+    resultJogos.push(inputResultJogos[166].value);
+    resultJogos.push(inputResultJogos[167].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 164; i<168; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'independiente del valle');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'toluca');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'river plate');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'cerro porteño');
+    positionTimes(GrupoG, 24,25,26,27);
+});
+
+//GRUPO H
+btnSalvarResultJogos[42].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[168].value);
+    resultJogos.push(inputResultJogos[169].value);
+    resultJogos.push(inputResultJogos[170].value);
+    resultJogos.push(inputResultJogos[171].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 168; i<172; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'colo-colo');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'olimpia');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'santos laguna');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'palmeiras');
+    positionTimes(GrupoH, 28,29,30,31);
+});
+btnSalvarResultJogos[43].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[172].value);
+    resultJogos.push(inputResultJogos[173].value);
+    resultJogos.push(inputResultJogos[174].value);
+    resultJogos.push(inputResultJogos[175].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 172; i<176; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'olimpia');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'santos laguna');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'palmeiras');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'colo-colo');
+    positionTimes(GrupoH, 28,29,30,31);
+});
+btnSalvarResultJogos[44].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[176].value);
+    resultJogos.push(inputResultJogos[177].value);
+    resultJogos.push(inputResultJogos[178].value);
+    resultJogos.push(inputResultJogos[179].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 176; i<180; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'santos laguna');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'colo-colo');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'palmeiras');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'olimpia');
+    positionTimes(GrupoH, 28,29,30,31);
+});
+btnSalvarResultJogos[45].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[180].value);
+    resultJogos.push(inputResultJogos[181].value);
+    resultJogos.push(inputResultJogos[182].value);
+    resultJogos.push(inputResultJogos[183].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 180; i<184; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'colo-colo');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'santos laguna');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'olimpia');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'palmeiras');
+    positionTimes(GrupoH, 28,29,30,31);
+});
+btnSalvarResultJogos[46].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[184].value);
+    resultJogos.push(inputResultJogos[185].value);
+    resultJogos.push(inputResultJogos[186].value);
+    resultJogos.push(inputResultJogos[187].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 184; i<188; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'colo-colo');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'palmeiras');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'santos laguna');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'olimpia');
+    positionTimes(GrupoH, 28,29,30,31);
+});
+btnSalvarResultJogos[47].addEventListener('click', function(){
+    let resultJogos = [];
+    resultJogos.push(inputResultJogos[188].value);
+    resultJogos.push(inputResultJogos[189].value);
+    resultJogos.push(inputResultJogos[190].value);
+    resultJogos.push(inputResultJogos[191].value);
+
+    for(let i = 0; i<resultJogos.length; i++){
+        if(!resultJogos[i])return
+    }
+
+    for(let i = 188; i<192; i++){
+        inputResultJogos[i].setAttribute('readonly', 'readonly');
+    }
+
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'palmeiras');
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'santos laguna');
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'olimpia');
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'colo-colo');
+    positionTimes(GrupoH, 28,29,30,31);
 });
