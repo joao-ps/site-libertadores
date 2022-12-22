@@ -1,6 +1,8 @@
+import { grupoA, grupoB, grupoC, grupoD, grupoE, grupoF, grupoG, grupoH } from "../index.js";
+
 let GrupoA = [
     {
-        time: 'chivas',
+        time: grupoA[0].time,
         p: 0,
         j: 0,
         v: 0,
@@ -8,10 +10,11 @@ let GrupoA = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoA[0].namePlacar
     },
     {
-        time: 'cruzeiro',
+        time: grupoA[1].time,
         p: 0,
         j: 0,
         v: 0,
@@ -19,10 +22,11 @@ let GrupoA = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoA[1].namePlacar
     },
     {
-        time: 'sporting cristal',
+        time: grupoA[2].time,
         p: 0,
         j: 0,
         v: 0,
@@ -30,10 +34,11 @@ let GrupoA = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoA[2].namePlacar
     },
     {
-        time: 'bragantino',
+        time: grupoA[3].time,
         p: 0,
         j: 0,
         v: 0,
@@ -41,12 +46,13 @@ let GrupoA = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoA[3].namePlacar
     }
 ];
 let GrupoB = [
     {
-        time: 'pachuca',
+        time: grupoB[0].time,
         p: 0,
         j: 0,
         v: 0,
@@ -54,10 +60,11 @@ let GrupoB = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoB[0].namePlacar
     },
     {
-        time: 'san lorenzo',
+        time: grupoB[1].time,
         p: 0,
         j: 0,
         v: 0,
@@ -65,10 +72,11 @@ let GrupoB = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoB[1].namePlacar
     },
     {
-        time: 'santa fe',
+        time: grupoB[2].time,
         p: 0,
         j: 0,
         v: 0,
@@ -76,10 +84,11 @@ let GrupoB = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoB[2].namePlacar
     },
     {
-        time: 'defensa y justicia',
+        time: grupoB[3].time,
         p: 0,
         j: 0,
         v: 0,
@@ -87,12 +96,13 @@ let GrupoB = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoB[3].namePlacar
     }
 ];
 let GrupoC = [
     {
-        time: 'peñarol',
+        time: grupoC[0].time,
         p: 0,
         j: 0,
         v: 0,
@@ -100,10 +110,11 @@ let GrupoC = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoC[0].namePlacar
     },
     {
-        time: 'américa',
+        time: grupoC[1].time,
         p: 0,
         j: 0,
         v: 0,
@@ -111,10 +122,11 @@ let GrupoC = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoC[1].namePlacar
     },
     {
-        time: 'tolima',
+        time: grupoC[2].time,
         p: 0,
         j: 0,
         v: 0,
@@ -122,10 +134,11 @@ let GrupoC = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoC[2].namePlacar
     },
     {
-        time: 'zamora',
+        time: grupoC[3].time,
         p: 0,
         j: 0,
         v: 0,
@@ -133,12 +146,13 @@ let GrupoC = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoC[3].namePlacar
     }
 ];
 let GrupoD = [
     {
-        time: 'grêmio',
+        time: grupoD[0].time,
         p: 0,
         j: 0,
         v: 0,
@@ -146,10 +160,11 @@ let GrupoD = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoD[0].namePlacar
     },
     {
-        time: 'cruz azul',
+        time: grupoD[1].time,
         p: 0,
         j: 0,
         v: 0,
@@ -157,10 +172,11 @@ let GrupoD = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoD[1].namePlacar
     },
     {
-        time: 'lafc',
+        time: grupoD[2].time,
         p: 0,
         j: 0,
         v: 0,
@@ -168,10 +184,11 @@ let GrupoD = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoD[2].namePlacar
     },
     {
-        time: 'monarcas',
+        time: grupoD[3].time,
         p: 0,
         j: 0,
         v: 0,
@@ -179,12 +196,13 @@ let GrupoD = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoD[3].namePlacar
     }
 ];
 let GrupoE = [
     {
-        time: 'boca juniors',
+        time: grupoE[0].time,
         p: 0,
         j: 0,
         v: 0,
@@ -192,10 +210,11 @@ let GrupoE = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoE[0].namePlacar
     },
     {
-        time: 'ldu',
+        time: grupoE[1].time,
         p: 0,
         j: 0,
         v: 0,
@@ -203,10 +222,11 @@ let GrupoE = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoE[1].namePlacar
     },
     {
-        time: 'union española',
+        time: grupoE[2].time,
         p: 0,
         j: 0,
         v: 0,
@@ -214,10 +234,11 @@ let GrupoE = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoE[2].namePlacar
     },
     {
-        time: 'estudiantes',
+        time: grupoE[3].time,
         p: 0,
         j: 0,
         v: 0,
@@ -225,12 +246,13 @@ let GrupoE = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoE[3].namePlacar
     }
 ];
 let GrupoF = [
     {
-        time: 'flamengo',
+        time: grupoF[0].time,
         p: 0,
         j: 0,
         v: 0,
@@ -238,10 +260,11 @@ let GrupoF = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoF[0].namePlacar
     },
     {
-        time: 'junior barranquillha',
+        time: grupoF[1].time,
         p: 0,
         j: 0,
         v: 0,
@@ -249,10 +272,11 @@ let GrupoF = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoF[1].namePlacar
     },
     {
-        time: 'austin',
+        time: grupoF[2].time,
         p: 0,
         j: 0,
         v: 0,
@@ -260,10 +284,11 @@ let GrupoF = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoF[2].namePlacar
     },
     {
-        time: 'club léon',
+        time: grupoF[3].time,
         p: 0,
         j: 0,
         v: 0,
@@ -271,12 +296,13 @@ let GrupoF = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoF[3].namePlacar
     }
 ];
 let GrupoG = [
     {
-        time: 'river plate',
+        time: grupoG[0].time,
         p: 0,
         j: 0,
         v: 0,
@@ -284,10 +310,11 @@ let GrupoG = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoG[0].namePlacar
     },
     {
-        time: 'cerro porteño',
+        time: grupoG[1].time,
         p: 0,
         j: 0,
         v: 0,
@@ -295,10 +322,11 @@ let GrupoG = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoG[1].namePlacar
     },
     {
-        time: 'toluca',
+        time: grupoG[2].time,
         p: 0,
         j: 0,
         v: 0,
@@ -306,10 +334,11 @@ let GrupoG = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoG[2].namePlacar
     },
     {
-        time: 'independiente del valle',
+        time: grupoG[3].time,
         p: 0,
         j: 0,
         v: 0,
@@ -317,12 +346,13 @@ let GrupoG = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoG[3].namePlacar
     }
 ];
 let GrupoH = [
     {
-        time: 'palmeiras',
+        time: grupoH[0].time,
         p: 0,
         j: 0,
         v: 0,
@@ -330,10 +360,11 @@ let GrupoH = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoH[0].namePlacar
     },
     {
-        time: 'colo-colo',
+        time: grupoH[1].time,
         p: 0,
         j: 0,
         v: 0,
@@ -341,10 +372,11 @@ let GrupoH = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoH[1].namePlacar
     },
     {
-        time: 'olimpia',
+        time: grupoH[2].time,
         p: 0,
         j: 0,
         v: 0,
@@ -352,10 +384,11 @@ let GrupoH = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoH[2].namePlacar
     },
     {
-        time: 'santos laguna',
+        time: grupoH[3].time,
         p: 0,
         j: 0,
         v: 0,
@@ -363,7 +396,8 @@ let GrupoH = [
         d: 0,
         gp: 0,
         gc: 0,
-        sg: 0
+        sg: 0,
+        placar: grupoH[3].namePlacar
     }
 ];
 
@@ -382,6 +416,7 @@ const tdDerrotas = document.querySelectorAll('.cedula-derrotas');
 const tdGolsPro = document.querySelectorAll('.cedula-gols-pro');
 const tdGolsContra = document.querySelectorAll('.cedula-gols-contra');
 const tdSaldoGols  = document.querySelectorAll('.cedula-saldo-gols');
+const timeJogos = document.querySelectorAll('.jogo');
 let valorTranslateRodada1 = 0;
 let valorTranslateRodada2 = 0;
 let valorTranslateRodada3 = 0;
@@ -390,6 +425,46 @@ let valorTranslateRodada5 = 0;
 let valorTranslateRodada6 = 0;
 let valorTranslateRodada7 = 0;
 let valorTranslateRodada8 = 0;
+
+function definirConfrontos(time1, time2, time3, time4, position){
+    let equipe1 = time1;
+    let equipe2 = time2;
+    let equipe3 = time3;
+    let equipe4 = time4;
+    let posicoes = position
+    
+    //RODADA 1
+    timeJogos[posicoes[0]].innerText = equipe1;
+    timeJogos[posicoes[1]].innerText = equipe4;
+    timeJogos[posicoes[2]].innerText = equipe3;
+    timeJogos[posicoes[3]].innerText = equipe2;
+    //RODADA 2
+    timeJogos[posicoes[4]].innerText = equipe4;
+    timeJogos[posicoes[5]].innerText = equipe3;
+    timeJogos[posicoes[6]].innerText = equipe2;
+    timeJogos[posicoes[7]].innerText = equipe1;
+    //RODADA 3
+    timeJogos[posicoes[8]].innerText = equipe1;
+    timeJogos[posicoes[9]].innerText = equipe3;
+    timeJogos[posicoes[10]].innerText = equipe2;
+    timeJogos[posicoes[11]].innerText = equipe4;
+    //RODADA 4
+    timeJogos[posicoes[12]].innerText = equipe3;
+    timeJogos[posicoes[13]].innerText = equipe1;
+    timeJogos[posicoes[14]].innerText = equipe4;
+    timeJogos[posicoes[15]].innerText = equipe2;
+    //RODADA 5
+    timeJogos[posicoes[16]].innerText = equipe3;
+    timeJogos[posicoes[17]].innerText = equipe4;
+    timeJogos[posicoes[18]].innerText = equipe1;
+    timeJogos[posicoes[19]].innerText = equipe2;
+    //RODADA 6
+    timeJogos[posicoes[20]].innerText = equipe2;
+    timeJogos[posicoes[21]].innerText = equipe3;
+    timeJogos[posicoes[22]].innerText = equipe4;
+    timeJogos[posicoes[23]].innerText = equipe1;
+
+}
 
 function positionTimes(grupo, pos1, pos2, pos3, pos4){
     let grupos = grupo;
@@ -765,10 +840,10 @@ btnSalvarResultJogos[0].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, 'chivas');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, 'bragantino');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, 'sporting cristal');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, 'cruzeiro');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, grupoA[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[2].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[1].time);
     positionTimes(GrupoA, 0,1,2,3);
 });
 btnSalvarResultJogos[1].addEventListener('click', function(){
@@ -786,10 +861,10 @@ btnSalvarResultJogos[1].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, 'bragantino');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, 'sporting cristal');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, 'cruzeiro');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, 'chivas');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[3].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, grupoA[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[0].time);
     positionTimes(GrupoA, 0,1,2,3);
 });
 btnSalvarResultJogos[2].addEventListener('click', function(){
@@ -807,10 +882,10 @@ btnSalvarResultJogos[2].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, 'chivas');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, 'sporting cristal');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, 'cruzeiro');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, 'bragantino');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, grupoA[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[3].time);
     positionTimes(GrupoA, 0,1,2,3);
 });
 btnSalvarResultJogos[3].addEventListener('click', function(){
@@ -828,10 +903,10 @@ btnSalvarResultJogos[3].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, 'sporting cristal');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, 'chivas');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, 'bragantino');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, 'cruzeiro');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, grupoA[0].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[1].time);
     positionTimes(GrupoA, 0,1,2,3);
 });
 btnSalvarResultJogos[4].addEventListener('click', function(){
@@ -849,10 +924,10 @@ btnSalvarResultJogos[4].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, 'sporting cristal');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, 'bragantino');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, 'chivas');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, 'cruzeiro');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, grupoA[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[0].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[1].time);
     positionTimes(GrupoA, 0,1,2,3);
 });
 btnSalvarResultJogos[5].addEventListener('click', function(){
@@ -870,10 +945,10 @@ btnSalvarResultJogos[5].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, 'cruzeiro');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, 'sporting cristal');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, 'bragantino');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, 'chivas');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[1].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, grupoA[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[0].time);
     positionTimes(GrupoA, 0,1,2,3);
 });
 
@@ -893,10 +968,10 @@ btnSalvarResultJogos[6].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, 'santa fe');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, 'pachuca');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, 'defensa y justicia');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, 'san lorenzo');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, grupoB[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, grupoB[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[2].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[1].time);
     positionTimes(GrupoB, 4,5,6,7);
 });
 btnSalvarResultJogos[7].addEventListener('click', function(){
@@ -914,10 +989,10 @@ btnSalvarResultJogos[7].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, 'pachuca');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, 'defensa y justicia');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, 'san lorenzo');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, 'santa fe');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, grupoB[3].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, grupoB[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[0].time);
     positionTimes(GrupoB, 4,5,6,7);
 });
 btnSalvarResultJogos[8].addEventListener('click', function(){
@@ -935,10 +1010,10 @@ btnSalvarResultJogos[8].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, 'pachuca');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, 'san lorenzo');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, 'santa fe');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, 'defensa y justicia');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, grupoB[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, grupoB[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[3].time);
     positionTimes(GrupoB, 4,5,6,7);
 });
 btnSalvarResultJogos[9].addEventListener('click', function(){
@@ -956,10 +1031,10 @@ btnSalvarResultJogos[9].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, 'san lorenzo');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, 'pachuca');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, 'defensa y justicia');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, 'santa fe');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, grupoB[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, grupoB[0].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[1].time);
     positionTimes(GrupoB, 4,5,6,7);
 });
 btnSalvarResultJogos[10].addEventListener('click', function(){
@@ -977,10 +1052,10 @@ btnSalvarResultJogos[10].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, 'santa fe');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, 'san lorenzo');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, 'defensa y justicia');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, 'pachuca');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, grupoB[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, grupoB[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[0].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[1].time);
     positionTimes(GrupoB, 4,5,6,7);
 });
 btnSalvarResultJogos[11].addEventListener('click', function(){
@@ -998,10 +1073,10 @@ btnSalvarResultJogos[11].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, 'pachuca');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, 'santa fe');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, 'san lorenzo');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, 'defensa y justicia');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoB, grupoB[1].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoB, grupoB[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[0].time);
     positionTimes(GrupoB, 4,5,6,7);
 });
 
@@ -1021,10 +1096,10 @@ btnSalvarResultJogos[12].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, 'américa');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, 'tolima');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, 'zamora');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, 'peñarol');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, grupoC[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, grupoC[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[2].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[1].time);
     positionTimes(GrupoC, 8,9,10,11);
 });
 btnSalvarResultJogos[13].addEventListener('click', function(){
@@ -1042,10 +1117,10 @@ btnSalvarResultJogos[13].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, 'peñarol');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, 'américa');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, 'tolima');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, 'zamora');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, grupoC[3].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, grupoC[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[0].time);
     positionTimes(GrupoC, 8,9,10,11);
 });
 btnSalvarResultJogos[14].addEventListener('click', function(){
@@ -1063,10 +1138,10 @@ btnSalvarResultJogos[14].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, 'peñarol');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, 'tolima');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, 'zamora');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, 'américa');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, grupoC[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, grupoC[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[3].time);
     positionTimes(GrupoC, 8,9,10,11);
 });
 btnSalvarResultJogos[15].addEventListener('click', function(){
@@ -1084,10 +1159,10 @@ btnSalvarResultJogos[15].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, 'américa');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, 'zamora');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, 'tolima');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, 'peñarol');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, grupoC[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, grupoC[0].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[1].time);
     positionTimes(GrupoC, 8,9,10,11);
 });
 btnSalvarResultJogos[16].addEventListener('click', function(){
@@ -1105,10 +1180,10 @@ btnSalvarResultJogos[16].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, 'américa');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, 'peñarol');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, 'zamora');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, 'tolima');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, grupoC[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, grupoC[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[0].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[1].time);
     positionTimes(GrupoC, 8,9,10,11);
 });
 btnSalvarResultJogos[17].addEventListener('click', function(){
@@ -1126,10 +1201,10 @@ btnSalvarResultJogos[17].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, 'tolima');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, 'américa');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, 'peñarol');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, 'zamora');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoC, grupoC[1].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoC, grupoC[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[0].time);
     positionTimes(GrupoC, 8,9,10,11);
 });
 
@@ -1149,10 +1224,10 @@ btnSalvarResultJogos[18].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'grêmio');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'cruz azul');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'monarcas');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'lafc');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, grupoD[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, grupoD[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[2].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[1].time);
     positionTimes(GrupoD, 12,13,14,15);
 });
 btnSalvarResultJogos[19].addEventListener('click', function(){
@@ -1170,10 +1245,10 @@ btnSalvarResultJogos[19].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'lafc');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'grêmio');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'cruz azul');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'monarcas');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, grupoD[3].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, grupoD[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[0].time);
     positionTimes(GrupoD, 12,13,14,15);
 });
 btnSalvarResultJogos[20].addEventListener('click', function(){
@@ -1191,10 +1266,10 @@ btnSalvarResultJogos[20].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'lafc');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'cruz azul');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'monarcas');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'grêmio');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, grupoD[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, grupoD[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[3].time);
     positionTimes(GrupoD, 12,13,14,15);
 });
 btnSalvarResultJogos[21].addEventListener('click', function(){
@@ -1212,10 +1287,10 @@ btnSalvarResultJogos[21].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'cruz azul');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'lafc');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'grêmio');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'monarcas');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, grupoD[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, grupoD[0].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[1].time);
     positionTimes(GrupoD, 12,13,14,15);
 });
 btnSalvarResultJogos[22].addEventListener('click', function(){
@@ -1233,10 +1308,10 @@ btnSalvarResultJogos[22].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'grêmio');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'lafc');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'monarcas');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'cruz azul');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, grupoD[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, grupoD[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[0].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[1].time);
     positionTimes(GrupoD, 12,13,14,15);
 });
 btnSalvarResultJogos[23].addEventListener('click', function(){
@@ -1254,10 +1329,10 @@ btnSalvarResultJogos[23].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, 'cruz azul');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, 'grêmio');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, 'lafc');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, 'monarcas');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoD, grupoD[1].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoD, grupoD[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[0].time);
     positionTimes(GrupoD, 12,13,14,15);
 });
 
@@ -1277,10 +1352,10 @@ btnSalvarResultJogos[24].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'boca juniors');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'estudiantes');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'union española');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'ldu');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, grupoE[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, grupoE[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[2].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[1].time);
     positionTimes(GrupoE, 16,17,18,19);
 });
 btnSalvarResultJogos[25].addEventListener('click', function(){
@@ -1298,10 +1373,10 @@ btnSalvarResultJogos[25].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'ldu');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'boca juniors');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'estudiantes');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'union española');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, grupoE[3].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, grupoE[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[0].time);
     positionTimes(GrupoE, 16,17,18,19);
 });
 btnSalvarResultJogos[26].addEventListener('click', function(){
@@ -1319,10 +1394,10 @@ btnSalvarResultJogos[26].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'estudiantes');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'ldu');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'boca juniors');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'union española');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, grupoE[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, grupoE[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[3].time);
     positionTimes(GrupoE, 16,17,18,19);
 });
 btnSalvarResultJogos[27].addEventListener('click', function(){
@@ -1340,10 +1415,10 @@ btnSalvarResultJogos[27].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'union española');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'boca juniors');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'ldu');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'estudiantes');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, grupoE[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, grupoE[0].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[1].time);
     positionTimes(GrupoE, 16,17,18,19);
 });
 btnSalvarResultJogos[28].addEventListener('click', function(){
@@ -1361,10 +1436,10 @@ btnSalvarResultJogos[28].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'union española');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'estudiantes');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'boca juniors');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'ldu');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, grupoE[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, grupoE[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[0].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[1].time);
     positionTimes(GrupoE, 16,17,18,19);
 });
 btnSalvarResultJogos[29].addEventListener('click', function(){
@@ -1382,10 +1457,10 @@ btnSalvarResultJogos[29].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, 'estudiantes');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, 'boca juniors');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, 'ldu');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, 'union española');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoE, grupoE[1].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoE, grupoE[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[0].time);
     positionTimes(GrupoE, 16,17,18,19);
 });
 
@@ -1405,10 +1480,10 @@ btnSalvarResultJogos[30].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'austin');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'flamengo');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'junior barranquillha');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'club léon');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, grupoF[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, grupoF[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[2].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[1].time);
     positionTimes(GrupoF, 20,21,22,23);
 });
 btnSalvarResultJogos[31].addEventListener('click', function(){
@@ -1426,10 +1501,10 @@ btnSalvarResultJogos[31].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'flamengo');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'junior barranquillha');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'club léon');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'austin');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, grupoF[3].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, grupoF[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[0].time);
     positionTimes(GrupoF, 20,21,22,23);
 });
 btnSalvarResultJogos[32].addEventListener('click', function(){
@@ -1447,10 +1522,10 @@ btnSalvarResultJogos[32].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'austin');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'junior barranquillha');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'club léon');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'flamengo');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, grupoF[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, grupoF[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[3].time);
     positionTimes(GrupoF, 20,21,22,23);
 });
 btnSalvarResultJogos[33].addEventListener('click', function(){
@@ -1468,10 +1543,10 @@ btnSalvarResultJogos[33].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'flamengo');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'club léon');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'junior barranquillha');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'austin');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, grupoF[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, grupoF[0].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[1].time);
     positionTimes(GrupoF, 20,21,22,23);
 });
 btnSalvarResultJogos[34].addEventListener('click', function(){
@@ -1489,10 +1564,10 @@ btnSalvarResultJogos[34].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'austin');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'club léon');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'junior barranquillha');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'flamengo');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, grupoF[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, grupoF[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[0].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[1].time);
     positionTimes(GrupoF, 20,21,22,23);
 });
 btnSalvarResultJogos[35].addEventListener('click', function(){
@@ -1510,10 +1585,10 @@ btnSalvarResultJogos[35].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, 'club léon');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, 'junior barranquillha');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, 'flamengo');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, 'austin');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoF, grupoF[1].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoF, grupoF[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[0].time);
     positionTimes(GrupoF, 20,21,22,23);
 });
 
@@ -1533,10 +1608,10 @@ btnSalvarResultJogos[36].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'toluca');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'independiente del valle');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'cerro porteño');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'river plate');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, grupoG[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, grupoG[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[2].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[1].time);
     positionTimes(GrupoG, 24,25,26,27);
 });
 btnSalvarResultJogos[37].addEventListener('click', function(){
@@ -1554,10 +1629,10 @@ btnSalvarResultJogos[37].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'river plate');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'toluca');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'independiente del valle');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'cerro porteño');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, grupoG[3].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, grupoG[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[0].time);
     positionTimes(GrupoG, 24,25,26,27);
 });
 btnSalvarResultJogos[38].addEventListener('click', function(){
@@ -1575,10 +1650,10 @@ btnSalvarResultJogos[38].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'cerro porteño');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'toluca');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'independiente del valle');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'river plate');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, grupoG[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, grupoG[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[3].time);
     positionTimes(GrupoG, 24,25,26,27);
 });
 btnSalvarResultJogos[39].addEventListener('click', function(){
@@ -1596,10 +1671,10 @@ btnSalvarResultJogos[39].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'toluca');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'cerro porteño');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'river plate');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'independiente del valle');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, grupoG[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, grupoG[0].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[1].time);
     positionTimes(GrupoG, 24,25,26,27);
 });
 btnSalvarResultJogos[40].addEventListener('click', function(){
@@ -1617,10 +1692,10 @@ btnSalvarResultJogos[40].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'toluca');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'river plate');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'cerro porteño');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'independiente del valle');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, grupoG[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, grupoG[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[0].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[1].time);
     positionTimes(GrupoG, 24,25,26,27);
 });
 btnSalvarResultJogos[41].addEventListener('click', function(){
@@ -1638,10 +1713,10 @@ btnSalvarResultJogos[41].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, 'independiente del valle');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, 'toluca');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, 'river plate');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, 'cerro porteño');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoG, grupoG[1].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoG, grupoG[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[0].time);
     positionTimes(GrupoG, 24,25,26,27);
 });
 
@@ -1661,10 +1736,10 @@ btnSalvarResultJogos[42].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'colo-colo');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'olimpia');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'santos laguna');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'palmeiras');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, grupoH[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, grupoH[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[2].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[1].time);
     positionTimes(GrupoH, 28,29,30,31);
 });
 btnSalvarResultJogos[43].addEventListener('click', function(){
@@ -1682,10 +1757,10 @@ btnSalvarResultJogos[43].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'olimpia');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'santos laguna');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'palmeiras');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'colo-colo');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, grupoH[3].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, grupoH[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[0].time);
     positionTimes(GrupoH, 28,29,30,31);
 });
 btnSalvarResultJogos[44].addEventListener('click', function(){
@@ -1703,10 +1778,10 @@ btnSalvarResultJogos[44].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'santos laguna');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'colo-colo');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'palmeiras');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'olimpia');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, grupoH[0].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, grupoH[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[1].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[3].time);
     positionTimes(GrupoH, 28,29,30,31);
 });
 btnSalvarResultJogos[45].addEventListener('click', function(){
@@ -1724,10 +1799,10 @@ btnSalvarResultJogos[45].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'colo-colo');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'santos laguna');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'olimpia');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'palmeiras');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, grupoH[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, grupoH[0].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[1].time);
     positionTimes(GrupoH, 28,29,30,31);
 });
 btnSalvarResultJogos[46].addEventListener('click', function(){
@@ -1745,10 +1820,10 @@ btnSalvarResultJogos[46].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'colo-colo');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'palmeiras');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'santos laguna');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'olimpia');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, grupoH[2].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, grupoH[3].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[0].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[1].time);
     positionTimes(GrupoH, 28,29,30,31);
 });
 btnSalvarResultJogos[47].addEventListener('click', function(){
@@ -1766,9 +1841,18 @@ btnSalvarResultJogos[47].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
-    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, 'palmeiras');
-    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, 'santos laguna');
-    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, 'olimpia');
-    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, 'colo-colo');
+    insertResultsArray1(resultJogos[0], resultJogos[1], GrupoH, grupoH[1].time);
+    insertResultsArray1(resultJogos[1], resultJogos[0], GrupoH, grupoH[2].time);
+    insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[3].time);
+    insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[0].time);
     positionTimes(GrupoH, 28,29,30,31);
 });
+
+definirConfrontos(GrupoA[0].placar,GrupoA[1].placar,GrupoA[2].placar,GrupoA[3].placar, [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]);
+definirConfrontos(GrupoB[0].placar,GrupoB[1].placar,GrupoB[2].placar,GrupoB[3].placar, [24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47]);
+definirConfrontos(GrupoC[0].placar,GrupoC[1].placar,GrupoC[2].placar,GrupoC[3].placar, [48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71]);
+definirConfrontos(GrupoD[0].placar,GrupoD[1].placar,GrupoD[2].placar,GrupoD[3].placar, [72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95]);
+definirConfrontos(GrupoE[0].placar,GrupoE[1].placar,GrupoE[2].placar,GrupoE[3].placar, [96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119]);
+definirConfrontos(GrupoF[0].placar,GrupoF[1].placar,GrupoF[2].placar,GrupoF[3].placar, [120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143]);
+definirConfrontos(GrupoG[0].placar,GrupoG[1].placar,GrupoG[2].placar,GrupoG[3].placar, [144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167]);
+definirConfrontos(GrupoH[0].placar,GrupoH[1].placar,GrupoH[2].placar,GrupoH[3].placar, [168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191]);

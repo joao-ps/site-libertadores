@@ -1,51 +1,51 @@
 let pote1 = [
-    {time: 'boca juniors', pais: 'argentina'},
-    {time: 'flamengo', pais: 'brasil'}, 
-    {time: 'são paulo', pais: 'brasil'}, 
-    {time: 'peñarol', pais: 'uruguai'}, 
-    {time: 'palmeiras', pais: 'brasil'}, 
-    {time: 'nacional', pais: 'uruguai'}, 
-    {time: 'olimpia', pais: 'paraguai'}
+    {time: 'river plate', pais: 'argentina', namePlacar: 'riv'}, 
+    {time: 'boca juniors', pais: 'argentina', namePlacar: 'boc'},
+    {time: 'flamengo', pais: 'brasil', namePlacar: 'fla'}, 
+    {time: 'nacional-URU', pais: 'uruguai', namePlacar: 'nac'}, 
+    {time: 'peñarol', pais: 'uruguai', namePlacar: 'pen'}, 
+    {time: 'atletico mg', pais: 'brasil', namePlacar: 'cam'}, 
+    {time: 'atletico pr', pais: 'brasil', namePlacar: 'cap'}
 ];
 let pote2 = [
-    {time: 'independiente del valle', pais: 'equador'}, 
-    {time: 'racing', pais: 'argentina'}, 
-    {time: 'universidad católica', pais: 'chile'}, 
-    {time: 'tigres', pais: 'méxico'}, 
-    {time: 'cerro porteño', pais: 'paraguai'}, 
-    {time: 'junior', pais: 'colômbia'}, 
-    {time: 'internacional', pais: 'brasil'},
-    {time: 'pachuca', pais: 'méxico'},
+    {time: 'cerro porteño', pais: 'paraguai', namePlacar: 'ccp'},
+    {time: 'libertad', pais: 'paraguai', namePlacar: 'lib'},
+    {time: 'independiente del valle', pais: 'equador', namePlacar: 'idv'}, 
+    {time: 'universidad católica', pais: 'chile', namePlacar: 'cat'},   
+    {time: 'emelec', pais: 'equador', namePlacar: 'eme'}, 
+    {time: 'corinthians', pais: 'brasil', namePlacar: 'cor'}, 
+    {time: 'colo-colo', pais:'chile', namePlacar: 'col'}, 
+    {time: 'vélez', pais: 'argentina', namePlacar: 'vel'}
 ];
 let pote3 = [
-    {time: 'bolivar', pais: 'bolivia'}, 
-    {time: 'atletico nacional', pais: 'colômbia'}, 
-    {time: 'san lorenzo', pais: 'argentina'}, 
-    {time: 'colo-colo', pais:'chile'}, 
-    {time: 'Defensa y Justicia', pais: 'argentina'},  
-    {time: 'the strongest', pais: 'bolivia'}, 
-    {time: 'caracas', pais: 'venezuela'},
-    {time: 'barcelona', pais: 'equador'}
+    {time: 'sporting cristal', pais: 'peru', namePlacar: 'scl'}, 
+    {time: 'deportivo cali', pais: 'colômbia', namePlacar: 'cal'}, 
+    {time: 'bragantino', pais: 'brasil', namePlacar: 'bra'}, 
+    {time: 'dep. táchira', pais: 'venezuela', namePlacar: 'tac'},
+    {time: 'alianza lima', pais: 'peru', namePlacar: 'ali'},
+    {time: 'tolima', pais: 'colômbia', namePlacar: 'tol'}, 
+    {time: 'colón', pais: 'argentina', namePlacar: 'col'}, 
+    {time: 'caracas', pais: 'venezuela', namePlacar: 'car'}
 ];
 let pote4 = [
-    {time: 'fluminense', pais: 'brasil'}, 
-    {time: 'portland ', pais: 'eua' },
-    {time: 'talleres', pais: 'argentina'},
-    {time: 'monterrey', pais: 'méxico'},
-    {time: 'zamora', pais: 'venezuela'},
-    {time: 'atlanta united', pais: 'eua'},
-    {time: 'nacional', pais: 'paraguai'},
-    {time: 'sporting cristal', pais: 'peru'}
+    {time: 'always ready', pais: 'bolivia', namePlacar: 'alw'},
+    {time: 'talleres', pais: 'argentina', namePlacar: 'tal'},
+    {time: 'independiente petrolero', pais: 'bolivia', namePlacar: 'pet'},
+    {time: 'fortaleza', pais: 'brasil', namePlacar: 'for'},
+    {time: 'olimpia', pais: 'paraguai', namePlacar: 'oli'},
+    {time: 'estudiantes', pais: 'argentina', namePlacar: 'est'},
+    {time: 'the strongest', pais: 'bolivia', namePlacar: 'str'},
+    {time: 'américa mg', pais: 'brasil', namePlacar: 'ame'}
 ];
-let grupoA = [{time: 'river plate', pais: 'argentina'}];
-let grupoB = [];
-let grupoC = [];
-let grupoD = [];
-let grupoE = [];
-let grupoF = [];
-let grupoG = [];
-let grupoH = [];
-let uniaoGrupos = [];
+
+export let grupoA = [{time: 'palmeiras', pais: 'brasil', namePlacar: 'pal'}];
+export let grupoB = [];
+export let grupoC = [];
+export let grupoD = [];
+export let grupoE = [];
+export let grupoF = [];
+export let grupoG = [];
+export let grupoH = [];
 
 let tdTimes = document.querySelectorAll('td.cedula-time');
 let tdTimes1 = document.querySelectorAll('td.cedula-time1');
@@ -62,7 +62,7 @@ function addTimesPote4(pote){
         
         switch(i){
             case 0:
-                //innerHtmlGruposA()
+                
             case 1:
                 grupoH.push(timesPotes[numAleatorio]);
                 pote4.splice(numAleatorio, 1);
@@ -118,7 +118,6 @@ function addTimesPote3(pote){
             case 1:
                 grupoH.push(timesPotes[numAleatorio])
                 pote3.splice(numAleatorio, 1);
-                console.log('H - ' + grupoH[2].time)
                 if(grupoH[2].pais == grupoH[0].pais || grupoH[2].pais == grupoH[1].pais){
                     if(
                         grupoH[2].pais != grupoG[0].pais 
@@ -204,7 +203,6 @@ function addTimesPote3(pote){
             case 2:
                 grupoG.push(timesPotes[numAleatorio])
                 pote3.splice(numAleatorio, 1);
-                console.log('G - ' + grupoG[2].time)
                 if(grupoG[2].pais == grupoG[0].pais || grupoG[2].pais == grupoG[1].pais){
                     if(
                         grupoG[2].pais != grupoF[0].pais 
