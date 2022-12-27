@@ -4,8 +4,8 @@ let pote1 = [
     {time: 'flamengo', pais: 'brasil', namePlacar: 'fla'}, 
     {time: 'nacional-URU', pais: 'uruguai', namePlacar: 'nac'}, 
     {time: 'peñarol', pais: 'uruguai', namePlacar: 'pen'}, 
-    {time: 'atletico mg', pais: 'brasil', namePlacar: 'cam'}, 
-    {time: 'atletico pr', pais: 'brasil', namePlacar: 'cap'}
+    {time: 'atletico MG', pais: 'brasil', namePlacar: 'cam'}, 
+    {time: 'atletico PR', pais: 'brasil', namePlacar: 'cap'}
 ];
 let pote2 = [
     {time: 'cerro porteño', pais: 'paraguai', namePlacar: 'ccp'},
@@ -35,7 +35,7 @@ let pote4 = [
     {time: 'olimpia', pais: 'paraguai', namePlacar: 'oli'},
     {time: 'estudiantes', pais: 'argentina', namePlacar: 'est'},
     {time: 'the strongest', pais: 'bolivia', namePlacar: 'str'},
-    {time: 'américa mg', pais: 'brasil', namePlacar: 'ame'}
+    {time: 'américa MG', pais: 'brasil', namePlacar: 'ame'}
 ];
 
 export let grupoA = [{time: 'palmeiras', pais: 'brasil', namePlacar: 'pal'}];

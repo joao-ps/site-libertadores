@@ -426,44 +426,79 @@ let valorTranslateRodada6 = 0;
 let valorTranslateRodada7 = 0;
 let valorTranslateRodada8 = 0;
 
-function definirConfrontos(time1, time2, time3, time4, position){
+function definirConfrontos(time1, time2, time3, time4, timeChar1, timeChar2, timeChar3, timeChar4, position){
     let equipe1 = time1;
     let equipe2 = time2;
     let equipe3 = time3;
     let equipe4 = time4;
+    let equipeCharCompleto1 = timeChar1;
+    let equipeCharCompleto2 = timeChar2;
+    let equipeCharCompleto3 = timeChar3;
+    let equipeCharCompleto4 = timeChar4;
     let posicoes = position
     
-    //RODADA 1
-    timeJogos[posicoes[0]].innerText = equipe1;
-    timeJogos[posicoes[1]].innerText = equipe4;
-    timeJogos[posicoes[2]].innerText = equipe3;
-    timeJogos[posicoes[3]].innerText = equipe2;
-    //RODADA 2
-    timeJogos[posicoes[4]].innerText = equipe4;
-    timeJogos[posicoes[5]].innerText = equipe3;
-    timeJogos[posicoes[6]].innerText = equipe2;
-    timeJogos[posicoes[7]].innerText = equipe1;
-    //RODADA 3
-    timeJogos[posicoes[8]].innerText = equipe1;
-    timeJogos[posicoes[9]].innerText = equipe3;
-    timeJogos[posicoes[10]].innerText = equipe2;
-    timeJogos[posicoes[11]].innerText = equipe4;
-    //RODADA 4
-    timeJogos[posicoes[12]].innerText = equipe3;
-    timeJogos[posicoes[13]].innerText = equipe1;
-    timeJogos[posicoes[14]].innerText = equipe4;
-    timeJogos[posicoes[15]].innerText = equipe2;
-    //RODADA 5
-    timeJogos[posicoes[16]].innerText = equipe3;
-    timeJogos[posicoes[17]].innerText = equipe4;
-    timeJogos[posicoes[18]].innerText = equipe1;
-    timeJogos[posicoes[19]].innerText = equipe2;
-    //RODADA 6
-    timeJogos[posicoes[20]].innerText = equipe2;
-    timeJogos[posicoes[21]].innerText = equipe3;
-    timeJogos[posicoes[22]].innerText = equipe4;
-    timeJogos[posicoes[23]].innerText = equipe1;
-
+    if(window.innerWidth >= 1020){
+        //RODADA 1
+        timeJogos[posicoes[0]].innerText = equipe1;
+        timeJogos[posicoes[1]].innerText = equipe4;
+        timeJogos[posicoes[2]].innerText = equipe3;
+        timeJogos[posicoes[3]].innerText = equipe2;
+        //RODADA 2
+        timeJogos[posicoes[4]].innerText = equipe4;
+        timeJogos[posicoes[5]].innerText = equipe3;
+        timeJogos[posicoes[6]].innerText = equipe2;
+        timeJogos[posicoes[7]].innerText = equipe1;
+        //RODADA 3
+        timeJogos[posicoes[8]].innerText = equipe1;
+        timeJogos[posicoes[9]].innerText = equipe3;
+        timeJogos[posicoes[10]].innerText = equipe2;
+        timeJogos[posicoes[11]].innerText = equipe4;
+        //RODADA 4
+        timeJogos[posicoes[12]].innerText = equipe3;
+        timeJogos[posicoes[13]].innerText = equipe1;
+        timeJogos[posicoes[14]].innerText = equipe4;
+        timeJogos[posicoes[15]].innerText = equipe2;
+        //RODADA 5
+        timeJogos[posicoes[16]].innerText = equipe3;
+        timeJogos[posicoes[17]].innerText = equipe4;
+        timeJogos[posicoes[18]].innerText = equipe1;
+        timeJogos[posicoes[19]].innerText = equipe2;
+        //RODADA 6
+        timeJogos[posicoes[20]].innerText = equipe2;
+        timeJogos[posicoes[21]].innerText = equipe3;
+        timeJogos[posicoes[22]].innerText = equipe4;
+        timeJogos[posicoes[23]].innerText = equipe1;
+    }else{
+        timeJogos[posicoes[0]].innerText = equipeCharCompleto1;
+        timeJogos[posicoes[1]].innerText = equipeCharCompleto4;
+        timeJogos[posicoes[2]].innerText = equipeCharCompleto3;
+        timeJogos[posicoes[3]].innerText = equipeCharCompleto2;
+        //RODADA 2
+        timeJogos[posicoes[4]].innerText = equipeCharCompleto4;
+        timeJogos[posicoes[5]].innerText = equipeCharCompleto3;
+        timeJogos[posicoes[6]].innerText = equipeCharCompleto2;
+        timeJogos[posicoes[7]].innerText = equipeCharCompleto1;
+        //RODADA 3
+        timeJogos[posicoes[8]].innerText = equipeCharCompleto1;
+        timeJogos[posicoes[9]].innerText = equipeCharCompleto3;
+        timeJogos[posicoes[10]].innerText = equipeCharCompleto2;
+        timeJogos[posicoes[11]].innerText = equipeCharCompleto4;
+        //RODADA 4
+        timeJogos[posicoes[12]].innerText = equipeCharCompleto3;
+        timeJogos[posicoes[13]].innerText = equipeCharCompleto1;
+        timeJogos[posicoes[14]].innerText = equipeCharCompleto4;
+        timeJogos[posicoes[15]].innerText = equipeCharCompleto2;
+        //RODADA 5
+        timeJogos[posicoes[16]].innerText = equipeCharCompleto3;
+        timeJogos[posicoes[17]].innerText = equipeCharCompleto4;
+        timeJogos[posicoes[18]].innerText = equipeCharCompleto1;
+        timeJogos[posicoes[19]].innerText = equipeCharCompleto2;
+        //RODADA 6
+        timeJogos[posicoes[20]].innerText = equipeCharCompleto2;
+        timeJogos[posicoes[21]].innerText = equipeCharCompleto3;
+        timeJogos[posicoes[22]].innerText = equipeCharCompleto4;
+        timeJogos[posicoes[23]].innerText = equipeCharCompleto1;
+    }
 }
 
 function positionTimes(grupo, pos1, pos2, pos3, pos4){
@@ -1848,11 +1883,11 @@ btnSalvarResultJogos[47].addEventListener('click', function(){
     positionTimes(GrupoH, 28,29,30,31);
 });
 
-definirConfrontos(GrupoA[0].placar,GrupoA[1].placar,GrupoA[2].placar,GrupoA[3].placar, [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]);
-definirConfrontos(GrupoB[0].placar,GrupoB[1].placar,GrupoB[2].placar,GrupoB[3].placar, [24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47]);
-definirConfrontos(GrupoC[0].placar,GrupoC[1].placar,GrupoC[2].placar,GrupoC[3].placar, [48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71]);
-definirConfrontos(GrupoD[0].placar,GrupoD[1].placar,GrupoD[2].placar,GrupoD[3].placar, [72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95]);
-definirConfrontos(GrupoE[0].placar,GrupoE[1].placar,GrupoE[2].placar,GrupoE[3].placar, [96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119]);
-definirConfrontos(GrupoF[0].placar,GrupoF[1].placar,GrupoF[2].placar,GrupoF[3].placar, [120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143]);
-definirConfrontos(GrupoG[0].placar,GrupoG[1].placar,GrupoG[2].placar,GrupoG[3].placar, [144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167]);
-definirConfrontos(GrupoH[0].placar,GrupoH[1].placar,GrupoH[2].placar,GrupoH[3].placar, [168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191]);
+definirConfrontos(GrupoA[0].placar,GrupoA[1].placar,GrupoA[2].placar,GrupoA[3].placar,GrupoA[0].time,GrupoA[1].time,GrupoA[2].time,GrupoA[3].time, [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]);
+definirConfrontos(GrupoB[0].placar,GrupoB[1].placar,GrupoB[2].placar,GrupoB[3].placar,GrupoB[0].time,GrupoB[1].time,GrupoB[2].time,GrupoB[3].time, [24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47]);
+definirConfrontos(GrupoC[0].placar,GrupoC[1].placar,GrupoC[2].placar,GrupoC[3].placar,GrupoC[0].time,GrupoC[1].time,GrupoC[2].time,GrupoC[3].time, [48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71]);
+definirConfrontos(GrupoD[0].placar,GrupoD[1].placar,GrupoD[2].placar,GrupoD[3].placar,GrupoD[0].time,GrupoD[1].time,GrupoD[2].time,GrupoD[3].time, [72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95]);
+definirConfrontos(GrupoE[0].placar,GrupoE[1].placar,GrupoE[2].placar,GrupoE[3].placar,GrupoE[0].time,GrupoE[1].time,GrupoE[2].time,GrupoE[3].time, [96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119]);
+definirConfrontos(GrupoF[0].placar,GrupoF[1].placar,GrupoF[2].placar,GrupoF[3].placar,GrupoF[0].time,GrupoF[1].time,GrupoF[2].time,GrupoF[3].time, [120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143]);
+definirConfrontos(GrupoG[0].placar,GrupoG[1].placar,GrupoG[2].placar,GrupoG[3].placar,GrupoG[0].time,GrupoG[1].time,GrupoG[2].time,GrupoG[3].time, [144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167]);
+definirConfrontos(GrupoH[0].placar,GrupoH[1].placar,GrupoH[2].placar,GrupoH[3].placar,GrupoH[0].time,GrupoH[1].time,GrupoH[2].time,GrupoH[3].time, [168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191]);
