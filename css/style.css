@@ -47,14 +47,22 @@ button {
   text-align: center;
 }
 
-.disponivel {
-  color: #06aa48;
-  cursor: pointer;
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
-.disabled {
-  color: #CCCCCC;
-  cursor: no-drop;
+.swiper-slide {
+  background-color: #fcfcfc;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #06aa48;
 }
 
 .container {
@@ -95,6 +103,9 @@ button {
   width: 100%;
   display: grid;
   grid-template-columns: 5fr 4fr;
+}
+.container-table-jogos abbr {
+  text-decoration: none;
 }
 .container-table-jogos table {
   border-right: 1px solid #a2a2a2;
@@ -159,15 +170,10 @@ button {
 }
 .container-table-jogos .jogos-fase-grupo .jogos {
   position: relative;
-  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.container-table-jogos .jogos-fase-grupo .jogos .container-rodadas {
-  position: absolute;
-  display: grid;
-  grid-template-columns: 530px 530px 530px 530px 530px 530px;
 }
 .container-table-jogos .jogos-fase-grupo .jogos .rodada-1, .container-table-jogos .jogos-fase-grupo .jogos .rodada-6, .container-table-jogos .jogos-fase-grupo .jogos .rodada-5, .container-table-jogos .jogos-fase-grupo .jogos .rodada-4, .container-table-jogos .jogos-fase-grupo .jogos .rodada-3, .container-table-jogos .jogos-fase-grupo .jogos .rodada-2 {
-  position: relative;
+  width: 100%;
+  height: 100%;
 }
 .container-table-jogos .jogos-fase-grupo .jogos .btn-result-jogos {
   position: absolute;
@@ -180,24 +186,15 @@ button {
   text-transform: uppercase;
 }
 .container-table-jogos .jogos-fase-grupo .rodadas {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  position: absolute;
   align-items: center;
   border-top: 1px solid #a2a2a2;
   border-bottom: 1px solid #a2a2a2;
-  overflow: hidden;
-  position: relative;
-  padding: 8.7px 0;
-}
-.container-table-jogos .jogos-fase-grupo .container-btns-rodadas {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  padding: 7.7px 0;
 }
 .container-table-jogos .jogos-fase-grupo .container-translate-rodada {
-  position: absolute;
-  display: grid;
-  grid-template-columns: 530px 530px 530px 530px 530px 530px;
+  width: 100%;
   z-index: -1;
   transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
@@ -213,6 +210,9 @@ button {
 .container-table-jogos .jogos-fase-grupo i {
   font-size: 1.5rem;
   margin: 0 5px;
+}
+.container-table-jogos .jogos-fase-grupo .container-jogo-1 {
+  margin-top: 40px;
 }
 .container-table-jogos .jogos-fase-grupo .container-jogo-1, .container-table-jogos .jogos-fase-grupo .container-jogo-2 {
   padding: 23.5px 0;

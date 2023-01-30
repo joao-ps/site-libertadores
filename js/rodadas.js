@@ -468,7 +468,7 @@ function definirConfrontos(time1, time2, time3, time4, timeChar1, timeChar2, tim
         timeJogos[posicoes[21]].innerText = equipe3;
         timeJogos[posicoes[22]].innerText = equipe4;
         timeJogos[posicoes[23]].innerText = equipe1;
-    }else{
+    }else if(window.innerWidth > 650 && window.innerWidth < 1020){
         timeJogos[posicoes[0]].innerText = equipeCharCompleto1;
         timeJogos[posicoes[1]].innerText = equipeCharCompleto4;
         timeJogos[posicoes[2]].innerText = equipeCharCompleto3;
@@ -498,6 +498,36 @@ function definirConfrontos(time1, time2, time3, time4, timeChar1, timeChar2, tim
         timeJogos[posicoes[21]].innerText = equipeCharCompleto3;
         timeJogos[posicoes[22]].innerText = equipeCharCompleto4;
         timeJogos[posicoes[23]].innerText = equipeCharCompleto1;
+    }else{
+        timeJogos[posicoes[0]].innerText = equipe1;
+        timeJogos[posicoes[1]].innerText = equipe4;
+        timeJogos[posicoes[2]].innerText = equipe3;
+        timeJogos[posicoes[3]].innerText = equipe2;
+        //RODADA 2
+        timeJogos[posicoes[4]].innerText = equipe4;
+        timeJogos[posicoes[5]].innerText = equipe3;
+        timeJogos[posicoes[6]].innerText = equipe2;
+        timeJogos[posicoes[7]].innerText = equipe1;
+        //RODADA 3
+        timeJogos[posicoes[8]].innerText = equipe1;
+        timeJogos[posicoes[9]].innerText = equipe3;
+        timeJogos[posicoes[10]].innerText = equipe2;
+        timeJogos[posicoes[11]].innerText = equipe4;
+        //RODADA 4
+        timeJogos[posicoes[12]].innerText = equipe3;
+        timeJogos[posicoes[13]].innerText = equipe1;
+        timeJogos[posicoes[14]].innerText = equipe4;
+        timeJogos[posicoes[15]].innerText = equipe2;
+        //RODADA 5
+        timeJogos[posicoes[16]].innerText = equipe3;
+        timeJogos[posicoes[17]].innerText = equipe4;
+        timeJogos[posicoes[18]].innerText = equipe1;
+        timeJogos[posicoes[19]].innerText = equipe2;
+        //RODADA 6
+        timeJogos[posicoes[20]].innerText = equipe2;
+        timeJogos[posicoes[21]].innerText = equipe3;
+        timeJogos[posicoes[22]].innerText = equipe4;
+        timeJogos[posicoes[23]].innerText = equipe1;
     }
 }
 
@@ -527,7 +557,18 @@ function positionTimes(grupo, pos1, pos2, pos3, pos4){
         }
     });
 
-    tdTime[positionTable1].innerText = position[3].time;
+    if(window.innerWidth > 700){
+        tdTime[positionTable1].innerText = position[3].time
+        tdTime[positionTable2].innerText = position[2].time
+        tdTime[positionTable3].innerText = position[1].time
+        tdTime[positionTable4].innerText = position[0].time
+    }else{
+        tdTime[positionTable1].innerText = position[3].placar
+        tdTime[positionTable2].innerText = position[2].placar
+        tdTime[positionTable3].innerText = position[1].placar
+        tdTime[positionTable4].innerText = position[0].placar
+    }
+
     tdPontos[positionTable1].innerText = position[3].p;
     tdJogos[positionTable1].innerText = position[3].j
     tdVitorias[positionTable1].innerText = position[3].v
@@ -537,7 +578,7 @@ function positionTimes(grupo, pos1, pos2, pos3, pos4){
     tdGolsContra[positionTable1].innerText = position[3].gc
     tdSaldoGols[positionTable1].innerText = position[3].sg
 
-    tdTime[positionTable2].innerText = position[2].time;
+    //tdTime[positionTable2].innerText = position[2].time;
     tdPontos[positionTable2].innerText = position[2].p;
     tdJogos[positionTable2].innerText = position[2].j
     tdVitorias[positionTable2].innerText = position[2].v
@@ -547,7 +588,7 @@ function positionTimes(grupo, pos1, pos2, pos3, pos4){
     tdGolsContra[positionTable2].innerText = position[2].gc
     tdSaldoGols[positionTable2].innerText = position[2].sg
 
-    tdTime[positionTable3].innerText = position[1].time;
+    //tdTime[positionTable3].innerText = position[1].time;
     tdPontos[positionTable3].innerText = position[1].p;
     tdJogos[positionTable3].innerText = position[1].j
     tdVitorias[positionTable3].innerText = position[1].v
@@ -557,7 +598,7 @@ function positionTimes(grupo, pos1, pos2, pos3, pos4){
     tdGolsContra[positionTable3].innerText = position[1].gc
     tdSaldoGols[positionTable3].innerText = position[1].sg
 
-    tdTime[positionTable4].innerText = position[0].time;
+    //tdTime[positionTable4].innerText = position[0].time;
     tdPontos[positionTable4].innerText = position[0].p;
     tdJogos[positionTable4].innerText = position[0].j
     tdVitorias[positionTable4].innerText = position[0].v
@@ -596,269 +637,269 @@ function insertResultsArray1(resultadoPro, resultadoContra, grup,infoTime){
     informacoesTime.sg += resultGolProContra;
 }
 
-btnVoltarRodada[0].addEventListener('click', function(){
-    valorTranslateRodada1 >= 0 ?  valorTranslateRodada1 += 0
-        : valorTranslateRodada1 += 530;
+//btnVoltarRodada[0].addEventListener('click', function(){
+//    valorTranslateRodada1 >= 0 ?  valorTranslateRodada1 += 0
+//        : valorTranslateRodada1 += 530;
+//
+//    if(valorTranslateRodada1 >= 0){
+//        btnVoltarRodada[0].style.color = '#CCCCCC';
+//        btnVoltarRodada[0].style.cursor = 'no-drop';
+//        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+//        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+//    }else{
+//        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+//        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+//        btnAvancarRodada[0].style.color = '#06aa48'; 
+//        btnAvancarRodada[0].style.cursor = 'pointer';
+//    }
+//});
+//btnAvancarRodada[0].addEventListener('click', function(){
+//    valorTranslateRodada1 <= -2650 ? valorTranslateRodada1 = -2650
+//        : valorTranslateRodada1 += -530
+//
+//    if(valorTranslateRodada1 == -2650){
+//        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+//        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+//        btnAvancarRodada[0].style.color = '#CCCCCC';
+//        btnAvancarRodada[0].style.cursor = 'no-drop';
+//    }else{
+//        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+//        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
+//        btnVoltarRodada[0].style.color = '#06aa48'; 
+//        btnVoltarRodada[0].style.cursor = 'pointer';
+//    }
+//});
 
-    if(valorTranslateRodada1 >= 0){
-        btnVoltarRodada[0].style.color = '#CCCCCC';
-        btnVoltarRodada[0].style.cursor = 'no-drop';
-        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
-        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
-    }else{
-        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
-        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
-        btnAvancarRodada[0].style.color = '#06aa48'; 
-        btnAvancarRodada[0].style.cursor = 'pointer';
-    }
-});
-btnAvancarRodada[0].addEventListener('click', function(){
-    valorTranslateRodada1 <= -2650 ? valorTranslateRodada1 = -2650
-        : valorTranslateRodada1 += -530
+//btnVoltarRodada[1].addEventListener('click', function(){
+//    valorTranslateRodada2 >= 0 ?  valorTranslateRodada2 += 0
+//        : valorTranslateRodada2 += 530;
+//
+//    if(valorTranslateRodada2 >= 0){
+//        btnVoltarRodada[1].style.color = '#CCCCCC';
+//        btnVoltarRodada[1].style.cursor = 'no-drop';
+//        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+//        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+//    }else{
+//        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+//        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+//        btnAvancarRodada[1].style.color = '#06aa48'; 
+//        btnAvancarRodada[1].style.cursor = 'pointer';
+//    }
+//});
+//btnAvancarRodada[1].addEventListener('click', function(){
+//    valorTranslateRodada2 <= -2650 ? valorTranslateRodada2 = -2650
+//        : valorTranslateRodada2 += -530
+//
+//    if(valorTranslateRodada2 == -2650){
+//        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+//        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+//        btnAvancarRodada[1].style.color = '#CCCCCC';
+//        btnAvancarRodada[1].style.cursor = 'no-drop';
+//    }else{
+//        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+//        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
+//        btnVoltarRodada[1].style.color = '#06aa48'; 
+//        btnVoltarRodada[1].style.cursor = 'pointer';
+//    }
+//});
+//
+//btnVoltarRodada[2].addEventListener('click', function(){
+//    valorTranslateRodada3 >= 0 ?  valorTranslateRodada3 += 0
+//        : valorTranslateRodada3 += 530;
+//
+//    if(valorTranslateRodada3 >= 0){
+//        btnVoltarRodada[2].style.color = '#CCCCCC';
+//        btnVoltarRodada[2].style.cursor = 'no-drop';
+//        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+//        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+//    }else{
+//        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+//        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+//        btnAvancarRodada[2].style.color = '#06aa48'; 
+//        btnAvancarRodada[2].style.cursor = 'pointer';
+//    }
+//});
+//btnAvancarRodada[2].addEventListener('click', function(){
+//    valorTranslateRodada3 <= -2650 ? valorTranslateRodada3 = -2650
+//        : valorTranslateRodada3 += -530
+//
+//    if(valorTranslateRodada3 == -2650){
+//        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+//        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+//        btnAvancarRodada[2].style.color = '#CCCCCC';
+//        btnAvancarRodada[2].style.cursor = 'no-drop';
+//    }else{
+//        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+//        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
+//        btnVoltarRodada[2].style.color = '#06aa48'; 
+//        btnVoltarRodada[2].style.cursor = 'pointer';
+//    }
+//});
 
-    if(valorTranslateRodada1 == -2650){
-        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
-        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
-        btnAvancarRodada[0].style.color = '#CCCCCC';
-        btnAvancarRodada[0].style.cursor = 'no-drop';
-    }else{
-        divJogos[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
-        divRodadas[0].style.transform = `TranslateX(${valorTranslateRodada1}px)`;
-        btnVoltarRodada[0].style.color = '#06aa48'; 
-        btnVoltarRodada[0].style.cursor = 'pointer';
-    }
-});
+//btnVoltarRodada[3].addEventListener('click', function(){
+//    valorTranslateRodada4 >= 0 ?  valorTranslateRodada4 += 0
+//        : valorTranslateRodada4 += 530;
+//
+//    if(valorTranslateRodada4 >= 0){
+//        btnVoltarRodada[3].style.color = '#CCCCCC';
+//        btnVoltarRodada[3].style.cursor = 'no-drop';
+//        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+//        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+//    }else{
+//        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+//        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+//        btnAvancarRodada[3].style.color = '#06aa48'; 
+//        btnAvancarRodada[3].style.cursor = 'pointer';
+//    }
+//});
+//btnAvancarRodada[3].addEventListener('click', function(){
+//    valorTranslateRodada4 <= -2650 ? valorTranslateRodada4 = -2650
+//        : valorTranslateRodada4 += -530
+//
+//    if(valorTranslateRodada4 == -2650){
+//        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+//        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+//        btnAvancarRodada[3].style.color = '#CCCCCC';
+//        btnAvancarRodada[3].style.cursor = 'no-drop';
+//    }else{
+//        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+//        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
+//        btnVoltarRodada[3].style.color = '#06aa48'; 
+//        btnVoltarRodada[3].style.cursor = 'pointer';
+//    }
+////});
+//
+//btnVoltarRodada[4].addEventListener('click', function(){
+//    valorTranslateRodada5 >= 0 ?  valorTranslateRodada5 += 0
+//        : valorTranslateRodada5 += 530;
+//
+//    if(valorTranslateRodada5 >= 0){
+//        btnVoltarRodada[4].style.color = '#CCCCCC';
+//        btnVoltarRodada[4].style.cursor = 'no-drop';
+//        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+//        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+//    }else{
+//        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+//        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+//        btnAvancarRodada[4].style.color = '#06aa48'; 
+//        btnAvancarRodada[4].style.cursor = 'pointer';
+//    }
+//});
+//btnAvancarRodada[4].addEventListener('click', function(){
+//    valorTranslateRodada5 <= -2650 ? valorTranslateRodada5 = -2650
+//        : valorTranslateRodada5 += -530
+//
+//    if(valorTranslateRodada5 == -2650){
+//        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+//        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+//        btnAvancarRodada[4].style.color = '#CCCCCC';
+//        btnAvancarRodada[4].style.cursor = 'no-drop';
+//    }else{
+//        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+//        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
+//        btnVoltarRodada[4].style.color = '#06aa48'; 
+//        btnVoltarRodada[4].style.cursor = 'pointer';
+//    }
+//});
 
-btnVoltarRodada[1].addEventListener('click', function(){
-    valorTranslateRodada2 >= 0 ?  valorTranslateRodada2 += 0
-        : valorTranslateRodada2 += 530;
+//btnVoltarRodada[5].addEventListener('click', function(){
+//    valorTranslateRodada6 >= 0 ?  valorTranslateRodada6 += 0
+//        : valorTranslateRodada6 += 530;
+//
+//    if(valorTranslateRodada6 >= 0){
+//        btnVoltarRodada[5].style.color = '#CCCCCC';
+//        btnVoltarRodada[5].style.cursor = 'no-drop';
+//        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+//        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+//    }else{
+//        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+//        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+//        btnAvancarRodada[5].style.color = '#06aa48'; 
+//        btnAvancarRodada[5].style.cursor = 'pointer';
+//    }
+//});
+//btnAvancarRodada[5].addEventListener('click', function(){
+//    valorTranslateRodada6 <= -2650 ? valorTranslateRodada6 = -2650
+//        : valorTranslateRodada6 += -530
+//
+//    if(valorTranslateRodada6 == -2650){
+//        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+//        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+//        btnAvancarRodada[5].style.color = '#CCCCCC';
+//        btnAvancarRodada[5].style.cursor = 'no-drop';
+//    }else{
+//        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+//        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
+//        btnVoltarRodada[5].style.color = '#06aa48'; 
+//        btnVoltarRodada[5].style.cursor = 'pointer';
+//    }
+//});
 
-    if(valorTranslateRodada2 >= 0){
-        btnVoltarRodada[1].style.color = '#CCCCCC';
-        btnVoltarRodada[1].style.cursor = 'no-drop';
-        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
-        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
-    }else{
-        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
-        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
-        btnAvancarRodada[1].style.color = '#06aa48'; 
-        btnAvancarRodada[1].style.cursor = 'pointer';
-    }
-});
-btnAvancarRodada[1].addEventListener('click', function(){
-    valorTranslateRodada2 <= -2650 ? valorTranslateRodada2 = -2650
-        : valorTranslateRodada2 += -530
-
-    if(valorTranslateRodada2 == -2650){
-        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
-        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
-        btnAvancarRodada[1].style.color = '#CCCCCC';
-        btnAvancarRodada[1].style.cursor = 'no-drop';
-    }else{
-        divJogos[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
-        divRodadas[1].style.transform = `TranslateX(${valorTranslateRodada2}px)`;
-        btnVoltarRodada[1].style.color = '#06aa48'; 
-        btnVoltarRodada[1].style.cursor = 'pointer';
-    }
-});
-
-btnVoltarRodada[2].addEventListener('click', function(){
-    valorTranslateRodada3 >= 0 ?  valorTranslateRodada3 += 0
-        : valorTranslateRodada3 += 530;
-
-    if(valorTranslateRodada3 >= 0){
-        btnVoltarRodada[2].style.color = '#CCCCCC';
-        btnVoltarRodada[2].style.cursor = 'no-drop';
-        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
-        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
-    }else{
-        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
-        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
-        btnAvancarRodada[2].style.color = '#06aa48'; 
-        btnAvancarRodada[2].style.cursor = 'pointer';
-    }
-});
-btnAvancarRodada[2].addEventListener('click', function(){
-    valorTranslateRodada3 <= -2650 ? valorTranslateRodada3 = -2650
-        : valorTranslateRodada3 += -530
-
-    if(valorTranslateRodada3 == -2650){
-        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
-        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
-        btnAvancarRodada[2].style.color = '#CCCCCC';
-        btnAvancarRodada[2].style.cursor = 'no-drop';
-    }else{
-        divJogos[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
-        divRodadas[2].style.transform = `TranslateX(${valorTranslateRodada3}px)`;
-        btnVoltarRodada[2].style.color = '#06aa48'; 
-        btnVoltarRodada[2].style.cursor = 'pointer';
-    }
-});
-
-btnVoltarRodada[3].addEventListener('click', function(){
-    valorTranslateRodada4 >= 0 ?  valorTranslateRodada4 += 0
-        : valorTranslateRodada4 += 530;
-
-    if(valorTranslateRodada4 >= 0){
-        btnVoltarRodada[3].style.color = '#CCCCCC';
-        btnVoltarRodada[3].style.cursor = 'no-drop';
-        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
-        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
-    }else{
-        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
-        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
-        btnAvancarRodada[3].style.color = '#06aa48'; 
-        btnAvancarRodada[3].style.cursor = 'pointer';
-    }
-});
-btnAvancarRodada[3].addEventListener('click', function(){
-    valorTranslateRodada4 <= -2650 ? valorTranslateRodada4 = -2650
-        : valorTranslateRodada4 += -530
-
-    if(valorTranslateRodada4 == -2650){
-        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
-        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
-        btnAvancarRodada[3].style.color = '#CCCCCC';
-        btnAvancarRodada[3].style.cursor = 'no-drop';
-    }else{
-        divJogos[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
-        divRodadas[3].style.transform = `TranslateX(${valorTranslateRodada4}px)`;
-        btnVoltarRodada[3].style.color = '#06aa48'; 
-        btnVoltarRodada[3].style.cursor = 'pointer';
-    }
-});
-
-btnVoltarRodada[4].addEventListener('click', function(){
-    valorTranslateRodada5 >= 0 ?  valorTranslateRodada5 += 0
-        : valorTranslateRodada5 += 530;
-
-    if(valorTranslateRodada5 >= 0){
-        btnVoltarRodada[4].style.color = '#CCCCCC';
-        btnVoltarRodada[4].style.cursor = 'no-drop';
-        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
-        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
-    }else{
-        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
-        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
-        btnAvancarRodada[4].style.color = '#06aa48'; 
-        btnAvancarRodada[4].style.cursor = 'pointer';
-    }
-});
-btnAvancarRodada[4].addEventListener('click', function(){
-    valorTranslateRodada5 <= -2650 ? valorTranslateRodada5 = -2650
-        : valorTranslateRodada5 += -530
-
-    if(valorTranslateRodada5 == -2650){
-        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
-        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
-        btnAvancarRodada[4].style.color = '#CCCCCC';
-        btnAvancarRodada[4].style.cursor = 'no-drop';
-    }else{
-        divJogos[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
-        divRodadas[4].style.transform = `TranslateX(${valorTranslateRodada5}px)`;
-        btnVoltarRodada[4].style.color = '#06aa48'; 
-        btnVoltarRodada[4].style.cursor = 'pointer';
-    }
-});
-
-btnVoltarRodada[5].addEventListener('click', function(){
-    valorTranslateRodada6 >= 0 ?  valorTranslateRodada6 += 0
-        : valorTranslateRodada6 += 530;
-
-    if(valorTranslateRodada6 >= 0){
-        btnVoltarRodada[5].style.color = '#CCCCCC';
-        btnVoltarRodada[5].style.cursor = 'no-drop';
-        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
-        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
-    }else{
-        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
-        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
-        btnAvancarRodada[5].style.color = '#06aa48'; 
-        btnAvancarRodada[5].style.cursor = 'pointer';
-    }
-});
-btnAvancarRodada[5].addEventListener('click', function(){
-    valorTranslateRodada6 <= -2650 ? valorTranslateRodada6 = -2650
-        : valorTranslateRodada6 += -530
-
-    if(valorTranslateRodada6 == -2650){
-        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
-        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
-        btnAvancarRodada[5].style.color = '#CCCCCC';
-        btnAvancarRodada[5].style.cursor = 'no-drop';
-    }else{
-        divJogos[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
-        divRodadas[5].style.transform = `TranslateX(${valorTranslateRodada6}px)`;
-        btnVoltarRodada[5].style.color = '#06aa48'; 
-        btnVoltarRodada[5].style.cursor = 'pointer';
-    }
-});
-
-btnVoltarRodada[6].addEventListener('click', function(){
-    valorTranslateRodada7 >= 0 ?  valorTranslateRodada7 += 0
-        : valorTranslateRodada7 += 530;
-
-    if(valorTranslateRodada7 >= 0){
-        btnVoltarRodada[6].style.color = '#CCCCCC';
-        btnVoltarRodada[6].style.cursor = 'no-drop';
-        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
-        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
-    }else{
-        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
-        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
-        btnAvancarRodada[6].style.color = '#06aa48'; 
-        btnAvancarRodada[6].style.cursor = 'pointer';
-    }
-});
-btnAvancarRodada[6].addEventListener('click', function(){
-    valorTranslateRodada7 <= -2650 ? valorTranslateRodada7 = -2650
-        : valorTranslateRodada7 += -530
-
-    if(valorTranslateRodada7 == -2650){
-        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
-        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
-        btnAvancarRodada[6].style.color = '#CCCCCC';
-        btnAvancarRodada[6].style.cursor = 'no-drop';
-    }else{
-        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
-        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
-        btnVoltarRodada[6].style.color = '#06aa48'; 
-        btnVoltarRodada[6].style.cursor = 'pointer';
-    }
-});
-
-btnVoltarRodada[7].addEventListener('click', function(){
-    valorTranslateRodada8 >= 0 ?  valorTranslateRodada8 += 0
-        : valorTranslateRodada8 += 530;
-
-    if(valorTranslateRodada8 >= 0){
-        btnVoltarRodada[7].style.color = '#CCCCCC';
-        btnVoltarRodada[7].style.cursor = 'no-drop';
-        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
-        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
-    }else{
-        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
-        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
-        btnAvancarRodada[7].style.color = '#06aa48'; 
-        btnAvancarRodada[7].style.cursor = 'pointer';
-    }
-});
-btnAvancarRodada[7].addEventListener('click', function(){
-    valorTranslateRodada8 <= -2650 ? valorTranslateRodada8 = -2650
-        : valorTranslateRodada8 += -530
-
-    if(valorTranslateRodada8 == -2650){
-        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
-        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
-        btnAvancarRodada[7].style.color = '#CCCCCC';
-        btnAvancarRodada[7].style.cursor = 'no-drop';
-    }else{
-        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
-        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
-        btnVoltarRodada[7].style.color = '#06aa48'; 
-        btnVoltarRodada[7].style.cursor = 'pointer';
-    }
-});
+//btnVoltarRodada[6].addEventListener('click', function(){
+//    valorTranslateRodada7 >= 0 ?  valorTranslateRodada7 += 0
+//        : valorTranslateRodada7 += 530;
+//
+//    if(valorTranslateRodada7 >= 0){
+//        btnVoltarRodada[6].style.color = '#CCCCCC';
+//        btnVoltarRodada[6].style.cursor = 'no-drop';
+//        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+//        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+//    }else{
+//        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+//        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+//        btnAvancarRodada[6].style.color = '#06aa48'; 
+//        btnAvancarRodada[6].style.cursor = 'pointer';
+//    }
+//});
+//btnAvancarRodada[6].addEventListener('click', function(){
+//    valorTranslateRodada7 <= -2650 ? valorTranslateRodada7 = -2650
+//        : valorTranslateRodada7 += -530
+//
+//    if(valorTranslateRodada7 == -2650){
+//        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+//        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+//        btnAvancarRodada[6].style.color = '#CCCCCC';
+//        btnAvancarRodada[6].style.cursor = 'no-drop';
+//    }else{
+//        divJogos[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+//        divRodadas[6].style.transform = `TranslateX(${valorTranslateRodada7}px)`;
+//        btnVoltarRodada[6].style.color = '#06aa48'; 
+//        btnVoltarRodada[6].style.cursor = 'pointer';
+//    }
+////});
+//
+//btnVoltarRodada[7].addEventListener('click', function(){
+//    valorTranslateRodada8 >= 0 ?  valorTranslateRodada8 += 0
+//        : valorTranslateRodada8 += 530;
+//
+//    if(valorTranslateRodada8 >= 0){
+//        btnVoltarRodada[7].style.color = '#CCCCCC';
+//        btnVoltarRodada[7].style.cursor = 'no-drop';
+//        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+//        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+//    }else{
+//        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+//        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+//        btnAvancarRodada[7].style.color = '#06aa48'; 
+//        btnAvancarRodada[7].style.cursor = 'pointer';
+//    }
+//});
+//btnAvancarRodada[7].addEventListener('click', function(){
+//    valorTranslateRodada8 <= -2650 ? valorTranslateRodada8 = -2650
+//        : valorTranslateRodada8 += -530
+//
+//    if(valorTranslateRodada8 == -2650){
+//        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+//        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+//        btnAvancarRodada[7].style.color = '#CCCCCC';
+//        btnAvancarRodada[7].style.cursor = 'no-drop';
+//    }else{
+//        divJogos[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+//        divRodadas[7].style.transform = `TranslateX(${valorTranslateRodada8}px)`;
+//        btnVoltarRodada[7].style.color = '#06aa48'; 
+//        btnVoltarRodada[7].style.cursor = 'pointer';
+//    }
+//});
 
 btnSalvarResultJogos[0].addEventListener('click', function(){
     let resultJogos = [];

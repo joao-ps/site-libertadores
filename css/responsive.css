@@ -4,10 +4,7 @@
     }
     .container-table-jogos{
         grid-template-columns: 5fr 3fr;
-    }
-    .rodada-1,.rodada-2,.rodada-3,.rodada-4,.rodada-5,.rodada-6{
-        width: 365px;
-    }
+    } 
     .btn-result-jogos{
         font-size: 1rem;
     }
@@ -18,8 +15,7 @@
         width: 750px;
     }
     .container-jogos-fase-grupo{
-        width: 71%;
-        margin: 0 auto;
+        width: 100%;
     }
     .container-table-jogos table{
         border-right: none;
@@ -27,11 +23,7 @@
     .container-table-jogos{
         grid-template-columns: 100%;
         grid-template-rows: 1fr 1fr;
-        gap: 0 30px;
     }
-    .rodada-1,.rodada-2,.rodada-3,.rodada-4,.rodada-5,.rodada-6{
-        width: 100%;
-    } 
     .jogo{
         font-size: 1.6rem;
         text-transform: capitalize;
@@ -39,10 +31,16 @@
     .btn-result-jogos{
         font-size: 1.3rem;
     }
-    .btn-result-jogos{
-        right: 4%;
-        top: 5%;
-        width: 80px;
-        height: 30px;
+}
+
+@media(max-width: 800px){
+    .container{
+        width: 90%;
+    }
+}
+
+@media(max-width: 600px){
+    .container{
+        width: 95%;
     }
 }

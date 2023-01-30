@@ -40,15 +40,43 @@ button{
     border-radius: 4px;
     text-align: center;
 }
-.disponivel{
-    color: #06aa48;
-    cursor: pointer;
-}
-.disabled{
-    color: #CCCCCC;
-    cursor: no-drop;
-}
+//.disponivel{
+//    color: #06aa48;
+//    cursor: pointer;
+//}
+//.disabled{
+//    color: #CCCCCC;
+//    cursor: no-drop;
+//}
 
+.swiper {
+    width: 100%;
+    height: 100%;
+    //position: relative;
+    //height: 100%;
+    //width: 100%;
+}
+.swiper-slide {
+    background-color: #fcfcfc;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-button-prev,
+.swiper-button-next{
+    color: #06aa48;
+}
 .container{
     width: 1200px;
     margin: 0 auto;
@@ -88,6 +116,10 @@ button{
     width: 100%;
     display: grid;
     grid-template-columns: 5fr 4fr;
+
+    abbr{
+        text-decoration: none;
+    }
 
     table{
         @extend %borda-colada;
@@ -159,15 +191,17 @@ button{
 
         .jogos{
             position: relative;
-            transition: $transicao-jogos-rodadas;
+            //transition: $transicao-jogos-rodadas;
 
             .container-rodadas{
-                position: absolute;
-                display: grid;
-                grid-template-columns: 530px 530px 530px 530px 530px 530px;
+                //position: absolute;
+                //display: grid;
+                //grid-template-columns: 530px 530px 530px 530px 530px 530px;
             }
             .rodada-1{
-                position: relative;
+                //position: relative;
+                width: 100%;
+                height: 100%;
             }
             .rodada-2{
                 @extend .rodada-1;
@@ -196,24 +230,23 @@ button{
             }
         }
         .rodadas{
-            display: flex;
-            justify-content: space-between;
+            width: 100%;
+            position: absolute;
             align-items: center;
             border-top: 1px solid #a2a2a2;
             border-bottom: 1px solid #a2a2a2;
-            overflow: hidden;
-            position: relative;
-            padding: 8.7px 0;
+            padding: 7.7px 0;
         }
-        .container-btns-rodadas{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
+        //.container-btns-rodadas{
+        //    width: 100%;
+        //    display: flex;
+        //    justify-content: space-between;
+        //}
         .container-translate-rodada{
-            position: absolute;
-            display: grid;
-            grid-template-columns: 530px 530px 530px 530px 530px 530px;
+            width: 100%;
+            //position: absolute;
+            //display: grid;
+            //grid-template-columns: 530px 530px 530px 530px 530px 530px;
             z-index: -1;
             transition: $transicao-jogos-rodadas;
             overflow: hidden;
@@ -232,6 +265,9 @@ button{
             margin: 0 5px;
         }
 
+        .container-jogo-1{
+            margin-top: 40px;
+        }
         .container-jogo-1,.container-jogo-2{
             padding: 23.5px 0;
             border-bottom: 1px solid #cccccc91;
