@@ -1,56 +1,361 @@
 let pote1 = [
-    {time: 'river plate', pais: 'argentina', namePlacar: 'riv'}, 
-    {time: 'boca juniors', pais: 'argentina', namePlacar: 'boc'},
-    {time: 'flamengo', pais: 'brasil', namePlacar: 'fla'}, 
-    {time: 'nacional-URU', pais: 'uruguai', namePlacar: 'nac'}, 
-    {time: 'peñarol', pais: 'uruguai', namePlacar: 'pen'}, 
-    {time: 'atletico MG', pais: 'brasil', namePlacar: 'cam'}, 
-    {time: 'atletico PR', pais: 'brasil', namePlacar: 'cap'}
+    //{time: 'river plate', pais: 'argentina', namePlacar: 'riv'}, 
+    //{time: 'boca juniors', pais: 'argentina', namePlacar: 'boc'},
+    //{time: 'flamengo', pais: 'brasil', namePlacar: 'fla'}, 
+    //{time: 'nacional-URU', pais: 'uruguai', namePlacar: 'nac'}, 
+    //{time: 'peñarol', pais: 'uruguai', namePlacar: 'pen'}, 
+    //{time: 'atletico MG', pais: 'brasil', namePlacar: 'cam'}, 
+    //{time: 'atletico PR', pais: 'brasil', namePlacar: 'cap'}
 ];
 let pote2 = [
-    {time: 'cerro porteño', pais: 'paraguai', namePlacar: 'ccp'},
-    {time: 'libertad', pais: 'paraguai', namePlacar: 'lib'},
-    {time: 'independiente del valle', pais: 'equador', namePlacar: 'idv'}, 
-    {time: 'universidad católica', pais: 'chile', namePlacar: 'cat'},   
-    {time: 'emelec', pais: 'equador', namePlacar: 'eme'}, 
-    {time: 'corinthians', pais: 'brasil', namePlacar: 'cor'}, 
-    {time: 'colo-colo', pais:'chile', namePlacar: 'col'}, 
-    {time: 'vélez', pais: 'argentina', namePlacar: 'vel'}
+    //{time: 'cerro porteño', pais: 'paraguai', namePlacar: 'ccp'},
+    //{time: 'libertad', pais: 'paraguai', namePlacar: 'lib'},
+    //{time: 'independiente del valle', pais: 'equador', namePlacar: 'idv'}, 
+    //{time: 'universidad católica', pais: 'chile', namePlacar: 'cat'},   
+    //{time: 'emelec', pais: 'equador', namePlacar: 'eme'}, 
+    //{time: 'corinthians', pais: 'brasil', namePlacar: 'cor'}, 
+    //{time: 'colo-colo', pais:'chile', namePlacar: 'col'}, 
+    //{time: 'vélez', pais: 'argentina', namePlacar: 'vel'}
 ];
 let pote3 = [
-    {time: 'sporting cristal', pais: 'peru', namePlacar: 'scl'}, 
-    {time: 'deportivo cali', pais: 'colômbia', namePlacar: 'cal'}, 
-    {time: 'bragantino', pais: 'brasil', namePlacar: 'bra'}, 
-    {time: 'dep. táchira', pais: 'venezuela', namePlacar: 'tac'},
-    {time: 'alianza lima', pais: 'peru', namePlacar: 'ali'},
-    {time: 'tolima', pais: 'colômbia', namePlacar: 'tol'}, 
-    {time: 'colón', pais: 'argentina', namePlacar: 'col'}, 
-    {time: 'caracas', pais: 'venezuela', namePlacar: 'car'}
+    //{time: 'sporting cristal', pais: 'peru', namePlacar: 'scl'}, 
+    //{time: 'deportivo cali', pais: 'colômbia', namePlacar: 'cal'}, 
+    //{time: 'bragantino', pais: 'brasil', namePlacar: 'bra'}, 
+    //{time: 'dep. táchira', pais: 'venezuela', namePlacar: 'tac'},
+    //{time: 'alianza lima', pais: 'peru', namePlacar: 'ali'},
+    //{time: 'tolima', pais: 'colômbia', namePlacar: 'tol'}, 
+    //{time: 'colón', pais: 'argentina', namePlacar: 'col'}, 
+    //{time: 'caracas', pais: 'venezuela', namePlacar: 'car'}
 ];
 let pote4 = [
-    {time: 'always ready', pais: 'bolivia', namePlacar: 'alw'},
-    {time: 'talleres', pais: 'argentina', namePlacar: 'tal'},
-    {time: 'independiente petrolero', pais: 'bolivia', namePlacar: 'pet'},
-    {time: 'fortaleza', pais: 'brasil', namePlacar: 'for'},
-    {time: 'olimpia', pais: 'paraguai', namePlacar: 'oli'},
-    {time: 'estudiantes', pais: 'argentina', namePlacar: 'est'},
-    {time: 'the strongest', pais: 'bolivia', namePlacar: 'str'},
-    {time: 'américa MG', pais: 'brasil', namePlacar: 'ame'}
+    //{time: 'always ready', pais: 'bolivia', namePlacar: 'alw'},
+    //{time: 'talleres', pais: 'argentina', namePlacar: 'tal'},
+    //{time: 'independiente petrolero', pais: 'bolivia', namePlacar: 'pet'},
+    //{time: 'fortaleza', pais: 'brasil', namePlacar: 'for'},
+    //{time: 'olimpia', pais: 'paraguai', namePlacar: 'oli'},
+    //{time: 'estudiantes', pais: 'argentina', namePlacar: 'est'},
+    //{time: 'the strongest', pais: 'bolivia', namePlacar: 'str'},
+    //{time: 'américa MG', pais: 'brasil', namePlacar: 'ame'}
 ];
+let poteGeral = []
+//{time: 'palmeiras', pais: 'brasil', namePlacar: 'pal'}
 
-export let grupoA = [{time: 'palmeiras', pais: 'brasil', namePlacar: 'pal'}];
-export let grupoB = [];
-export let grupoC = [];
-export let grupoD = [];
-export let grupoE = [];
-export let grupoF = [];
-export let grupoG = [];
-export let grupoH = [];
+export let grupoA = []
+export let grupoB = []
+export let grupoC = []
+export let grupoD = []
+export let grupoE = []
+export let grupoF = []
+export let grupoG = []
+export let grupoH = []
 
 let tdTimes1 = document.querySelectorAll('td.cedula-time1 > abbr.cedula-time')
 let tdTimes2 = document.querySelectorAll('td.cedula-time2 > abbr.cedula-time')
 let tdTimes3 = document.querySelectorAll('td.cedula-time3 > abbr.cedula-time')
 let tdTimes4 = document.querySelectorAll('td.cedula-time4 > abbr.cedula-time')
+
+function setTimesPotes(){
+    poteGeral = poteGeral.sort((a,b) => a.ranking > b.ranking) 
+
+    poteGeral.forEach((element,index,array) => {
+        if(index < 6){
+            pote1.push(poteGeral[index])
+        }else if(index >= 6 && index < 14){
+            pote2.push(element)
+        }else if(index >= 14 && index < 22){
+            pote3.push(element)
+        }else{
+            pote4.push(element)
+        }
+    })
+    pote1 = pote1.sort((a,b) => a.ranking > b.ranking)
+
+    addTimesPote1()
+}
+
+const getDadosCampeaoLibertadores = async() => {
+    let response = await axios.get('http://localhost:2020/campeao-libertadores')
+    let dados = response.data
+
+    grupoA.push(dados)
+}
+
+const getDadosCampeaoSul = async() => {
+    let response = await axios.get('http://localhost:2020/campeao-sul')
+    let dados = response.data
+
+    pote1.push(dados)
+}
+
+const getDadosBrasil = async() => {
+    let response = await axios.get('http://localhost:2020/brasil')
+    let dados = response.data
+    let numVagas = 5
+
+    if(grupoA[0].pais == 'brasil' && pote1[0].pais == 'brasil'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'brasil' || pote1[0].pais == 'brasil'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time 
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosArgentina = async () => {
+    let response = await axios.get('http://localhost:2020/argentina')
+    let dados = response.data
+    let numVagas = 5
+
+    if(grupoA[0].pais == 'argentina' && pote1[0].pais == 'argentina'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'argentina' || pote1[0].pais == 'argentina'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosColombia = async () => {
+    let response = await axios.get('http://localhost:2020/colombia')
+    let dados = response.data
+    let numVagas = 3
+
+    if(grupoA[0].pais == 'colombia' && pote1[0].pais == 'colombia'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'colombia' || pote1[0].pais == 'colombia'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosChile = async () => {
+    let response = await axios.get('http://localhost:2020/chile')
+    let dados = response.data
+    let numVagas = 3
+
+    if(grupoA[0].pais == 'chile' && pote1[0].pais == 'chile'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'chile' || pote1[0].pais == 'chile'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosUruguai = async () => {
+    let response = await axios.get('http://localhost:2020/uruguai')
+    let dados = response.data
+    let numVagas = 3
+
+    if(grupoA[0].pais == 'uruguai' && pote1[0].pais == 'uruguai'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'uruguai' || pote1[0].pais == 'uruguai'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosParaguai = async () => {
+    let response = await axios.get('http://localhost:2020/paraguai')
+    let dados = response.data
+    let numVagas = 3
+
+    if(grupoA[0].pais == 'paraguai' && pote1[0].pais == 'paraguai'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'paraguai' || pote1[0].pais == 'paraguai'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosPeru = async () => {
+    let response = await axios.get('http://localhost:2020/peru')
+    let dados = response.data
+    let numVagas = 2
+
+    if(grupoA[0].pais == 'peru' && pote1[0].pais == 'peru'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'peru' || pote1[0].pais == 'peru'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosBolivia = async () => {
+    let response = await axios.get('http://localhost:2020/bolivia')
+    let dados = response.data
+    let numVagas = 2
+
+    if(grupoA[0].pais == 'bolivia' && pote1[0].pais == 'bolivia'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'bolivia' || pote1[0].pais == 'bolivia'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosEquador = async () => {
+    let response = await axios.get('http://localhost:2020/equador')
+    let dados = response.data
+    let numVagas = 2
+
+    if(grupoA[0].pais == 'equador' && pote1[0].pais == 'equador'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'equador' || pote1[0].pais == 'equador'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+const getDadosVenezuela = async() => {
+    let response = await axios.get('http://localhost:2020/venezuela')
+    let dados = response.data
+    let numVagas = 2
+
+    if(grupoA[0].pais == 'venezuela' && pote1[0].pais == 'venezuela'){
+        numVagas += 2
+    }else if(grupoA[0].pais == 'venezuela' || pote1[0].pais == 'venezuela'){
+        numVagas += 1
+    }
+
+    dados.forEach(element => {
+        if(element.pos <= numVagas){
+            if(element.time == grupoA[0].time
+                && element.pais == grupoA[0].pais
+                    || element.time == pote1[0].time
+                        && element.pais == pote1[0].pais){
+                console.log(`${element.time} já está no pote 1`)
+            }else{
+                poteGeral.push(element)
+            }
+        }
+    })
+}
+
+Promise.all(
+    [
+        getDadosCampeaoLibertadores(), 
+        getDadosCampeaoSul(),
+        getDadosBrasil(),
+        getDadosArgentina(),
+        getDadosColombia(),
+        getDadosChile(),
+        getDadosUruguai(),
+        getDadosParaguai(),
+        getDadosPeru(),
+        getDadosBolivia(),
+        getDadosEquador(),
+        getDadosVenezuela()
+])
+    .then(result => console.log('Times inseridos no pote com sucesso!'))
+    .catch(error => console.log(error.mesage))
+
+setTimeout(setTimesPotes, 3000)
 
 function setTeamWidthOnPage(time, largura){
     let team = time
@@ -72,7 +377,7 @@ function addTimesPote4(pote){
         
         switch(i){
             case 0:
-                
+                                
             case 1:
                 grupoH.push(timesPotes[numAleatorio])
                 pote4.splice(numAleatorio, 1)
@@ -670,4 +975,4 @@ function addTimesPote1(){
     }
 }
 
-addTimesPote1()
+//addTimesPote1()
