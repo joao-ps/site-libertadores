@@ -44,10 +44,11 @@ button{
 //    color: #06aa48;
 //    cursor: pointer;
 //}
-//.disabled{
-//    color: #CCCCCC;
-//    cursor: no-drop;
-//}
+.btn-disabled{
+    //color: #CCCCCC;
+    opacity: .5;
+    cursor: no-drop;
+}
 
 .swiper {
     width: 100%;
@@ -193,11 +194,11 @@ button{
             position: relative;
             //transition: $transicao-jogos-rodadas;
 
-            .container-rodadas{
-                //position: absolute;
-                //display: grid;
-                //grid-template-columns: 530px 530px 530px 530px 530px 530px;
-            }
+            //.container-rodadas{
+            //    //position: absolute;
+            //    //display: grid;
+            //    //grid-template-columns: 530px 530px 530px 530px 530px 530px;
+            //}
             .rodada-1{
                 //position: relative;
                 width: 100%;

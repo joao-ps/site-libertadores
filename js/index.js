@@ -1027,7 +1027,7 @@ function setTeamWidthOnPage(time, largura){
     }
 }
 
-btnSalvarResultJogos[0].addEventListener('click', function(){
+btnSalvarResultJogos[0].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[0].value);
     resultJogos.push(inputResultJogos[1].value);
@@ -1047,8 +1047,10 @@ btnSalvarResultJogos[0].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[2].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[1].time);
     positionTimes(GrupoA, 0,1,2,3);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[1].addEventListener('click', function(){
+btnSalvarResultJogos[1].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[4].value);
     resultJogos.push(inputResultJogos[5].value);
@@ -1057,6 +1059,10 @@ btnSalvarResultJogos[1].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    if(btnSalvarResultJogos[0].classList.contains('btn-disabled') == false){
+        return
     }
 
     for(let i = 4; i<8; i++){
@@ -1068,8 +1074,10 @@ btnSalvarResultJogos[1].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[0].time);
     positionTimes(GrupoA, 0,1,2,3);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[2].addEventListener('click', function(){
+btnSalvarResultJogos[2].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[8].value);
     resultJogos.push(inputResultJogos[9].value);
@@ -1078,6 +1086,12 @@ btnSalvarResultJogos[2].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 0; i<2; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 8; i<12; i++){
@@ -1089,8 +1103,10 @@ btnSalvarResultJogos[2].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[3].time);
     positionTimes(GrupoA, 0,1,2,3);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[3].addEventListener('click', function(){
+btnSalvarResultJogos[3].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[12].value);
     resultJogos.push(inputResultJogos[13].value);
@@ -1105,13 +1121,21 @@ btnSalvarResultJogos[3].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
+    for(let i = 0; i < 3; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
+    }
+
     insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[2].time);
     insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, grupoA[0].time);
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[1].time);
     positionTimes(GrupoA, 0,1,2,3);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[4].addEventListener('click', function(){
+btnSalvarResultJogos[4].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[16].value);
     resultJogos.push(inputResultJogos[17].value);
@@ -1120,6 +1144,12 @@ btnSalvarResultJogos[4].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 0; i<4; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 16; i<20; i++){
@@ -1131,8 +1161,10 @@ btnSalvarResultJogos[4].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[0].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[1].time);
     positionTimes(GrupoA, 0,1,2,3);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[5].addEventListener('click', function(){
+btnSalvarResultJogos[5].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[20].value);
     resultJogos.push(inputResultJogos[21].value);
@@ -1147,15 +1179,23 @@ btnSalvarResultJogos[5].addEventListener('click', function(){
         inputResultJogos[i].setAttribute('readonly', 'readonly');
     }
 
+    for(let i = 0; i < 5; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
+    }
+
     insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[1].time);
     insertResultsArray1(resultJogos[1], resultJogos[0], GrupoA, grupoA[2].time);
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoA, grupoA[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoA, grupoA[0].time);
     positionTimes(GrupoA, 0,1,2,3);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
 
 //GRUPO B
-btnSalvarResultJogos[6].addEventListener('click', function(){
+btnSalvarResultJogos[6].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[24].value);
     resultJogos.push(inputResultJogos[25].value);
@@ -1175,8 +1215,10 @@ btnSalvarResultJogos[6].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[2].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[1].time);
     positionTimes(GrupoB, 4,5,6,7);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[7].addEventListener('click', function(){
+btnSalvarResultJogos[7].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[28].value);
     resultJogos.push(inputResultJogos[29].value);
@@ -1185,6 +1227,10 @@ btnSalvarResultJogos[7].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    if(btnSalvarResultJogos[6].classList.contains('btn-disabled') == false){
+        return
     }
 
     for(let i = 28; i<32; i++){
@@ -1196,8 +1242,10 @@ btnSalvarResultJogos[7].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[0].time);
     positionTimes(GrupoB, 4,5,6,7);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[8].addEventListener('click', function(){
+btnSalvarResultJogos[8].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[32].value);
     resultJogos.push(inputResultJogos[33].value);
@@ -1206,6 +1254,12 @@ btnSalvarResultJogos[8].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 6; i<8; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 32; i<36; i++){
@@ -1217,8 +1271,10 @@ btnSalvarResultJogos[8].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[3].time);
     positionTimes(GrupoB, 4,5,6,7);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[9].addEventListener('click', function(){
+btnSalvarResultJogos[9].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[36].value);
     resultJogos.push(inputResultJogos[37].value);
@@ -1227,6 +1283,12 @@ btnSalvarResultJogos[9].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 6; i<9; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 36; i<40; i++){
@@ -1238,8 +1300,10 @@ btnSalvarResultJogos[9].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[1].time);
     positionTimes(GrupoB, 4,5,6,7);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[10].addEventListener('click', function(){
+btnSalvarResultJogos[10].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[40].value);
     resultJogos.push(inputResultJogos[41].value);
@@ -1248,6 +1312,12 @@ btnSalvarResultJogos[10].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 6; i<10; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 40; i<44; i++){
@@ -1259,8 +1329,10 @@ btnSalvarResultJogos[10].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[0].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[1].time);
     positionTimes(GrupoB, 4,5,6,7);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[11].addEventListener('click', function(){
+btnSalvarResultJogos[11].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[44].value);
     resultJogos.push(inputResultJogos[45].value);
@@ -1269,6 +1341,12 @@ btnSalvarResultJogos[11].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 6; i<11; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 44; i<48; i++){
@@ -1280,10 +1358,12 @@ btnSalvarResultJogos[11].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoB, grupoB[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoB, grupoB[0].time);
     positionTimes(GrupoB, 4,5,6,7);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
 
 //GRUPOC
-btnSalvarResultJogos[12].addEventListener('click', function(){
+btnSalvarResultJogos[12].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[48].value);
     resultJogos.push(inputResultJogos[49].value);
@@ -1303,8 +1383,10 @@ btnSalvarResultJogos[12].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[2].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[1].time);
     positionTimes(GrupoC, 8,9,10,11);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[13].addEventListener('click', function(){
+btnSalvarResultJogos[13].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[52].value);
     resultJogos.push(inputResultJogos[53].value);
@@ -1313,6 +1395,10 @@ btnSalvarResultJogos[13].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    if(btnSalvarResultJogos[12].classList.contains('btn-disabled') == false){
+        return
     }
 
     for(let i = 52; i<56; i++){
@@ -1324,8 +1410,10 @@ btnSalvarResultJogos[13].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[0].time);
     positionTimes(GrupoC, 8,9,10,11);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[14].addEventListener('click', function(){
+btnSalvarResultJogos[14].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[56].value);
     resultJogos.push(inputResultJogos[57].value);
@@ -1334,6 +1422,12 @@ btnSalvarResultJogos[14].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 12; i<14; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 56; i<60; i++){
@@ -1345,8 +1439,10 @@ btnSalvarResultJogos[14].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[3].time);
     positionTimes(GrupoC, 8,9,10,11);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[15].addEventListener('click', function(){
+btnSalvarResultJogos[15].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[60].value);
     resultJogos.push(inputResultJogos[61].value);
@@ -1355,6 +1451,12 @@ btnSalvarResultJogos[15].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 12; i<15; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 60; i<64; i++){
@@ -1366,8 +1468,10 @@ btnSalvarResultJogos[15].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[1].time);
     positionTimes(GrupoC, 8,9,10,11);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[16].addEventListener('click', function(){
+btnSalvarResultJogos[16].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[64].value);
     resultJogos.push(inputResultJogos[65].value);
@@ -1376,6 +1480,12 @@ btnSalvarResultJogos[16].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 12; i<16; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 64; i<68; i++){
@@ -1387,8 +1497,10 @@ btnSalvarResultJogos[16].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[0].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[1].time);
     positionTimes(GrupoC, 8,9,10,11);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[17].addEventListener('click', function(){
+btnSalvarResultJogos[17].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[68].value);
     resultJogos.push(inputResultJogos[69].value);
@@ -1397,6 +1509,12 @@ btnSalvarResultJogos[17].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 12; i<17; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 68; i<72; i++){
@@ -1408,10 +1526,12 @@ btnSalvarResultJogos[17].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoC, grupoC[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoC, grupoC[0].time);
     positionTimes(GrupoC, 8,9,10,11);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
 
 //GRUPO D
-btnSalvarResultJogos[18].addEventListener('click', function(){
+btnSalvarResultJogos[18].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[72].value);
     resultJogos.push(inputResultJogos[73].value);
@@ -1431,8 +1551,10 @@ btnSalvarResultJogos[18].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[2].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[1].time);
     positionTimes(GrupoD, 12,13,14,15);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[19].addEventListener('click', function(){
+btnSalvarResultJogos[19].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[76].value);
     resultJogos.push(inputResultJogos[77].value);
@@ -1441,6 +1563,10 @@ btnSalvarResultJogos[19].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    if(btnSalvarResultJogos[18].classList.contains('btn-disabled') == false){
+        return
     }
 
     for(let i = 76; i<80; i++){
@@ -1452,8 +1578,10 @@ btnSalvarResultJogos[19].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[0].time);
     positionTimes(GrupoD, 12,13,14,15);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[20].addEventListener('click', function(){
+btnSalvarResultJogos[20].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[80].value);
     resultJogos.push(inputResultJogos[81].value);
@@ -1462,6 +1590,12 @@ btnSalvarResultJogos[20].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 18; i<20; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 80; i<84; i++){
@@ -1473,8 +1607,10 @@ btnSalvarResultJogos[20].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[3].time);
     positionTimes(GrupoD, 12,13,14,15);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[21].addEventListener('click', function(){
+btnSalvarResultJogos[21].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[84].value);
     resultJogos.push(inputResultJogos[85].value);
@@ -1483,6 +1619,12 @@ btnSalvarResultJogos[21].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 18; i<21; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 84; i<88; i++){
@@ -1494,8 +1636,10 @@ btnSalvarResultJogos[21].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[1].time);
     positionTimes(GrupoD, 12,13,14,15);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[22].addEventListener('click', function(){
+btnSalvarResultJogos[22].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[88].value);
     resultJogos.push(inputResultJogos[89].value);
@@ -1504,6 +1648,12 @@ btnSalvarResultJogos[22].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 18; i<22; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 88; i<92; i++){
@@ -1515,8 +1665,10 @@ btnSalvarResultJogos[22].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[0].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[1].time);
     positionTimes(GrupoD, 12,13,14,15);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[23].addEventListener('click', function(){
+btnSalvarResultJogos[23].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[92].value);
     resultJogos.push(inputResultJogos[93].value);
@@ -1525,6 +1677,12 @@ btnSalvarResultJogos[23].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 18; i<23; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 92; i<96; i++){
@@ -1536,10 +1694,12 @@ btnSalvarResultJogos[23].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoD, grupoD[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoD, grupoD[0].time);
     positionTimes(GrupoD, 12,13,14,15);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
 
 //GRUPO E
-btnSalvarResultJogos[24].addEventListener('click', function(){
+btnSalvarResultJogos[24].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[96].value);
     resultJogos.push(inputResultJogos[97].value);
@@ -1559,8 +1719,10 @@ btnSalvarResultJogos[24].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[2].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[1].time);
     positionTimes(GrupoE, 16,17,18,19);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[25].addEventListener('click', function(){
+btnSalvarResultJogos[25].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[100].value);
     resultJogos.push(inputResultJogos[101].value);
@@ -1569,6 +1731,10 @@ btnSalvarResultJogos[25].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    if(btnSalvarResultJogos[24].classList.contains('btn-disabled') == false){
+        return
     }
 
     for(let i = 100; i<104; i++){
@@ -1580,8 +1746,10 @@ btnSalvarResultJogos[25].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[0].time);
     positionTimes(GrupoE, 16,17,18,19);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[26].addEventListener('click', function(){
+btnSalvarResultJogos[26].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[104].value);
     resultJogos.push(inputResultJogos[105].value);
@@ -1590,6 +1758,12 @@ btnSalvarResultJogos[26].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 24; i<26; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 104; i<108; i++){
@@ -1601,8 +1775,10 @@ btnSalvarResultJogos[26].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[3].time);
     positionTimes(GrupoE, 16,17,18,19);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[27].addEventListener('click', function(){
+btnSalvarResultJogos[27].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[108].value);
     resultJogos.push(inputResultJogos[109].value);
@@ -1611,6 +1787,12 @@ btnSalvarResultJogos[27].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 24; i<27; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 108; i<112; i++){
@@ -1622,8 +1804,10 @@ btnSalvarResultJogos[27].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[1].time);
     positionTimes(GrupoE, 16,17,18,19);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[28].addEventListener('click', function(){
+btnSalvarResultJogos[28].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[112].value);
     resultJogos.push(inputResultJogos[113].value);
@@ -1632,6 +1816,12 @@ btnSalvarResultJogos[28].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 24; i<28; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 112; i<116; i++){
@@ -1643,8 +1833,10 @@ btnSalvarResultJogos[28].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[0].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[1].time);
     positionTimes(GrupoE, 16,17,18,19);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[29].addEventListener('click', function(){
+btnSalvarResultJogos[29].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[116].value);
     resultJogos.push(inputResultJogos[117].value);
@@ -1653,6 +1845,12 @@ btnSalvarResultJogos[29].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 24; i<29; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 116; i<120; i++){
@@ -1664,10 +1862,12 @@ btnSalvarResultJogos[29].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoE, grupoE[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoE, grupoE[0].time);
     positionTimes(GrupoE, 16,17,18,19);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
 
 //GRUPO F
-btnSalvarResultJogos[30].addEventListener('click', function(){
+btnSalvarResultJogos[30].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[120].value);
     resultJogos.push(inputResultJogos[121].value);
@@ -1687,8 +1887,10 @@ btnSalvarResultJogos[30].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[2].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[1].time);
     positionTimes(GrupoF, 20,21,22,23);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[31].addEventListener('click', function(){
+btnSalvarResultJogos[31].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[124].value);
     resultJogos.push(inputResultJogos[125].value);
@@ -1697,6 +1899,10 @@ btnSalvarResultJogos[31].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    if(btnSalvarResultJogos[30].classList.contains('btn-disabled') == false){
+        return
     }
 
     for(let i = 124; i<128; i++){
@@ -1708,8 +1914,10 @@ btnSalvarResultJogos[31].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[0].time);
     positionTimes(GrupoF, 20,21,22,23);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[32].addEventListener('click', function(){
+btnSalvarResultJogos[32].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[128].value);
     resultJogos.push(inputResultJogos[129].value);
@@ -1718,6 +1926,12 @@ btnSalvarResultJogos[32].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 30; i<32; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 128; i<132; i++){
@@ -1729,8 +1943,10 @@ btnSalvarResultJogos[32].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[3].time);
     positionTimes(GrupoF, 20,21,22,23);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[33].addEventListener('click', function(){
+btnSalvarResultJogos[33].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[132].value);
     resultJogos.push(inputResultJogos[133].value);
@@ -1739,6 +1955,12 @@ btnSalvarResultJogos[33].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 30; i<33; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 132; i<136; i++){
@@ -1750,8 +1972,10 @@ btnSalvarResultJogos[33].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[1].time);
     positionTimes(GrupoF, 20,21,22,23);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[34].addEventListener('click', function(){
+btnSalvarResultJogos[34].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[136].value);
     resultJogos.push(inputResultJogos[137].value);
@@ -1760,6 +1984,12 @@ btnSalvarResultJogos[34].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 30; i<34; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 136; i<140; i++){
@@ -1771,8 +2001,10 @@ btnSalvarResultJogos[34].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[0].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[1].time);
     positionTimes(GrupoF, 20,21,22,23);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[35].addEventListener('click', function(){
+btnSalvarResultJogos[35].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[140].value);
     resultJogos.push(inputResultJogos[141].value);
@@ -1781,6 +2013,12 @@ btnSalvarResultJogos[35].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 30; i<35; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 140; i<144; i++){
@@ -1792,10 +2030,12 @@ btnSalvarResultJogos[35].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoF, grupoF[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoF, grupoF[0].time);
     positionTimes(GrupoF, 20,21,22,23);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
 
 //GRUPO G
-btnSalvarResultJogos[36].addEventListener('click', function(){
+btnSalvarResultJogos[36].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[144].value);
     resultJogos.push(inputResultJogos[145].value);
@@ -1815,8 +2055,10 @@ btnSalvarResultJogos[36].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[2].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[1].time);
     positionTimes(GrupoG, 24,25,26,27);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[37].addEventListener('click', function(){
+btnSalvarResultJogos[37].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[148].value);
     resultJogos.push(inputResultJogos[149].value);
@@ -1825,6 +2067,10 @@ btnSalvarResultJogos[37].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    if(btnSalvarResultJogos[36].classList.contains('btn-disabled') == false){
+        return
     }
 
     for(let i = 148; i<152; i++){
@@ -1836,8 +2082,10 @@ btnSalvarResultJogos[37].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[0].time);
     positionTimes(GrupoG, 24,25,26,27);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[38].addEventListener('click', function(){
+btnSalvarResultJogos[38].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[152].value);
     resultJogos.push(inputResultJogos[153].value);
@@ -1846,6 +2094,12 @@ btnSalvarResultJogos[38].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 36; i<38; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 152; i<156; i++){
@@ -1857,8 +2111,10 @@ btnSalvarResultJogos[38].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[3].time);
     positionTimes(GrupoG, 24,25,26,27);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[39].addEventListener('click', function(){
+btnSalvarResultJogos[39].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[156].value);
     resultJogos.push(inputResultJogos[157].value);
@@ -1867,6 +2123,12 @@ btnSalvarResultJogos[39].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 36; i<39; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 156; i<160; i++){
@@ -1878,8 +2140,10 @@ btnSalvarResultJogos[39].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[1].time);
     positionTimes(GrupoG, 24,25,26,27);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[40].addEventListener('click', function(){
+btnSalvarResultJogos[40].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[160].value);
     resultJogos.push(inputResultJogos[161].value);
@@ -1888,6 +2152,12 @@ btnSalvarResultJogos[40].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 36; i<40; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 160; i<164; i++){
@@ -1899,8 +2169,10 @@ btnSalvarResultJogos[40].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[0].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[1].time);
     positionTimes(GrupoG, 24,25,26,27);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[41].addEventListener('click', function(){
+btnSalvarResultJogos[41].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[164].value);
     resultJogos.push(inputResultJogos[165].value);
@@ -1909,6 +2181,12 @@ btnSalvarResultJogos[41].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 36; i<41; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 164; i<168; i++){
@@ -1920,10 +2198,12 @@ btnSalvarResultJogos[41].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoG, grupoG[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoG, grupoG[0].time);
     positionTimes(GrupoG, 24,25,26,27);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
 
 //GRUPO H
-btnSalvarResultJogos[42].addEventListener('click', function(){
+btnSalvarResultJogos[42].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[168].value);
     resultJogos.push(inputResultJogos[169].value);
@@ -1943,8 +2223,10 @@ btnSalvarResultJogos[42].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[2].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[1].time);
     positionTimes(GrupoH, 28,29,30,31);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[43].addEventListener('click', function(){
+btnSalvarResultJogos[43].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[172].value);
     resultJogos.push(inputResultJogos[173].value);
@@ -1953,6 +2235,10 @@ btnSalvarResultJogos[43].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    if(btnSalvarResultJogos[42].classList.contains('btn-disabled') == false){
+        return
     }
 
     for(let i = 172; i<176; i++){
@@ -1964,8 +2250,10 @@ btnSalvarResultJogos[43].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[0].time);
     positionTimes(GrupoH, 28,29,30,31);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[44].addEventListener('click', function(){
+btnSalvarResultJogos[44].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[176].value);
     resultJogos.push(inputResultJogos[177].value);
@@ -1974,6 +2262,12 @@ btnSalvarResultJogos[44].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 42; i<44; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 176; i<180; i++){
@@ -1985,8 +2279,10 @@ btnSalvarResultJogos[44].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[1].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[3].time);
     positionTimes(GrupoH, 28,29,30,31);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[45].addEventListener('click', function(){
+btnSalvarResultJogos[45].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[180].value);
     resultJogos.push(inputResultJogos[181].value);
@@ -1995,6 +2291,12 @@ btnSalvarResultJogos[45].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 42; i<45; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 180; i<184; i++){
@@ -2006,8 +2308,10 @@ btnSalvarResultJogos[45].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[1].time);
     positionTimes(GrupoH, 28,29,30,31);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[46].addEventListener('click', function(){
+btnSalvarResultJogos[46].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[184].value);
     resultJogos.push(inputResultJogos[185].value);
@@ -2016,6 +2320,12 @@ btnSalvarResultJogos[46].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 42; i<46; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 184; i<188; i++){
@@ -2027,8 +2337,10 @@ btnSalvarResultJogos[46].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[0].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[1].time);
     positionTimes(GrupoH, 28,29,30,31);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
-btnSalvarResultJogos[47].addEventListener('click', function(){
+btnSalvarResultJogos[47].addEventListener('click', function saveResult(){
     let resultJogos = [];
     resultJogos.push(inputResultJogos[188].value);
     resultJogos.push(inputResultJogos[189].value);
@@ -2037,6 +2349,12 @@ btnSalvarResultJogos[47].addEventListener('click', function(){
 
     for(let i = 0; i<resultJogos.length; i++){
         if(!resultJogos[i])return
+    }
+
+    for(let i = 42; i<47; i++){
+        if(btnSalvarResultJogos[i].classList.contains('btn-disabled') == false){
+            return
+        }
     }
 
     for(let i = 188; i<192; i++){
@@ -2048,6 +2366,8 @@ btnSalvarResultJogos[47].addEventListener('click', function(){
     insertResultsArray1(resultJogos[2], resultJogos[3], GrupoH, grupoH[3].time);
     insertResultsArray1(resultJogos[3], resultJogos[2], GrupoH, grupoH[0].time);
     positionTimes(GrupoH, 28,29,30,31);
+    this.removeEventListener('click', saveResult)
+    this.classList.add('btn-disabled')
 });
 
 //FUNÇÕES SORTEIO DOS GRUPOS E ADD TIMES NA TABELA
