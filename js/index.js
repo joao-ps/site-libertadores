@@ -435,33 +435,34 @@ const tdGolsPro = document.querySelectorAll('.cedula-gols-pro')
 const tdGolsContra = document.querySelectorAll('.cedula-gols-contra')
 const tdSaldoGols  = document.querySelectorAll('.cedula-saldo-gols')
 const timeJogos = document.querySelectorAll('.jogo')
-let valorTranslateRodada1 = 0
-let valorTranslateRodada2 = 0
-let valorTranslateRodada3 = 0
-let valorTranslateRodada4 = 0
-let valorTranslateRodada5 = 0
-let valorTranslateRodada6 = 0
-let valorTranslateRodada7 = 0
-let valorTranslateRodada8 = 0
 
-function setTimesPotes(){
-    poteGeral = poteGeral.sort((a,b) => a.ranking > b.ranking) 
+//let valorTranslateRodada1 = 0
+//let valorTranslateRodada2 = 0
+//let valorTranslateRodada3 = 0
+//let valorTranslateRodada4 = 0
+//let valorTranslateRodada5 = 0
+//let valorTranslateRodada6 = 0
+//let valorTranslateRodada7 = 0
+//let valorTranslateRodada8 = 0
 
-    poteGeral.forEach((element,index,array) => {
-        if(index < 6){
-            pote1.push(poteGeral[index])
-        }else if(index >= 6 && index < 14){
-            pote2.push(element)
-        }else if(index >= 14 && index < 22){
-            pote3.push(element)
-        }else{
-            pote4.push(element)
-        }
-    })
-    pote1 = pote1.sort((a,b) => a.ranking > b.ranking)
-
-    addTimesPote1()
-}
+//function setTimesPotes(){
+//    poteGeral = poteGeral.sort((a,b) => a.ranking > b.ranking) 
+//
+//    poteGeral.forEach((element,index,array) => {
+//        if(index < 6){
+//            pote1.push(poteGeral[index])
+//        }else if(index >= 6 && index < 14){
+//            pote2.push(element)
+//        }else if(index >= 14 && index < 22){
+//            pote3.push(element)
+//        }else{
+//            pote4.push(element)
+//        }
+//    })
+//    pote1 = pote1.sort((a,b) => a.ranking > b.ranking)
+//
+//    addTimesPote1()
+//}
 
 const getDadosCampeaoLibertadores = async() => {
     let response = await axios.get('http://localhost:2020/campeao-libertadores')

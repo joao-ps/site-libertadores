@@ -1,0 +1,70 @@
+.faseUm
+    width: 100%
+    
+.faseUm h2
+    font-size: 2.7rem
+    text-transform: uppercase
+    padding: 10px 0
+
+.confrontos
+    display: flex
+    flex-direction: column
+    gap: 20px 0
+
+.confrontos p
+    text-align: center
+
+.confrontoUm,
+.confrontoDois,
+.confrontoTres
+    height: 100px
+    display: grid
+    grid-template-columns: 1fr 1fr
+    border: 1px solid #a2a2a2
+
+.ida,.volta
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr 3fr
+    padding: 5px 0
+.ida
+    border-right: 1px solid #a2a2a252
+.volta
+    border-left: 1px solid #a2a2a252
+
+.gameInformation
+    display: grid
+    grid-template-columns: 5fr 1fr 1fr 1fr 5fr
+    align-items: center
+    justify-content: center
+
+.gameInformation .containerInput:nth-child(2)
+    display: grid
+    justify-content: end
+.gameInformation .containerInput:nth-child(4)
+    display: grid
+    justify-content: start
+
+.team
+    max-height: 75px
+    display: grid
+    grid-template-columns: auto auto
+    justify-content: flex-start
+    gap: 0 8px
+    align-items: center 
+    font-size: 2rem
+    text-transform: capitalize
+
+.team:nth-child(1)
+    justify-content: flex-end
+
+.team img
+    width: 38px
+    height: 23px
+    border-radius: 8px
+
+.containerButton
+    display: flex
+    justify-content: flex-end
+    margin: 15px 5px
+    

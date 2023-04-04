@@ -1,0 +1,181 @@
+%borda-colada
+    border-collapse: collapse
+
+.swiper 
+  width: 100%
+  height: 100%
+
+.swiper-slide 
+  text-align: center
+  font-size: 18px
+  background: #fcfcfc
+
+  /* Center slide text vertically */
+  display: flex
+  justify-content: center
+  align-items: center
+
+.swiper-slide img
+  display: block
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+
+.swiper-button-prev,
+.swiper-button-next
+    color: #06aa48
+    
+.container-fases
+    padding: 15px 0
+
+.container-fases h2
+    font-size: 2.7rem
+    text-transform: uppercase
+    padding-bottom: 10px
+
+.container-table-jogos
+    width: 100%
+    display: grid
+    grid-template-columns: 5fr 4fr
+
+.container-table-jogos abbr
+    text-decoration: none
+    
+table
+    @extend %borda-colada
+    border-right: 1px solid #a2a2a2
+
+thead tr th:nth-child(2)
+    width: 36%
+    border-right: 1px solid #a2a2a2
+        
+thead tr th:nth-child(2) ~ th
+    width: 8%
+        
+thead tr
+    border-top: 1px solid #a2a2a2
+    border-bottom: 1px solid #a2a2a2
+        
+thead th
+    font-size: 1.2rem
+    text-transform: uppercase
+    text-align: left
+    color: #a2a2a2
+    font-weight: 400
+    padding: 9px 0
+        
+th:nth-child(2) ~ th
+    text-align: center    
+
+tbody
+    position: relative
+
+tbody tr
+    border-bottom: 1px solid #cccccc91
+            
+tbody tr td:nth-child(1)
+    position: absolute
+    left: 0
+            
+tbody td
+    padding: 13px 0
+    font-size: 1.7rem
+    text-transform: capitalize
+            
+tbody td:nth-child(2)
+    border-right: 1px solid #a2a2a2
+            
+tbody td:nth-child(2) ~ td
+    text-align: center
+
+tbody tr td:nth-child(2)
+    padding-left: 25px
+
+tbody tr td.classificado ~ td:nth-child(odd)
+    background-color: #f5f5f585
+
+tbody tr td.sul-americana ~ td:nth-child(odd)
+    background-color: #f5f5f585
+            
+tbody tr td.eliminado ~ td:nth-child(odd)
+    background-color: #f5f5f5ce
+            
+.container-jogos-fase-grupo
+    overflow: hidden
+
+.container-jogos-fase-grupo .jogos
+    position: relative
+
+.container-jogos-fase-grupo .rodada-1            
+    width: 100%
+    height: 100%
+            
+.container-jogos-fase-grupo .rodada-2, .rodada-3, .rodada-4, .rodada-5, .rodada-6
+    @extend .rodada-1
+            
+.btn-result-jogos
+    position: absolute
+    right: 4%
+    bottom: 0%
+    padding: 3px 10px
+    margin-bottom: 5px
+
+.container-jogos-fase-grupo .rodadas
+    width: 100%
+    position: absolute
+    align-items: center
+    border-top: 1px solid #a2a2a2
+    border-bottom: 1px solid #a2a2a2
+    padding: 7.7px 0
+    
+.container-jogos-fase-grupo .container-translate-rodada
+    width: 100%
+    z-index: -1
+    overflow: hidden
+    justify-content: center
+
+.container-jogos-fase-grupo .rodada-1,.rodada-2,.rodada-3,.rodada-4,.rodada-5,.rodada-6
+    text-align: center
+            
+.container-jogos-fase-grupo h3
+    font-size: 1.5rem
+    text-transform: uppercase
+        
+.container-jogos-fase-grupo i
+    font-size: 1.5rem
+    margin: 0 5px        
+
+.container-jogos-fase-grupo .container-jogo-1
+    margin-top: 40px
+
+.container-jogos-fase-grupo .container-jogo-1,.container-jogo-2
+    padding: 23.5px 0
+    border-bottom: 1px solid #cccccc91
+
+.container-jogo-1,.container-jogo-2 p
+    text-align: center
+            
+p.information-jogo
+    font-size: 1.1rem
+    text-transform: uppercase
+    color: #808080
+    font-weight: 800
+    padding-bottom: 10px
+            
+span.stadium
+    font-weight: 400
+            
+p.jogo-1,p.jogo-2
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 2rem
+    text-transform: uppercase
+
+span
+    padding: 0 3px
+    font-weight: 300
+                
+span:nth-child(2)
+    font-size: 1rem
