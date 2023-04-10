@@ -17,7 +17,6 @@
 .confrontoUm,
 .confrontoDois,
 .confrontoTres
-    height: 100px
     display: grid
     grid-template-columns: 1fr 1fr
     border: 1px solid #a2a2a2
@@ -31,8 +30,10 @@
     border-right: 1px solid #a2a2a252
 .volta
     border-left: 1px solid #a2a2a252
+    position: relative
 
 .gameInformation
+    position: relative
     display: grid
     grid-template-columns: 5fr 1fr 1fr 1fr 5fr
     align-items: center
@@ -63,8 +64,28 @@
     height: 23px
     border-radius: 8px
 
+.containerBtnSalvar
+    display: flex
+    justify-content: center
+
 .containerButton
     display: flex
     justify-content: flex-end
     margin: 15px 5px
-    
+
+.penaltis
+    position: absolute
+    top: 70%
+    display: flex
+    visibility: hidden
+    justify-content: space-around
+    width: 100%
+.penaltis.on
+    visibility: visible
+
+.input-resultado-penaltis
+    width: 15px
+    outline: none
+    border: 1px solid black
+    border-radius: 4px
+    text-align: center
