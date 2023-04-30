@@ -1,7 +1,12 @@
-.faseUm
+%styleChave
+    display: grid
+    grid-template-columns: 1fr 1fr
+    border: 1px solid #a2a2a2
+    
+.fasesEliminatorias
     width: 100%
     
-.faseUm h2
+.fasesEliminatorias h2
     font-size: 2.7rem
     text-transform: uppercase
     padding: 10px 0
@@ -14,12 +19,23 @@
 .confrontos p
     text-align: center
 
-.confrontoUm,
-.confrontoDois,
+.confrontoUm
+    @extend %styleChave
+.confrontoDois
+    @extend %styleChave
 .confrontoTres
-    display: grid
-    grid-template-columns: 1fr 1fr
-    border: 1px solid #a2a2a2
+    @extend %styleChave
+.confrontoQuatro
+    @extend %styleChave
+.confrontoCinco
+    @extend %styleChave
+.confrontoSeis
+    @extend %styleChave
+.confrontoSete
+    @extend %styleChave
+.confrontoOito
+    @extend %styleChave
+    margin-bottom: 25px
 
 .ida,.volta
     display: grid

@@ -1,19 +1,37 @@
+import axios from 'axios'
+import { BrowserRouter } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
 import { Grupos } from './componentes/Grupos'
 import { PrimeiraFase } from './pages/primeiraFase'
+
+import { GetTimes } from './componentes/api/getTeams'
+import { Rotas } from './componentes/routes/Routes'
 
 import './styles/app.sass'
 
 function App() {
+    let previaSegundaFase = []
+
+    function newPrevSegundaFase(newTeam){
+      previaSegundaFase.push(newTeam)
+    }
 
   return (
-    <div className="container">
-      <div className="fases-da-competicao">
+    <BrowserRouter>
+      <GetTimes.Provider value={[
+        newPrevSegundaFase,
+        previaSegundaFase
+    ]}>
+        <div className="container">
+          <div className="fases-da-competicao">
 
-        <PrimeiraFase />
+            <Rotas />
 
-        {/* <Grupos /> */}
-      </div>
-    </div>
+          </div>
+        </div>
+      </GetTimes.Provider>
+    </BrowserRouter>
   )
 }
 

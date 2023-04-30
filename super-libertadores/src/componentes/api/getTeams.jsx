@@ -1,8 +1,3 @@
-let Pote1 = []
+import { createContext } from "react";
 
-const getDadosCampeaoSul = async() => {
-    let response = await axios.get('http://localhost:2020/campeao-sul')
-    let dados = response.data
-
-    Pote1.push(dados)
-}
+export const GetTimes = createContext()

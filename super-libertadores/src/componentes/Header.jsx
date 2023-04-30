@@ -1,10 +1,12 @@
-export function Header({fases}){
+import { Link } from "react-router-dom"
+
+export function Header({fases, previousLink, nextLink}){
 
     return(
         <div className="fases">
-            <i className="fa-sharp fa-solid fa-chevron-left voltar"></i>
+            <Link to={previousLink}><i className="fa-sharp fa-solid fa-chevron-left"></i></Link>
             <h1>{fases}</h1>
-            <i className="fa-sharp fa-solid fa-chevron-right avancar"></i>
+            <Link to={nextLink}><i className="fa-sharp fa-solid fa-chevron-right"></i></Link>
         </div>
     )
 }
