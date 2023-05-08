@@ -41,6 +41,16 @@ export function PrimeiraFase(){
     let infoTeam4
     let infoTeam5
     let infoTeam6
+    let infoPenalti1
+    let infoPenalti2
+    let infoPenalti3
+
+    let saveResults1
+    let saveResults2
+    let saveResults3
+    let saveResults4
+    let saveResults5
+    let saveResults6
 
     async function carregarTimes(){
         await axios.get('http://localhost:2020/campeao-libertadores')
@@ -167,6 +177,26 @@ export function PrimeiraFase(){
         infoTeam4 = JSON.parse(sessionStorage.getItem('Time4'))
         infoTeam5 = JSON.parse(sessionStorage.getItem('Time5'))
         infoTeam6 = JSON.parse(sessionStorage.getItem('Time6'))
+
+        saveResults1 = JSON.parse(sessionStorage.getItem('Jg1'))
+        saveResults2 = JSON.parse(sessionStorage.getItem('Jg2'))
+        saveResults3 = JSON.parse(sessionStorage.getItem('Jg3'))
+        saveResults4 = JSON.parse(sessionStorage.getItem('Jg4'))
+        saveResults5 = JSON.parse(sessionStorage.getItem('Jg5'))
+        saveResults6 = JSON.parse(sessionStorage.getItem('Jg6'))
+        saveResults6 = JSON.parse(sessionStorage.getItem('Jg6'))
+
+        infoPenalti1 = JSON.parse(sessionStorage.getItem('Pen1')) != undefined 
+            ? JSON.parse(sessionStorage.getItem('Pen1')) 
+                : null
+
+        infoPenalti2 = JSON.parse(sessionStorage.getItem('Pen2')) != undefined
+            ? JSON.parse(sessionStorage.getItem('Pen2'))
+                : null
+
+        infoPenalti3 = JSON.parse(sessionStorage.getItem('Pen3')) != undefined
+            ? JSON.parse(sessionStorage.getItem('Pen3'))
+                : null
         
         setTimeout(() => {addEventButton()}, 100)
     }
@@ -268,8 +298,20 @@ export function PrimeiraFase(){
         buttonSaveResult[0].addEventListener('click', function setResult(){
             let result1 = resultsGames[0].value
             let result2 = resultsGames[1].value
+            let jogo1 = []
             
+            if(saveResults1 != null){
+                console.log('Resultadores já registrados')
+                return
+            }
+
             if(!result1 || ! result2)return
+
+            jogo1[0] = Number(result1)
+            jogo1[1] = Number(result2)
+
+            sessionStorage.setItem('Jg1', JSON.stringify(jogo1))
+            saveResults1 = JSON.parse(sessionStorage.getItem('Jg1'))
 
             resultsGames[0].setAttribute('readonly', 'readonly')
             resultsGames[1].setAttribute('readonly', 'readonly')
@@ -280,13 +322,27 @@ export function PrimeiraFase(){
         buttonSaveResult[1].addEventListener('click', function setResult(){
             let result1 = resultsGames[2].value
             let result2 = resultsGames[3].value
-            let acumuladoGols1 = Number(resultsGames[0].value) + Number(resultsGames[3].value)
-            let acumuladoGols2 = Number(resultsGames[1].value) + Number(resultsGames[2].value)
             let golFora = false
+            let jogo2 = []
+            
+            if(saveResults1 == undefined){
+                console.log('Resultado do primeiro jogo não registrado')
+                return
+            }
+            let acumuladoGols1 = Number(saveResults1[0]) + Number(result2)
+            let acumuladoGols2 = Number(saveResults1[1]) + Number(result1)
+
+            if(saveResults2 != null){
+                console.log('Resultadores já registrados')
+                return
+            }
             
             if(!result1 || ! result2)return
 
-            if(buttonSaveResult[0].classList.contains('btn-disabled') != true)return
+            jogo2[0] = Number(result1)
+            jogo2[1] = Number(result2)
+
+            sessionStorage.setItem('Jg2', JSON.stringify(jogo2))
 
             resultsGames[2].setAttribute('readonly', 'readonly')
             resultsGames[3].setAttribute('readonly', 'readonly')
@@ -302,46 +358,75 @@ export function PrimeiraFase(){
             if(containerPenaltis[0].classList.contains('on') == true){
                 let penalt1 = resultPenaltis[0].value
                 let penalt2 = resultPenaltis[1].value
+                let Penaltis1 = []
 
                 if(!penalt1 || !penalt2)return
 
                 resultPenaltis[0].setAttribute('readonly', 'readonly')
                 resultPenaltis[1].setAttribute('readonly', 'readonly')
 
+                Penaltis1[0] = Number(penalt1)
+                Penaltis1[1] = Number(penalt2)
+                sessionStorage.setItem('Pen1', JSON.stringify(Penaltis1))
+
                 if(penalt1 > penalt2 ){
                     spanTeam[0].classList.add('eliminado') 
                     spanTeam[3].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto1[1])
+                    if(confronto1[1] != undefined){
+                        newPrevSegundaFase(confronto1[1], 13)
+                    }else{
+                        newPrevSegundaFase(infoTeam2, 13)
+                    }
                 }else{
                     spanTeam[1].classList.add('eliminado')
                     spanTeam[2].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto1[0])
+                    if(confronto1[0] != undefined){
+                        newPrevSegundaFase(confronto1[0], 13)
+                    }else{
+                        newPrevSegundaFase(infoTeam1, 13)
+                    }
                 }                
             }else if(golFora){
                 if(resultsGames[1].value > resultsGames[3].value){
                     spanTeam[0].classList.add('eliminado') 
                     spanTeam[3].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto1[1])
+                    if(confronto1[1] != undefined){
+                        newPrevSegundaFase(confronto1[1], 13)
+                    }else{
+                        newPrevSegundaFase(infoTeam2, 13)
+                    }
                 }else{
                     spanTeam[1].classList.add('eliminado')
                     spanTeam[2].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto1[0])
+                    if(confronto1[0] != undefined){
+                        newPrevSegundaFase(confronto1[0], 13)
+                    }else{
+                        newPrevSegundaFase(infoTeam1, 13)
+                    }
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[1].classList.add('eliminado')
                     spanTeam[2].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto1[0])
+                    if(confronto1[0] != undefined){
+                        newPrevSegundaFase(confronto1[0], 13)
+                    }else{
+                        newPrevSegundaFase(infoTeam1, 13)
+                    }
                 }else{
                     spanTeam[0].classList.add('eliminado') 
                     spanTeam[3].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto1[1])                    
+                    if(confronto1[1] != undefined){
+                        newPrevSegundaFase(confronto1[1], 13)
+                    }else{
+                        newPrevSegundaFase(infoTeam2, 13)
+                    }
                 }
             }
 
@@ -351,8 +436,20 @@ export function PrimeiraFase(){
         buttonSaveResult[2].addEventListener('click', function setResult(){
             let result1 = resultsGames[4].value
             let result2 = resultsGames[5].value
+            let jogo1 = []
             
+            if(saveResults3 != null){
+                console.log('Resultadores já registrados')
+                return
+            }
+
             if(!result1 || ! result2)return
+
+            jogo1[0] = Number(result1)
+            jogo1[1] = Number(result2)
+
+            sessionStorage.setItem('Jg3', JSON.stringify(jogo1))
+            saveResults3 = JSON.parse(sessionStorage.getItem('Jg3'))
 
             resultsGames[4].setAttribute('readonly', 'readonly')
             resultsGames[5].setAttribute('readonly', 'readonly')
@@ -363,13 +460,28 @@ export function PrimeiraFase(){
         buttonSaveResult[3].addEventListener('click', function setResult(){
             let result1 = resultsGames[6].value
             let result2 = resultsGames[7].value
-            let acumuladoGols1 = Number(resultsGames[4].value) + Number(resultsGames[7].value)
-            let acumuladoGols2 = Number(resultsGames[5].value) + Number(resultsGames[6].value)
             let golFora = false
+            let jogo2 = []
+            
+            if(saveResults3 == undefined){
+                console.log('Resultado do primeiro jogo não registrado')
+                return
+            }
+
+            let acumuladoGols1 = Number(saveResults3[0]) + Number(result2)
+            let acumuladoGols2 = Number(saveResults3[1]) + Number(result1)
+
+            if(saveResults4 != null){
+                console.log('Resultadores já registrados')
+                return
+            }
             
             if(!result1 || ! result2)return
 
-            if(buttonSaveResult[2].classList.contains('btn-disabled') != true)return
+            jogo2[0] = Number(result1)
+            jogo2[1] = Number(result2)
+
+            sessionStorage.setItem('Jg4', JSON.stringify(jogo2))
 
             resultsGames[6].setAttribute('readonly', 'readonly')
             resultsGames[7].setAttribute('readonly', 'readonly')
@@ -385,46 +497,76 @@ export function PrimeiraFase(){
             if(containerPenaltis[1].classList.contains('on') == true){
                 let penalt1 = resultPenaltis[2].value
                 let penalt2 = resultPenaltis[3].value
+                let Penaltis2 = []
 
                 if(!penalt1 || !penalt2)return
 
                 resultPenaltis[2].setAttribute('readonly', 'readonly')
                 resultPenaltis[3].setAttribute('readonly', 'readonly')
 
+                Penaltis2[0] = Number(penalt1)
+                Penaltis2[1] = Number(penalt2)
+                sessionStorage.setItem('Pen2', JSON.stringify(Penaltis2))
+
                 if(penalt1 > penalt2 ){
                     spanTeam[4].classList.add('eliminado') 
                     spanTeam[7].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto2[1])
+                    if(confronto2[1] != undefined){
+                        newPrevSegundaFase(confronto2[1], 14)
+                    }else{
+                        newPrevSegundaFase(infoTeam4, 14)
+                    }
                 }else{
                     spanTeam[5].classList.add('eliminado')
                     spanTeam[6].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto2[0])
+                    if(confronto2[0] != undefined){
+                        newPrevSegundaFase(confronto2[0], 14)
+                    }else{
+                        newPrevSegundaFase(infoTeam4, 14)
+                    }
                 }                
             }else if(golFora){
                 if(resultsGames[5].value > resultsGames[7].value){
                     spanTeam[4].classList.add('eliminado') 
                     spanTeam[7].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto2[1])
+                    if(confronto2[1] != undefined){
+                        newPrevSegundaFase(confronto2[1], 14)
+                    }else{
+                        newPrevSegundaFase(infoTeam4, 14)
+                    }
                 }else{
                     spanTeam[5].classList.add('eliminado')
                     spanTeam[6].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto2[0])
+                    if(confronto2[0] != undefined){
+                        newPrevSegundaFase(confronto2[0], 14)
+                    }else{
+                        newPrevSegundaFase(infoTeam3, 14)
+                    }
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[5].classList.add('eliminado')
                     spanTeam[6].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto2[0])
+                    //AQUI
+                    if(confronto2[0] != undefined){
+                        newPrevSegundaFase(confronto2[0], 14)
+                    }else{
+                        newPrevSegundaFase(infoTeam3, 14)
+                    }
                 }else{
                     spanTeam[4].classList.add('eliminado') 
                     spanTeam[7].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto2[1])
+                    if(confronto2[1] != undefined){
+                        newPrevSegundaFase(confronto2[1], 14)
+                    }else{
+                        newPrevSegundaFase(infoTeam4, 14)
+                    }
                 }
             }
 
@@ -434,8 +576,20 @@ export function PrimeiraFase(){
         buttonSaveResult[4].addEventListener('click', function setResult(){
             let result1 = resultsGames[8].value
             let result2 = resultsGames[9].value
+            let jogo1 = []
             
+            if(saveResults5 != null){
+                console.log('Resultadores já registrados')
+                return
+            }
+
             if(!result1 || ! result2)return
+
+            jogo1[0] = Number(result1)
+            jogo1[1] = Number(result2)
+
+            sessionStorage.setItem('Jg5', JSON.stringify(jogo1))
+            saveResults5 = JSON.parse(sessionStorage.getItem('Jg5'))
 
             resultsGames[8].setAttribute('readonly', 'readonly')
             resultsGames[9].setAttribute('readonly', 'readonly')
@@ -446,13 +600,27 @@ export function PrimeiraFase(){
         buttonSaveResult[5].addEventListener('click', function setResult(){
             let result1 = resultsGames[10].value
             let result2 = resultsGames[11].value
-            let acumuladoGols1 = Number(resultsGames[8].value) + Number(resultsGames[11].value)
-            let acumuladoGols2 = Number(resultsGames[9].value) + Number(resultsGames[10].value)
             let golFora = false
+            let jogo2 = []
+            
+            if(saveResults5 == undefined){
+                console.log('Resultado do primeiro jogo não registrado')
+                return
+            }
+            let acumuladoGols1 = Number(saveResults5[0]) + Number(result2)
+            let acumuladoGols2 = Number(saveResults5[1]) + Number(result1)
+
+            if(saveResults6 != null){
+                console.log('Resultadores já registrados')
+                return
+            }
             
             if(!result1 || ! result2)return
 
-            if(buttonSaveResult[4].classList.contains('btn-disabled') != true)return
+            jogo2[0] = Number(result1)
+            jogo2[1] = Number(result2)
+
+            sessionStorage.setItem('Jg6', JSON.stringify(jogo2))
 
             resultsGames[10].setAttribute('readonly', 'readonly')
             resultsGames[11].setAttribute('readonly', 'readonly')
@@ -468,46 +636,75 @@ export function PrimeiraFase(){
             if(containerPenaltis[2].classList.contains('on') == true){
                 let penalt1 = resultPenaltis[4].value
                 let penalt2 = resultPenaltis[5].value
+                let Penaltis3 = []
 
                 if(!penalt1 || !penalt2)return
 
                 resultPenaltis[4].setAttribute('readonly', 'readonly')
                 resultPenaltis[5].setAttribute('readonly', 'readonly')
 
+                Penaltis3[0] = Number(penalt1)
+                Penaltis3[1] = Number(penalt2)
+                sessionStorage.setItem('Pen3', JSON.stringify(Penaltis3))
+
                 if(penalt1 > penalt2 ){
                     spanTeam[8].classList.add('eliminado') 
                     spanTeam[11].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto3[1])
+                    if(confronto3[1] != undefined){
+                        newPrevSegundaFase(confronto3[1], 15)
+                    }else{
+                        newPrevSegundaFase(infoTeam6, 15)
+                    }
                 }else{
                     spanTeam[9].classList.add('eliminado')
                     spanTeam[10].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto3[0])
+                    if(confronto3[0] != undefined){
+                        newPrevSegundaFase(confronto3[0], 15)
+                    }else{
+                        newPrevSegundaFase(infoTeam5, 15)
+                    }
                 }                
             }else if(golFora){
                 if(resultsGames[9].value > resultsGames[11].value){
                     spanTeam[8].classList.add('eliminado') 
                     spanTeam[11].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto3[1])
+                    if(confronto3[1] != undefined){
+                        newPrevSegundaFase(confronto3[1], 15)
+                    }else{
+                        newPrevSegundaFase(infoTeam6, 15)
+                    }
                 }else{
                     spanTeam[9].classList.add('eliminado')
                     spanTeam[10].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto3[0])
+                    if(confronto3[0] != undefined){
+                        newPrevSegundaFase(confronto3[0], 15)
+                    }else{
+                        newPrevSegundaFase(infoTeam5, 15)
+                    }
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[9].classList.add('eliminado')
                     spanTeam[10].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto3[0])
+                    if(confronto3[0] != undefined){
+                        newPrevSegundaFase(confronto3[0], 15)
+                    }else{
+                        newPrevSegundaFase(infoTeam5, 15)
+                    }
                 }else{
                     spanTeam[8].classList.add('eliminado') 
                     spanTeam[11].classList.add('eliminado')
 
-                    newPrevSegundaFase(confronto3[1])
+                    if(confronto3[1] != undefined){
+                        newPrevSegundaFase(confronto3[1], 15)
+                    }else{
+                        newPrevSegundaFase(infoTeam6, 15)
+                    }
                 }
             }
 
@@ -563,9 +760,31 @@ export function PrimeiraFase(){
                                     {infoTeam1 && infoTeam1.time}                    
                                     {infoTeam1 && <img src={infoTeam1.url} alt="" />}
                                 </span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults1 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults1[0]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span>x</span>     
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults1 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults1[1]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span className='team'>
                                     {infoTeam2 && <img src={infoTeam2.url} alt="" />}
                                     {infoTeam2 && infoTeam2.time}                    
@@ -584,19 +803,52 @@ export function PrimeiraFase(){
                                     {infoTeam2 && infoTeam2.time}                    
                                     {infoTeam2 && <img src={infoTeam2.url} alt="" />}
                                 </span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults2 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults2[0]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span>x</span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults2 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults2[1]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span className='team'>
                                     {infoTeam1 && <img src={infoTeam1.url} alt="" />}
                                     {infoTeam1 && infoTeam1.time}                    
                                 </span>
                             </p> 
 
-                            <p className="penaltis">
-                                <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
-                                <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
-                            </p>
+                            {infoPenalti1 != null ? 
+                                <p className='penaltis on'>
+                                    <span className="containerInput">
+                                        <input type="text" className='input-resultado-penaltis' value={infoPenalti1[0]} readOnly/>
+                                    </span>
+                                    <span className="containerInput">
+                                        <input type="text" className='input-resultado-penaltis' value={infoPenalti1[1]} readOnly/>
+                                    </span>
+                                </p>
+                                :
+                                <p className='penaltis'>
+                                    <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
+                                    <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
+                                </p>
+                            }
 
                             <div className="containerBtnSalvar">
                                 <button className='button btnSalvarResultado'>salvar</button>
@@ -612,9 +864,31 @@ export function PrimeiraFase(){
                                     {infoTeam3 && infoTeam3.time}                    
                                     {infoTeam3 && <img src={infoTeam3.url} alt="" />}
                                 </span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults3 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults3[0]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span>x</span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults3 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults3[1]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span className='team'>
                                     {infoTeam4 && <img src={infoTeam4.url} alt="" />}
                                     {infoTeam4 && infoTeam4.time}                    
@@ -633,19 +907,52 @@ export function PrimeiraFase(){
                                     {infoTeam4 && infoTeam4.time}                    
                                     {infoTeam4 && <img src={infoTeam4.url} alt="" />}
                                 </span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults4 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults4[0]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span>x</span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults4 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults4[1]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span className='team'>
                                     {infoTeam3 && <img src={infoTeam3.url} alt="" />}
                                     {infoTeam3 && infoTeam3.time}                    
                                 </span> 
                             </p>  
 
-                            <p className="penaltis">
-                                <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
-                                <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
-                            </p>
+                            {infoPenalti2 != null ?
+                                <p className="penaltis on">
+                                    <span className="containerInput">
+                                        <input type="text" className='input-resultado-penaltis' value={infoPenalti2[0]} readOnly/>
+                                    </span>
+                                    <span className="containerInput">
+                                        <input type="text" className='input-resultado-penaltis' value={infoPenalti2[1]} readOnly/>
+                                    </span>
+                                </p>
+                                :
+                                <p className="penaltis">
+                                    <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
+                                    <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
+                                </p>
+                            }
 
                             <div className="containerBtnSalvar">
                                 <button className='button btnSalvarResultado'>salvar</button>
@@ -661,9 +968,31 @@ export function PrimeiraFase(){
                                     {infoTeam5 && infoTeam5.time}                    
                                     {infoTeam5 && <img src={infoTeam5.url} alt="" />}
                                 </span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults5 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults5[0]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span>x</span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults5 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults5[1]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span className='team'>
                                     {infoTeam6 && <img src={infoTeam6.url} alt="" />}
                                     {infoTeam6 && infoTeam6.time}                    
@@ -682,19 +1011,52 @@ export function PrimeiraFase(){
                                     {infoTeam6 && infoTeam6.time}                    
                                     {infoTeam6 && <img src={infoTeam6.url} alt="" />}
                                 </span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults6 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults6[0]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span>x</span>
-                                <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
+                                <span className="containerInput">
+                                    {saveResults6 ? 
+                                        <input 
+                                            type="text" 
+                                            className='input-time-resultado' 
+                                            value={saveResults6[1]} 
+                                            readOnly 
+                                        />
+                                        :
+                                        <input type="text" className='input-time-resultado'/>
+                                    }
+                                </span>
                                 <span className='team'>
                                     {infoTeam5 && <img src={infoTeam5.url} alt="" />}
                                     {infoTeam5 && infoTeam5.time}                    
                                 </span> 
                             </p>
 
-                            <p className="penaltis">
-                                <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
-                                <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
-                            </p>
+                            {infoPenalti3 != null ?
+                                <p className="penaltis on">
+                                    <span className="containerInput">
+                                        <input type="text" className='input-resultado-penaltis' value={infoPenalti3[0]} readOnly/>
+                                    </span>
+                                    <span className="containerInput">
+                                        <input type="text" className='input-resultado-penaltis' value={infoPenalti3[1]} readOnly/>
+                                    </span>
+                                </p>
+                                :
+                                <p className="penaltis">
+                                    <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
+                                    <span className="containerInput"><input type="text" className='input-resultado-penaltis'/></span>
+                                </p>
+                            }
 
                             <div className="containerBtnSalvar">
                                 <button className='button btnSalvarResultado'>salvar</button>

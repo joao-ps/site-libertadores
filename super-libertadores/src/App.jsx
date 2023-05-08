@@ -13,8 +13,13 @@ import './styles/app.sass'
 function App() {
     let previaSegundaFase = []
 
-    function newPrevSegundaFase(newTeam){
-      previaSegundaFase.push(newTeam)
+    function newPrevSegundaFase(newTeam, posArray){
+
+      if(posArray == undefined){
+        previaSegundaFase.push(newTeam)
+      }else{
+        previaSegundaFase[posArray] = newTeam
+      }
     }
 
   return (

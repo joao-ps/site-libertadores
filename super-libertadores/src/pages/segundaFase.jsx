@@ -23,12 +23,6 @@ export function SegundaFase(){
     let confronto8 = []
 
     if(segundaFase != null){
-
-        //if(sessionStorage.getItem('sorteio') == true){
-        //    alert('SORTEIO DA SEGUNDA FASE CONCLUIDO')
-        //    return
-        //}
-
         for(let i = 0; i < 16; i++){
             let numAleatorio = Math.floor(Math.random()*segundaFase.length)
             
