@@ -10,7 +10,9 @@ import { json } from 'react-router-dom'
 export function PrimeiraFase(){
     let [
         newPrevSegundaFase,
-        previaSegundaFase
+        previaSegundaFase,
+        newPrevTerceiraFaseFase,
+        previaTerceiraFase
     ] = useContext(GetTimes)
 
     let campeao = []

@@ -12,6 +12,7 @@ import './styles/app.sass'
 
 function App() {
     let previaSegundaFase = []
+    let previaTerceiraFase = []
 
     function newPrevSegundaFase(newTeam, posArray){
 
@@ -21,12 +22,18 @@ function App() {
         previaSegundaFase[posArray] = newTeam
       }
     }
+    function newPrevTerceiraFaseFase(newTeam){
+      console.log(newTeam)
+      previaTerceiraFase.push(newTeam)
+    }
 
   return (
     <BrowserRouter>
       <GetTimes.Provider value={[
         newPrevSegundaFase,
-        previaSegundaFase
+        previaSegundaFase,
+        newPrevTerceiraFaseFase,
+        previaTerceiraFase
     ]}>
         <div className="container">
           <div className="fases-da-competicao">

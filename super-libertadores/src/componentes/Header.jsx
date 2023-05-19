@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom"
+import { FaAngleRight } from "react-icons/fa"
+import { FaAngleLeft } from "react-icons/fa"
 
 export function Header({fases, previousLink, nextLink}){
 
     return(
         <div className="fases">
-            <Link to={previousLink}><i className="fa-sharp fa-solid fa-chevron-left"></i></Link>
+            <Link to={previousLink}><FaAngleLeft className={previousLink != '' ? 'habilitado' : 'disabled'}/></Link>
             <h1>{fases}</h1>
-            <Link to={nextLink}><i className="fa-sharp fa-solid fa-chevron-right"></i></Link>
+            <Link to={nextLink}><FaAngleRight className={nextLink != '' ? 'habilitado' : 'disabled'}/></Link>
         </div>
     )
 }
