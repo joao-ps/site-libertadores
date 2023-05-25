@@ -13,18 +13,32 @@ import './styles/app.sass'
 function App() {
     let previaSegundaFase = []
     let previaTerceiraFase = []
+    let previaFaseDeGrupos = []
 
     function newPrevSegundaFase(newTeam, posArray){
-
       if(posArray == undefined){
         previaSegundaFase.push(newTeam)
       }else{
         previaSegundaFase[posArray] = newTeam
       }
     }
-    function newPrevTerceiraFaseFase(newTeam){
-      console.log(newTeam)
-      previaTerceiraFase.push(newTeam)
+    function newPrevTerceiraFaseFase(newTeam, posArray){
+      if(posArray == undefined){
+        previaTerceiraFase.push(newTeam)
+        console.log(newTeam)
+      }else{
+        previaTerceiraFase[posArray] = newTeam
+      }
+      console.log(previaTerceiraFase)
+    }
+    function newPrevFaseDeGrupos(newTeam, posArray){
+      if(posArray == undefined){
+        previaFaseDeGrupos.push(newTeam)
+        console.log(newTeam)
+      }else{
+        previaFaseDeGrupos[posArray] = newTeam
+      }
+      console.log(previaFaseDeGrupos)
     }
 
   return (
@@ -33,7 +47,9 @@ function App() {
         newPrevSegundaFase,
         previaSegundaFase,
         newPrevTerceiraFaseFase,
-        previaTerceiraFase
+        previaTerceiraFase,
+        newPrevFaseDeGrupos,
+        previaFaseDeGrupos
     ]}>
         <div className="container">
           <div className="fases-da-competicao">

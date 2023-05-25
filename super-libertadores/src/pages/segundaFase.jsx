@@ -11,11 +11,11 @@ export function SegundaFase(){
         newPrevSegundaFase,
         previaSegundaFase,
         newPrevTerceiraFaseFase,
-        previaTerceiraFase
+        previaTerceiraFase,
+        newPrevFaseDeGrupos,
+        previaFaseDeGrupos
     ] = useContext(GetTimes)
     let segundaFase = previaSegundaFase.length == 16 ? previaSegundaFase : null
-
-    console.log('TERCEIRA FASE' +' '+ previaTerceiraFase)
 
     let confronto1 = []
     let confronto2 = []
@@ -163,36 +163,36 @@ export function SegundaFase(){
                     spanTeam[0].classList.add('eliminado') 
                     spanTeam[3].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto1[1])
+                    newPrevTerceiraFaseFase(confronto1[1], 0)
                 }else{
                     spanTeam[1].classList.add('eliminado')
                     spanTeam[2].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto1[0])
+                    newPrevTerceiraFaseFase(confronto1[0], 0)
                 }                
             }else if(golFora){
                 if(resultsGames[1].value > resultsGames[3].value){
                     spanTeam[0].classList.add('eliminado') 
                     spanTeam[3].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto1[1])
+                    newPrevTerceiraFaseFase(confronto1[1], 0)
                 }else{
                     spanTeam[1].classList.add('eliminado')
                     spanTeam[2].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto1[0])
+                    newPrevTerceiraFaseFase(confronto1[0], 0)
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[1].classList.add('eliminado')
                     spanTeam[2].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto1[0])
+                    newPrevTerceiraFaseFase(confronto1[0], 0)
                 }else{
                     spanTeam[0].classList.add('eliminado') 
                     spanTeam[3].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto1[1])
+                    newPrevTerceiraFaseFase(confronto1[1], 0)
                 }
             }
 
@@ -277,36 +277,36 @@ export function SegundaFase(){
                     spanTeam[4].classList.add('eliminado') 
                     spanTeam[7].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto2[1])
+                    newPrevTerceiraFaseFase(confronto2[1], 1)
                 }else{
                     spanTeam[5].classList.add('eliminado')
                     spanTeam[6].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto2[0])
+                    newPrevTerceiraFaseFase(confronto2[0], 1)
                 }                
             }else if(golFora){
                 if(resultsGames[5].value > resultsGames[7].value){
                     spanTeam[4].classList.add('eliminado') 
                     spanTeam[7].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto2[1])
+                    newPrevTerceiraFaseFase(confronto2[1], 1)
                 }else{
                     spanTeam[5].classList.add('eliminado')
                     spanTeam[6].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto2[0])
+                    newPrevTerceiraFaseFase(confronto2[0], 1)
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[5].classList.add('eliminado')
                     spanTeam[6].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto2[0])
+                    newPrevTerceiraFaseFase(confronto2[0], 1)
                 }else{
                     spanTeam[4].classList.add('eliminado') 
                     spanTeam[7].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto2[1])
+                    newPrevTerceiraFaseFase(confronto2[1], 1)
                 }
             }
 
@@ -391,36 +391,36 @@ export function SegundaFase(){
                     spanTeam[8].classList.add('eliminado') 
                     spanTeam[11].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto3[1])
+                    newPrevTerceiraFaseFase(confronto3[1], 2)
                 }else{
                     spanTeam[9].classList.add('eliminado')
                     spanTeam[10].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto3[0])
+                    newPrevTerceiraFaseFase(confronto3[0], 2)
                 }                
             }else if(golFora){
                 if(resultsGames[9].value > resultsGames[11].value){
                     spanTeam[8].classList.add('eliminado') 
                     spanTeam[11].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto3[1])
+                    newPrevTerceiraFaseFase(confronto3[1], 2)
                 }else{
                     spanTeam[9].classList.add('eliminado')
                     spanTeam[10].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto3[0])
+                    newPrevTerceiraFaseFase(confronto3[0], 2)
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[9].classList.add('eliminado')
                     spanTeam[10].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto3[0])
+                    newPrevTerceiraFaseFase(confronto3[0], 2)
                 }else{
                     spanTeam[8].classList.add('eliminado') 
                     spanTeam[11].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto3[1])
+                    newPrevTerceiraFaseFase(confronto3[1], 2)
                 }
             }
 
@@ -505,36 +505,36 @@ export function SegundaFase(){
                     spanTeam[12].classList.add('eliminado') 
                     spanTeam[15].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto4[1])
+                    newPrevTerceiraFaseFase(confronto4[1], 3)
                 }else{
                     spanTeam[13].classList.add('eliminado')
                     spanTeam[14].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto4[0])
+                    newPrevTerceiraFaseFase(confronto4[0], 3)
                 }                
             }else if(golFora){
                 if(resultsGames[13].value > resultsGames[15].value){
                     spanTeam[12].classList.add('eliminado') 
                     spanTeam[15].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto4[1])
+                    newPrevTerceiraFaseFase(confronto4[1], 3)
                 }else{
                     spanTeam[13].classList.add('eliminado')
                     spanTeam[14].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto4[0])
+                    newPrevTerceiraFaseFase(confronto4[0], 3)
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[13].classList.add('eliminado')
                     spanTeam[14].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto4[0])
+                    newPrevTerceiraFaseFase(confronto4[0], 3)
                 }else{
                     spanTeam[12].classList.add('eliminado') 
                     spanTeam[15].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto4[1])
+                    newPrevTerceiraFaseFase(confronto4[1], 3)
                 }
             }
 
@@ -619,36 +619,36 @@ export function SegundaFase(){
                     spanTeam[16].classList.add('eliminado') 
                     spanTeam[19].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto5[1])
+                    newPrevTerceiraFaseFase(confronto5[1], 4)
                 }else{
                     spanTeam[17].classList.add('eliminado')
                     spanTeam[18].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto5[0])
+                    newPrevTerceiraFaseFase(confronto5[0], 4)
                 }                
             }else if(golFora){
                 if(resultsGames[17].value > resultsGames[19].value){
                     spanTeam[16].classList.add('eliminado') 
                     spanTeam[19].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto5[1])
+                    newPrevTerceiraFaseFase(confronto5[1], 4)
                 }else{
                     spanTeam[17].classList.add('eliminado')
                     spanTeam[18].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto5[0])
+                    newPrevTerceiraFaseFase(confronto5[0], 4)
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[17].classList.add('eliminado')
                     spanTeam[18].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto5[0])
+                    newPrevTerceiraFaseFase(confronto5[0], 4)
                 }else{
                     spanTeam[16].classList.add('eliminado') 
                     spanTeam[19].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto5[1])
+                    newPrevTerceiraFaseFase(confronto5[1], 4)
                 }
             }
 
@@ -733,36 +733,36 @@ export function SegundaFase(){
                     spanTeam[20].classList.add('eliminado') 
                     spanTeam[23].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto6[1])
+                    newPrevTerceiraFaseFase(confronto6[1], 5)
                 }else{
                     spanTeam[21].classList.add('eliminado')
                     spanTeam[22].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto6[0])
+                    newPrevTerceiraFaseFase(confronto6[0], 5)
                 }                
             }else if(golFora){
                 if(resultsGames[21].value > resultsGames[23].value){
                     spanTeam[20].classList.add('eliminado') 
                     spanTeam[23].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto6[1])
+                    newPrevTerceiraFaseFase(confronto6[1], 5)
                 }else{
                     spanTeam[21].classList.add('eliminado')
                     spanTeam[22].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto6[0])
+                    newPrevTerceiraFaseFase(confronto6[0], 5)
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[21].classList.add('eliminado')
                     spanTeam[22].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto6[0])
+                    newPrevTerceiraFaseFase(confronto6[0], 5)
                 }else{
                     spanTeam[20].classList.add('eliminado') 
                     spanTeam[23].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto6[1])
+                    newPrevTerceiraFaseFase(confronto6[1], 5)
                 }
             }
 
@@ -847,36 +847,36 @@ export function SegundaFase(){
                     spanTeam[24].classList.add('eliminado') 
                     spanTeam[27].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto7[1])
+                    newPrevTerceiraFaseFase(confronto7[1], 6)
                 }else{
                     spanTeam[25].classList.add('eliminado')
                     spanTeam[26].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto7[0])
+                    newPrevTerceiraFaseFase(confronto7[0], 6)
                 }                
             }else if(golFora){
                 if(resultsGames[25].value > resultsGames[27].value){
                     spanTeam[24].classList.add('eliminado') 
                     spanTeam[27].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto7[1])
+                    newPrevTerceiraFaseFase(confronto7[1], 6)
                 }else{
                     spanTeam[25].classList.add('eliminado')
                     spanTeam[26].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto7[0])
+                    newPrevTerceiraFaseFase(confronto7[0], 6)
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[25].classList.add('eliminado')
                     spanTeam[26].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto7[0])
+                    newPrevTerceiraFaseFase(confronto7[0], 6)
                 }else{
                     spanTeam[24].classList.add('eliminado') 
                     spanTeam[27].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto7[1])
+                    newPrevTerceiraFaseFase(confronto7[1], 6)
                 }
             }
 
@@ -961,36 +961,36 @@ export function SegundaFase(){
                     spanTeam[28].classList.add('eliminado') 
                     spanTeam[31].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto8[1])
+                    newPrevTerceiraFaseFase(confronto8[1], 7)
                 }else{
                     spanTeam[29].classList.add('eliminado')
                     spanTeam[30].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto8[0])
+                    newPrevTerceiraFaseFase(confronto8[0], 7)
                 }                
             }else if(golFora){
                 if(resultsGames[29].value > resultsGames[31].value){
                     spanTeam[28].classList.add('eliminado') 
                     spanTeam[31].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto8[1])
+                    newPrevTerceiraFaseFase(confronto8[1], 7)
                 }else{
                     spanTeam[29].classList.add('eliminado')
                     spanTeam[30].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto8[0])
+                    newPrevTerceiraFaseFase(confronto8[0], 7)
                 }
             }else{
                 if(acumuladoGols1 > acumuladoGols2){
                     spanTeam[29].classList.add('eliminado')
                     spanTeam[30].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto8[0])
+                    newPrevTerceiraFaseFase(confronto8[0], 7)
                 }else{
                     spanTeam[28].classList.add('eliminado') 
                     spanTeam[31].classList.add('eliminado')
 
-                    newPrevTerceiraFaseFase(confronto8[1])
+                    newPrevTerceiraFaseFase(confronto8[1], 7)
                 }
             }
 
@@ -1200,7 +1200,7 @@ export function SegundaFase(){
     
     return(
         <>
-            <Header fases='segunda fase' previousLink='/' nextLink=''/>
+            <Header fases='segunda fase' previousLink='/' nextLink='/terceira-fase'/>
 
             <div className="fasesEliminatorias">
                 <h2>jogos</h2>

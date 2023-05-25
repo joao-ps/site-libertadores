@@ -12,7 +12,9 @@ export function PrimeiraFase(){
         newPrevSegundaFase,
         previaSegundaFase,
         newPrevTerceiraFaseFase,
-        previaTerceiraFase
+        previaTerceiraFase,
+        newPrevFaseDeGrupos,
+        previaFaseDeGrupos
     ] = useContext(GetTimes)
 
     let campeao = []
@@ -58,6 +60,7 @@ export function PrimeiraFase(){
         await axios.get('http://localhost:2020/campeao-libertadores')
             .then((response) => {
                 campeao = response.data
+                newPrevFaseDeGrupos(campeao)
             })
             .catch((error) => {
                 console.log(error)
@@ -65,6 +68,7 @@ export function PrimeiraFase(){
         await axios.get('http://localhost:2020/campeao-sul')
             .then((response) => {
                 sulCampeao = response.data
+                newPrevFaseDeGrupos(sulCampeao)
             })
             .catch((error) => {
                 console.log(error)
@@ -118,7 +122,7 @@ export function PrimeiraFase(){
                                             vagasDiretas += 1
                                         }
                         }else if(element.pos <= vagasDiretas){
-                            faseGrupos.push(element)
+                            newPrevFaseDeGrupos(element)
                         }else if(element.pos <= vagasDiretas + vagasSegundaFase){
                             newPrevSegundaFase(element)
                         }else{
@@ -130,7 +134,7 @@ export function PrimeiraFase(){
                 campeonato.forEach(element => {
                     if(element.pos <= totalVagas){
                         if(element.pos <= vagasDiretas){
-                            faseGrupos.push(element)
+                            newPrevFaseDeGrupos(element)
                         }else if(element.pos <= totalVagas - 1){
                             newPrevSegundaFase(element)
                         }else{
@@ -152,7 +156,7 @@ export function PrimeiraFase(){
                                             vagasDiretas += 1
                                         }
                         }else if(element.pos <= vagasDiretas){
-                            faseGrupos.push(element)
+                            newPrevFaseDeGrupos(element)
                         }else if(element.pos <= vagasDiretas + vagasSegundaFase){
                             newPrevSegundaFase(element)
                         }
@@ -162,7 +166,7 @@ export function PrimeiraFase(){
                 campeonato.forEach(element => {
                     if(element.pos <= totalVagas){
                         if(element.pos <= vagasDiretas){
-                            faseGrupos.push(element)
+                            newPrevFaseDeGrupos(element)
                         }else{
                             newPrevSegundaFase(element)
                         }
