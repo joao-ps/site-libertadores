@@ -582,7 +582,7 @@ export function TerceiraFase(){
 
     return(
         <>
-            <Header fases='Terceira fase' previousLink='/segunda-fase' nextLink=''/>
+            <Header fases='Terceira fase' previousLink='/segunda-fase' nextLink='/fase-de-grupos'/>
 
             <div className="fasesEliminatorias">
                 <h2>jogos</h2>

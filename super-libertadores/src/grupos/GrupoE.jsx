@@ -10,7 +10,10 @@ import '../styles/grupos.sass'
 
 import { Navigation } from "swiper";
 
-export function GrupoE(){
+export function GrupoE({group}){
+    let Grupo = group
+    console.log('GRUPO E') 
+    console.log(Grupo)
 
     return(
         <div className="container-fases">
@@ -34,7 +37,16 @@ export function GrupoE(){
                     <tbody>
                         <tr>
                             <td rowSpan={1} className="classificado">1</td>
-                            <td className="cedula-time1"><abbr className="cedula-time"></abbr></td>
+                            <td className="cedula-time1">
+                                <abbr className="cedula-time">
+                                    {Grupo != null
+                                        ?
+                                            Grupo[0].time
+                                        :
+                                            ''
+                                    }
+                                </abbr>
+                            </td>
                             <td className="cedula-pontos"><b>0</b></td>
                             <td className="cedula-jogos">0</td>
                             <td className="cedula-vitorias">0</td>
@@ -46,7 +58,16 @@ export function GrupoE(){
                         </tr>
                         <tr>
                             <td rowSpan={1} className="classificado">2</td>
-                            <td className="cedula-time2"><abbr className="cedula-time"></abbr></td>
+                            <td className="cedula-time2">
+                                <abbr className="cedula-time">
+                                    {Grupo != null
+                                        ?
+                                            Grupo[1].time
+                                        :
+                                            ''
+                                    }                                    
+                                </abbr>
+                            </td>
                             <td className="cedula-pontos"><b>0</b></td>
                             <td className="cedula-jogos">0</td>
                             <td className="cedula-vitorias">0</td>
@@ -58,7 +79,16 @@ export function GrupoE(){
                         </tr>
                         <tr>
                             <td rowSpan={1} className="sul-americana">3</td>
-                            <td className="cedula-time3"><abbr className="cedula-time"></abbr></td>
+                            <td className="cedula-time3">
+                                <abbr className="cedula-time">
+                                    {Grupo != null
+                                        ?
+                                            Grupo[2].time
+                                        :
+                                            ''
+                                    }                                    
+                                </abbr>
+                            </td>
                             <td className="cedula-pontos"><b>0</b></td>
                             <td className="cedula-jogos">0</td>
                             <td className="cedula-vitorias">0</td>
@@ -70,7 +100,16 @@ export function GrupoE(){
                         </tr>
                         <tr>
                             <td rowSpan={1} className="eliminado">4</td>
-                            <td className="cedula-time4"><abbr className="cedula-time"></abbr></td>
+                            <td className="cedula-time4">
+                                <abbr className="cedula-time">
+                                    {Grupo != null
+                                        ?
+                                            Grupo[3].time
+                                        :
+                                            ''
+                                    }                                    
+                                </abbr>
+                            </td>
                             <td className="cedula-pontos"><b>0</b></td>
                             <td className="cedula-jogos">0</td>
                             <td className="cedula-vitorias">0</td>
