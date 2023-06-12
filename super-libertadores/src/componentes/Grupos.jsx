@@ -528,18 +528,6 @@ export function Grupos(){
         console.log(pote3)
         console.log(pote4)
 
-        //poteGeral.forEach((element,index,array) => {
-        //    if(index < 6){
-        //        pote1.push(element)
-        //    }else if(index >= 6 && index < 14){
-        //        pote2.push(element)
-        //    }else if(index >= 14 && index < 22){
-        //        pote3.push(element)
-        //    }else{
-        //        pote4.push(element)
-        //    }
-        //})
-
         addTimesPote1()
     }
 
@@ -606,43 +594,236 @@ export function Grupos(){
 
             switch(i){
                 case 0:
-                    grupo1.push(pote3[numAleatorio])
-                    pote3.splice(numAleatorio, 1)
+                    if(grupo1[0].pais == pote3[numAleatorio].pais || grupo1[1].pais == pote3[numAleatorio].pais){
+                        console.log(`GRUPO A ${pote3[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote3.length)
+                        } while (
+                            grupo1[0].pais == pote3[numAleatorio].pais 
+                                || grupo1[1].pais == pote3[numAleatorio].pais 
+                        )
+                        grupo1.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }else{
+                        grupo1.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 1:
-                    grupo2.push(pote3[numAleatorio])
-                    pote3.splice(numAleatorio, 1)
+                    if(grupo2[0].pais == pote3[numAleatorio].pais || grupo2[1].pais == pote3[numAleatorio].pais){
+                        console.log(`GRUPO B ${pote3[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote3.length)
+                        } while (
+                            grupo2[0].pais == pote3[numAleatorio].pais 
+                                || grupo2[1].pais == pote3[numAleatorio].pais 
+                        )
+                        grupo2.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }else{
+                        grupo2.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 2: 
-                    grupo3.push(pote3[numAleatorio])
-                    pote3.splice(numAleatorio, 1)
+                    if(grupo3[0].pais == pote3[numAleatorio].pais || grupo3[1].pais == pote3[numAleatorio].pais){
+                        console.log(`GRUPO C ${pote3[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote3.length)
+                        } while (
+                            grupo3[0].pais == pote3[numAleatorio].pais 
+                                || grupo3[1].pais == pote3[numAleatorio].pais 
+                        )
+                        grupo3.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }else{
+                        grupo3.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 3: 
-                    grupo4.push(pote3[numAleatorio])
-                    pote3.splice(numAleatorio, 1)
+                    if(grupo4[0].pais == pote3[numAleatorio].pais || grupo4[1].pais == pote3[numAleatorio].pais){
+                        console.log(`GRUPO D ${pote3[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote3.length)
+                        } while (
+                            grupo4[0].pais == pote3[numAleatorio].pais 
+                                || grupo4[1].pais == pote3[numAleatorio].pais 
+                        )
+                        grupo4.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }else{
+                        grupo4.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 4: 
-                    grupo5.push(pote3[numAleatorio])
-                    pote3.splice(numAleatorio, 1)
+                    if(grupo5[0].pais == pote3[numAleatorio].pais || grupo5[1].pais == pote3[numAleatorio].pais){
+                        console.log(`GRUPO E ${pote3[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote3.length)
+                        } while (
+                            grupo5[0].pais == pote3[numAleatorio].pais 
+                                || grupo5[1].pais == pote3[numAleatorio].pais 
+                        )
+                        grupo5.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }else{
+                        grupo5.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 5: 
-                    grupo6.push(pote3[numAleatorio])
-                    pote3.splice(numAleatorio, 1)
+                    if(grupo6[0].pais == pote3[numAleatorio].pais || grupo6[1].pais == pote3[numAleatorio].pais){
+                        console.log(`GRUPO F ${pote3[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote3.length)
+                        } while (
+                            grupo6[0].pais == pote3[numAleatorio].pais 
+                                || grupo6[1].pais == pote3[numAleatorio].pais 
+                        )
+                        grupo6.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }else{
+                        grupo6.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 6: 
-                    grupo7.push(pote3[numAleatorio])
-                    pote3.splice(numAleatorio, 1)
+                    if(grupo7[0].pais == pote3[numAleatorio].pais || grupo7[1].pais == pote3[numAleatorio].pais){
+                        console.log(`GRUPO G ${pote3[numAleatorio].time}`)
+                        grupo7.push(pote3[numAleatorio])
+
+                        if(
+                            grupo7[2].pais != grupo6[0].pais && grupo7[2].pais != grupo6[1].pais
+                                &&
+                                grupo6[2].pais != grupo7[0].pais && grupo6[2].pais != grupo7[1].pais
+                        ){
+                            let time1 = grupo6[2]
+                            let time2 = grupo7[2]
+                            grupo6[2] = time2
+                            grupo7[2] = time1
+                        }else if(
+                            grupo7[2].pais != grupo5[0].pais && grupo7[2].pais != grupo5[1].pais
+                                &&
+                                grupo5[2].pais != grupo7[0].pais && grupo5[2].pais != grupo7[1].pais
+                        ){
+                            let time1 = grupo5[2]
+                            let time2 = grupo7[2]
+                            grupo5[2] = time2
+                            grupo7[2] = time1
+                        }else if(
+                            grupo7[2].pais != grupo4[0].pais && grupo7[2].pais != grupo4[1].pais
+                                &&
+                                grupo4[2].pais != grupo7[0].pais && grupo4[2].pais != grupo7[1].pais
+                        ){
+                            let time1 = grupo4[2]
+                            let time2 = grupo7[2]
+                            grupo4[2] = time2
+                            grupo7[2] = time1
+                        }else if(
+                            grupo7[2].pais != grupo3[0].pais && grupo7[2].pais != grupo3[1].pais
+                                &&
+                                grupo3[2].pais != grupo7[0].pais && grupo3[2].pais != grupo7[1].pais
+                        ){
+                            let time1 = grupo3[2]
+                            let time2 = grupo7[2]
+                            grupo3[2] = time2
+                            grupo7[2] = time1
+                        }else if(
+                            grupo7[2].pais != grupo2[0].pais && grupo7[2].pais != grupo2[1].pais
+                                &&
+                                grupo2[2].pais != grupo7[0].pais && grupo2[2].pais != grupo7[1].pais
+                        ){
+                            let time1 = grupo2[2]
+                            let time2 = grupo7[2]
+                            grupo2[2] = time2
+                            grupo7[2] = time1
+                        }else{
+                            let time1 = grupo1[2]
+                            let time2 = grupo7[2]
+                            grupo1[2] = time2
+                            grupo7[2] = time1
+                        }
+                    }else{
+                        grupo7.push(pote3[numAleatorio])
+                        pote3.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 7: 
                     grupo8.push(pote3[numAleatorio])
                     pote3.splice(numAleatorio, 1)
+
+                    if(grupo8[0].pais == grupo8[2].pais || grupo8[1].pais == grupo8[2].pais){
+                        console.log(`GRUPO H ${grupo8[2].time}`)
+                        if(
+                            grupo8[2].pais != grupo7[0].pais && grupo8[2].pais != grupo7[1].pais
+                                &&
+                                grupo7[2].pais != grupo8[0].pais && grupo7[2].pais != grupo8[1].pais
+                        ){
+                            let time1 = grupo7[2]
+                            let time2 = grupo8[2]
+                            grupo7[2] = time2
+                            grupo8[2] = time1
+                        }else if(
+                            grupo8[2].pais != grupo6[0].pais && grupo8[2].pais != grupo6[1].pais
+                                &&
+                                grupo6[2].pais != grupo8[0].pais && grupo6[2].pais != grupo8[1].pais
+                        ){
+                            let time1 = grupo6[2]
+                            let time2 = grupo8[2]
+                            grupo6[2] = time2
+                            grupo8[2] = time1
+                        }else if(
+                            grupo8[2].pais != grupo5[0].pais && grupo8[2].pais != grupo5[1].pais
+                                &&
+                                grupo5[2].pais != grupo8[0].pais && grupo5[2].pais != grupo8[1].pais
+                        ){
+                            let time1 = grupo5[2]
+                            let time2 = grupo8[2]
+                            grupo5[2] = time2
+                            grupo8[2] = time1
+                        }else if(
+                            grupo8[2].pais != grupo4[0].pais && grupo8[2].pais != grupo4[1].pais
+                                &&
+                                grupo4[2].pais != grupo8[0].pais && grupo4[2].pais != grupo8[1].pais
+                        ){
+                            let time1 = grupo4[2]
+                            let time2 = grupo8[2]
+                            grupo4[2] = time2
+                            grupo8[2] = time1
+                        }else if(
+                            grupo8[2].pais != grupo3[0].pais && grupo8[2].pais != grupo3[1].pais
+                                &&
+                                grupo3[2].pais != grupo8[0].pais && grupo3[2].pais != grupo8[1].pais
+                        ){
+                            let time1 = grupo3[2]
+                            let time2 = grupo8[2]
+                            grupo3[2] = time2
+                            grupo8[2] = time1
+                        }else if(
+                            grupo8[2].pais != grupo2[0].pais && grupo8[2].pais != grupo2[1].pais
+                                &&
+                                grupo2[2].pais != grupo8[0].pais && grupo2[2].pais != grupo8[1].pais
+                        ){
+                            let time1 = grupo2[2]
+                            let time2 = grupo8[2]
+                            grupo2[2] = time2
+                            grupo8[2] = time1
+                        }else{
+                            let time1 = grupo1[2]
+                            let time2 = grupo8[2]
+                            grupo1[2] = time2
+                            grupo8[2] = time1
+                        }
+                    }
                     break;
             }
         }
@@ -656,43 +837,258 @@ export function Grupos(){
 
             switch (i) {
                 case 0:
-                    grupo1.push(pote2[numAleatorio])
-                    pote2.splice(numAleatorio, 1)
+                    if(grupo1[0].pais == pote2[numAleatorio].pais){
+                        console.log(`GRUPO A ${pote2[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote2.length)
+                        } while (grupo1[0].pais == pote2[numAleatorio].pais)
+                        grupo1.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }else{
+                        grupo1.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }
                     break;
             
                 case 1:
-                    grupo2.push(pote2[numAleatorio])
-                    pote2.splice(numAleatorio, 1)
+                    if(grupo2[0].pais == pote2[numAleatorio].pais){
+                        console.log(`GRUPO B ${pote2[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote2.length)
+                        } while (grupo2[0].pais == pote2[numAleatorio].pais)
+                        grupo2.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }else{
+                        grupo2.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 2:
-                    grupo3.push(pote2[numAleatorio])
-                    pote2.splice(numAleatorio, 1)
+                    if(grupo3[0].pais == pote2[numAleatorio].pais){
+                        console.log(`GRUPO C ${pote2[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote2.length)
+                        } while (grupo3[0].pais == pote2[numAleatorio].pais)
+                        grupo3.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }else{
+                        grupo3.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 3:
-                    grupo4.push(pote2[numAleatorio])
-                    pote2.splice(numAleatorio, 1)
+                    if(grupo4[0].pais == pote2[numAleatorio].pais){
+                        console.log(`GRUPO D ${pote2[numAleatorio].time}`)
+                        do {
+                            numAleatorio = Math.floor(Math.random()*pote2.length)
+                        } while (grupo4[0].pais == pote2[numAleatorio].pais)
+                        grupo4.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }else{
+                        grupo4.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 4:
-                    grupo5.push(pote2[numAleatorio])
-                    pote2.splice(numAleatorio, 1)
+                    if(grupo5[0].pais == pote2[numAleatorio].pais){
+                        console.log(`GRUPO E ${pote2[numAleatorio].time}`)
+                        console.log(`GRUPO E ATENÇÃO!!!`)
+                        if(
+                            grupo5[0].pais == pote2[0].pais
+                                &&
+                                grupo5[0].pais == pote2[1].pais
+                                    &&
+                                    grupo5[0].pais == pote2[2].pais
+                                        &&
+                                        grupo5[0].pais == pote2[3].pais
+                        ){
+                            grupo5.push(pote2[numAleatorio])
+
+                            if(grupo5[1].pais != grupo4[0].pais && grupo5[0].pais != grupo4[1].pais){
+                                let time1 = grupo4[1]
+                                let time2 = grupo5[1]
+                                grupo4[1] = time2
+                                grupo5[1] = time1
+                            }else if(grupo5[1].pais != grupo3[0].pais && grupo5[0].pais != grupo3[1].pais){
+                                let time1 = grupo3[1]
+                                let time2 = grupo5[1]
+                                grupo3[1] = time2
+                                grupo5[1] = time1
+                            }else if(grupo5[1].pais != grupo2[0].pais && grupo5[0].pais != grupo2[1].pais){
+                                let time1 = grupo2[1]
+                                let time2 = grupo5[1]
+                                grupo2[1] = time2
+                                grupo5[1] = time1
+                            }else{
+                                let time1 = grupo1[1]
+                                let time2 = grupo5[1]
+                                grupo1[1] = time2
+                                grupo5[1] = time1
+                            }
+                        }else{
+                            do {
+                                numAleatorio = Math.floor(Math.random()*pote2.length)
+                            } while (grupo5[0].pais == pote2[numAleatorio].pais)
+                            grupo5.push(pote2[numAleatorio])
+                            pote2.splice(numAleatorio, 1)
+                        }
+                    }else{
+                        grupo5.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 5:
-                    grupo6.push(pote2[numAleatorio])
-                    pote2.splice(numAleatorio, 1)
+                    if(grupo6[0].pais == pote2[numAleatorio].pais){
+                        console.log(`GRUPO F ${pote2[numAleatorio].time}`)
+                        if(
+                            grupo6[0].pais == pote2[0].pais
+                                &&
+                                grupo6[0].pais == pote2[1].pais
+                                    &&
+                                    grupo6[0].pais == pote2[2].pais
+                        ){
+                            grupo6.push(pote2[numAleatorio])
+
+                            if(grupo6[1].pais != grupo5[0].pais && grupo6[0].pais != grupo5[1].pais){
+                                let time1 = grupo5[1]
+                                let time2 = grupo6[1]
+                                grupo5[1] = time2
+                                grupo6[1] = time1
+                            }else if(grupo6[1].pais != grupo4[0].pais && grupo6[0].pais != grupo4[1].pais){
+                                let time1 = grupo4[1]
+                                let time2 = grupo6[1]
+                                grupo4[1] = time2
+                                grupo6[1] = time1
+                            }else if(grupo6[1].pais != grupo3[0].pais && grupo6[0].pais != grupo3[1].pais){
+                                let time1 = grupo3[1]
+                                let time2 = grupo6[1]
+                                grupo3[1] = time2
+                                grupo6[1] = time1
+                            }else if(grupo6[1].pais != grupo2[0].pais && grupo6[0].pais != grupo2[1].pais){
+                                let time1 = grupo2[1]
+                                let time2 = grupo6[1]
+                                grupo2[1] = time2
+                                grupo6[1] = time1
+                            }else{
+                                let time1 = grupo1[1]
+                                let time2 = grupo6[1]
+                                grupo1[1] = time2
+                                grupo6[1] = time1
+                            }
+                        }else{
+                            do {
+                                numAleatorio = Math.floor(Math.random()*pote2.length)
+                            } while (grupo6[0].pais == pote2[numAleatorio].pais)
+                            grupo6.push(pote2[numAleatorio])
+                            pote2.splice(numAleatorio, 1)
+                        }
+                    }else{
+                        grupo6.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 6:
-                    grupo7.push(pote2[numAleatorio])
-                    pote2.splice(numAleatorio, 1)
+                    if(grupo7[0].pais == pote2[numAleatorio].pais){
+                        console.log(`GRUPO G ${pote2[numAleatorio].time}`)
+                        if(
+                            grupo7[0].pais == pote2[0].pais
+                                &&
+                                grupo7[0].pais == pote2[1].pais
+                        ){
+                            grupo7.push(pote2[numAleatorio])
+
+                            if(grupo7[1].pais != grupo6[0].pais && grupo7[0].pais != grupo6[1].pais){
+                                let time1 = grupo6[1]
+                                let time2 = grupo7[1]
+                                grupo6[1] = time2
+                                grupo7[1] = time1
+                            }else if(grupo7[1].pais != grupo5[0].pais && grupo7[0].pais != grupo5[1].pais){
+                                let time1 = grupo5[1]
+                                let time2 = grupo7[1]
+                                grupo5[1] = time2
+                                grupo7[1] = time1
+                            }else if(grupo7[1].pais != grupo4[0].pais && grupo7[0].pais != grupo4[1].pais){
+                                let time1 = grupo4[1]
+                                let time2 = grupo7[1]
+                                grupo4[1] = time2
+                                grupo7[1] = time1
+                            }else if(grupo7[1].pais != grupo3[0].pais && grupo7[0].pais != grupo3[1].pais){
+                                let time1 = grupo3[1]
+                                let time2 = grupo7[1]
+                                grupo3[1] = time2
+                                grupo7[1] = time1
+                            }else if(grupo7[1].pais != grupo2[0].pais && grupo7[0].pais != grupo2[1].pais){
+                                let time1 = grupo2[1]
+                                let time2 = grupo7[1]
+                                grupo2[1] = time2
+                                grupo7[1] = time1
+                            }else{
+                                let time1 = grupo1[1]
+                                let time2 = grupo7[1]
+                                grupo1[1] = time2
+                                grupo7[1] = time1
+                            }
+                        }else{
+                            do {
+                                numAleatorio = Math.floor(Math.random()*pote2.length)
+                            } while (grupo7[0].pais == pote2[numAleatorio].pais)
+                            grupo7.push(pote2[numAleatorio])
+                            pote2.splice(numAleatorio, 1)
+                        }
+                    }else{
+                        grupo7.push(pote2[numAleatorio])
+                        pote2.splice(numAleatorio, 1)
+                    }
                     break;
 
                 case 7:
                     grupo8.push(pote2[numAleatorio])
                     pote2.splice(numAleatorio, 1)
+
+                    if(grupo8[0].pais == grupo8[1].pais){
+                        console.log(`GRUPO H ${grupo8[1].time}`)
+                        if(grupo8[1].pais != grupo7[0].pais && grupo8[0].pais != grupo7[1].pais){
+                            let time1 = grupo7[1]
+                            let time2 = grupo8[1]
+                            grupo7[1] = time2
+                            grupo8[1] = time1
+                        }else if(grupo8[1].pais != grupo6[0].pais && grupo8[0].pais != grupo6[1].pais){
+                            let time1 = grupo6[1]
+                            let time2 = grupo8[1]
+                            grupo6[1] = time2
+                            grupo8[1] = time1
+                        }else if(grupo8[1].pais != grupo5[0].pais && grupo8[0].pais != grupo5[1].pais){
+                            let time1 = grupo5[1]
+                            let time2 = grupo8[1]
+                            grupo5[1] = time2
+                            grupo8[1] = time1
+                        }else if(grupo8[1].pais != grupo4[0].pais && grupo8[0].pais != grupo4[1].pais){
+                            let time1 = grupo4[1]
+                            let time2 = grupo8[1]
+                            grupo4[1] = time2
+                            grupo8[1] = time1
+                        }else if(grupo8[1].pais != grupo3[0].pais && grupo8[0].pais != grupo3[1].pais){
+                            let time1 = grupo3[1]
+                            let time2 = grupo8[1]
+                            grupo3[1] = time2
+                            grupo8[1] = time1
+                        }else if(grupo8[1].pais != grupo2[0].pais && grupo8[0].pais != grupo2[1].pais){
+                            let time1 = grupo2[1]
+                            let time2 = grupo8[1]
+                            grupo2[1] = time2
+                            grupo8[1] = time1
+                        }else{
+                            let time1 = grupo1[1]
+                            let time2 = grupo8[1]
+                            grupo1[1] = time2
+                            grupo8[1] = time1
+                        }
+                    }
                     break;
             }
         }

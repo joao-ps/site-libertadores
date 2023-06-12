@@ -221,8 +221,8 @@ export function PrimeiraFase(){
             switch (v) {
                 case 0:
                     spanTeam[0].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[0].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
-                    spanTeam[3].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[0].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    spanTeam[3].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     spanTeam[3].innerHTML += primeiraFase[numAleatorio].time
                     stadium[0].innerText += primeiraFase[numAleatorio].estadio
 
@@ -232,10 +232,10 @@ export function PrimeiraFase(){
                     break;
 
                 case 1:
-                    spanTeam[1].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[1].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     spanTeam[1].innerHTML += primeiraFase[numAleatorio].time
                     spanTeam[2].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[2].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[2].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     stadium[1].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto1.push(primeiraFase[numAleatorio])
@@ -245,8 +245,8 @@ export function PrimeiraFase(){
 
                 case 2:
                     spanTeam[4].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[4].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
-                    spanTeam[7].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[4].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    spanTeam[7].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     spanTeam[7].innerHTML += primeiraFase[numAleatorio].time
                     stadium[2].innerText += primeiraFase[numAleatorio].estadio
 
@@ -256,10 +256,10 @@ export function PrimeiraFase(){
                     break;
 
                 case 3:
-                    spanTeam[5].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[5].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     spanTeam[5].innerHTML += primeiraFase[numAleatorio].time
                     spanTeam[6].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[6].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[6].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     stadium[3].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto2.push(primeiraFase[numAleatorio])
@@ -269,8 +269,8 @@ export function PrimeiraFase(){
 
                 case 4:
                     spanTeam[8].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[8].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
-                    spanTeam[11].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[8].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    spanTeam[11].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     spanTeam[11].innerHTML += primeiraFase[numAleatorio].time
                     stadium[4].innerText += primeiraFase[numAleatorio].estadio
 
@@ -280,10 +280,10 @@ export function PrimeiraFase(){
                     break;
 
                 case 5:
-                    spanTeam[9].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[9].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     spanTeam[9].innerHTML += primeiraFase[numAleatorio].time
                     spanTeam[10].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[10].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="bandeira do pais" />`
+                    spanTeam[10].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
                     stadium[5].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto3.push(primeiraFase[numAleatorio])

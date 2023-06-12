@@ -12,8 +12,353 @@ import { Navigation } from "swiper";
 
 export function GrupoA({group}){
     let Grupo = group
-    console.log('GRUPO A') 
-    console.log(Grupo)
+    const Time1 =
+        {
+            time: '',
+            p: 0,
+            j: 0,
+            v: 0,
+            e: 0,
+            d: 0,
+            gp: 0,
+            gc: 0,
+            sg: 0,
+            placar: ''
+        }
+        const Time2 =
+        {
+            time: '',
+            p: 0,
+            j: 0,
+            v: 0,
+            e: 0,
+            d: 0,
+            gp: 0,
+            gc: 0,
+            sg: 0,
+            placar: ''
+        }
+        const Time3 =
+        {
+            time: '',
+            p: 0,
+            j: 0,
+            v: 0,
+            e: 0,
+            d: 0,
+            gp: 0,
+            gc: 0,
+            sg: 0,
+            placar: ''
+        }
+        const Time4 =
+        {
+            time: '',
+            p: 0,
+            j: 0,
+            v: 0,
+            e: 0,
+            d: 0,
+            gp: 0,
+            gc: 0,
+            sg: 0,
+            placar: ''
+        }
+    let jogo1 = []
+    let jogo2 = []
+    let jogo3 = []
+    let jogo4 = []
+    let jogo5 = []
+    let jogo6 = []
+    let tableA = []
+    
+    if(Grupo != null){
+        Time1.time = Grupo[0].time
+        Time2.time = Grupo[1].time
+        Time3.time = Grupo[2].time
+        Time4.time = Grupo[3].time
+        Time1.placar = Grupo[0].namePlacar
+        Time2.placar = Grupo[1].namePlacar
+        Time3.placar = Grupo[2].namePlacar
+        Time4.placar = Grupo[3].namePlacar
+
+        //ROUND 1
+        jogo1.push(Grupo[0])
+        jogo1.push(Grupo[1])
+        jogo1.push(Grupo[2])
+        jogo1.push(Grupo[3])
+        //ROUND 2
+        jogo2.push(Grupo[3])
+        jogo2.push(Grupo[0])
+        jogo2.push(Grupo[1])
+        jogo2.push(Grupo[2])
+        //ROUND 3
+        jogo3.push(Grupo[3])
+        jogo3.push(Grupo[1])
+        jogo3.push(Grupo[2])
+        jogo3.push(Grupo[0])
+        //ROUND 4
+        jogo4.push(Grupo[0])
+        jogo4.push(Grupo[2])
+        jogo4.push(Grupo[1])
+        jogo4.push(Grupo[3])
+        //ROUND 5
+        jogo5.push(Grupo[2])
+        jogo5.push(Grupo[1])
+        jogo5.push(Grupo[0])
+        jogo5.push(Grupo[3])
+        //ROUND 6
+        jogo6.push(Grupo[3])
+        jogo6.push(Grupo[2])
+        jogo6.push(Grupo[1])
+        jogo6.push(Grupo[0])
+
+        sessionStorage.setItem('RoundA1', JSON.stringify(jogo1))
+        sessionStorage.setItem('RoundA2', JSON.stringify(jogo2))
+        sessionStorage.setItem('RoundA3', JSON.stringify(jogo3))
+        sessionStorage.setItem('RoundA4', JSON.stringify(jogo4))
+        sessionStorage.setItem('RoundA5', JSON.stringify(jogo5))
+        sessionStorage.setItem('RoundA6', JSON.stringify(jogo6))
+    }
+
+    function classificacao(){
+        const tdTime = document.querySelectorAll('.cedula-time')
+        const tdPontos = document.querySelectorAll('.cedula-pontos')
+        const tdJogos = document.querySelectorAll('.cedula-jogos')
+        const tdVitorias = document.querySelectorAll('.cedula-vitorias')
+        const tdEmpates = document.querySelectorAll('.cedula-empates')
+        const tdDerrotas = document.querySelectorAll('.cedula-derrotas')
+        const tdGolsPro = document.querySelectorAll('.cedula-gols-pro')
+        const tdGolsContra = document.querySelectorAll('.cedula-gols-contra')
+        const tdSaldoGols  = document.querySelectorAll('.cedula-saldo-gols')
+        tableA = []
+        tableA[0] = Time1
+        tableA[1] = Time2
+        tableA[2] = Time3
+        tableA[3] = Time4
+        
+        tableA.sort((a,b) => {
+            if(a.p > b.p ){
+                return 1
+            }
+            if(a.p == b.p ){
+                if(a.sg > 0){
+                    if(a.sg > b.sg){
+                        return 1
+                    }
+                }
+                if(a.sg < 0){
+                    if(a.sg > b.sg){
+                        return 1
+                    }
+                }
+            }else{
+                return -1
+            }
+        })
+
+        let v = 3
+        tableA.forEach((element,index,array) => {
+            tdTime[index].innerText = tableA[v].time
+            tdPontos[index].innerText = tableA[v].p
+            tdJogos[index].innerText = tableA[v].j
+            tdVitorias[index].innerText = tableA[v].v
+            tdEmpates[index].innerText = tableA[v].e
+            tdDerrotas[index].innerText = tableA[v].d
+            tdGolsPro[index].innerText = tableA[v].gp
+            tdGolsContra[index].innerText = tableA[v].gc
+            tdSaldoGols[index].innerText = tableA[v].sg
+            v--
+        })
+    }
+
+    function insertResultsGame(resultadoPro, resultadoContra, Team){
+        let resultPro = resultadoPro
+        let resultContra = resultadoContra
+        let resultGolProContra
+        let informacoesTime = Team
+
+        informacoesTime.j += 1
+
+        if(resultPro > resultContra){
+            informacoesTime.p += 3
+            informacoesTime.v += 1
+        }else if(resultPro == resultContra){
+            informacoesTime.p += 1
+            informacoesTime.e += 1
+        }else{
+            informacoesTime.p += 0
+            informacoesTime.d += 1
+        }
+
+        informacoesTime.gp += Number(resultPro)
+        informacoesTime.gc += Number(resultContra)
+        resultGolProContra = Number(resultPro) - Number(resultContra)
+        informacoesTime.sg += resultGolProContra
+    }
+
+    function addFunctionButton(){
+        let buttonSaveResult = document.querySelectorAll('.btn-result-jogos')
+        let resultsGames = document.querySelectorAll('.input-time-resultado')
+
+        buttonSaveResult[0].addEventListener('click', function setResult(){
+            let listResults = []
+            listResults.push(resultsGames[0].value)
+            listResults.push(resultsGames[1].value)
+            listResults.push(resultsGames[2].value)
+            listResults.push(resultsGames[3].value)
+
+            for(let i = 0; i<listResults.length; i++){
+                if(!listResults[i])return
+            }
+            for(let i = 0; i<4; i++){
+                resultsGames[i].setAttribute('readonly', 'readonly');
+            }
+            
+            insertResultsGame(listResults[0], listResults[1], Time1)
+            insertResultsGame(listResults[1], listResults[0], Time2)
+            insertResultsGame(listResults[2], listResults[3], Time3)
+            insertResultsGame(listResults[3], listResults[2], Time4)
+            classificacao()
+            console.log(tableA)
+            this.removeEventListener('click', setResult)
+            this.classList.add('btn-disabled')
+        })
+        buttonSaveResult[1].addEventListener('click', function setResult(){
+            let listResults = []
+            listResults.push(resultsGames[4].value)
+            listResults.push(resultsGames[5].value)
+            listResults.push(resultsGames[6].value)
+            listResults.push(resultsGames[7].value)
+
+            for(let i = 0; i<listResults.length; i++){
+                if(!listResults[i])return
+            }
+            if(buttonSaveResult[0].classList.contains('btn-disabled') == false){
+                return
+            }
+            for(let i = 4; i<8; i++){
+                resultsGames[i].setAttribute('readonly', 'readonly');
+            }
+
+            insertResultsGame(listResults[0], listResults[1], Time4)
+            insertResultsGame(listResults[1], listResults[0], Time1)
+            insertResultsGame(listResults[2], listResults[3], Time2)
+            insertResultsGame(listResults[3], listResults[2], Time3)
+            classificacao()
+            this.removeEventListener('click', setResult)
+            this.classList.add('btn-disabled')
+        })
+        buttonSaveResult[2].addEventListener('click', function setResult(){
+            let listResults = []
+            listResults.push(resultsGames[8].value)
+            listResults.push(resultsGames[9].value)
+            listResults.push(resultsGames[10].value)
+            listResults.push(resultsGames[11].value)
+
+            for(let i = 0; i<listResults.length; i++){
+                if(!listResults[i])return
+            }
+            if(buttonSaveResult[1].classList.contains('btn-disabled') == false){
+                return
+            }
+            for(let i = 8; i<12; i++){
+                resultsGames[i].setAttribute('readonly', 'readonly');
+            }
+            
+            insertResultsGame(listResults[0], listResults[1], Time4)
+            insertResultsGame(listResults[1], listResults[0], Time2)
+            insertResultsGame(listResults[2], listResults[3], Time3)
+            insertResultsGame(listResults[3], listResults[2], Time1)
+            classificacao()
+            this.removeEventListener('click', setResult)
+            this.classList.add('btn-disabled')
+        })
+        buttonSaveResult[3].addEventListener('click', function setResult(){
+            let listResults = []
+            listResults.push(resultsGames[12].value)
+            listResults.push(resultsGames[13].value)
+            listResults.push(resultsGames[14].value)
+            listResults.push(resultsGames[15].value)
+
+            for(let i = 0; i<listResults.length; i++){
+                if(!listResults[i])return
+            }
+            if(buttonSaveResult[2].classList.contains('btn-disabled') == false){
+                return
+            }
+            for(let i = 12; i<16; i++){
+                resultsGames[i].setAttribute('readonly', 'readonly');
+            }
+            
+            insertResultsGame(listResults[0], listResults[1], Time1)
+            insertResultsGame(listResults[1], listResults[0], Time3)
+            insertResultsGame(listResults[2], listResults[3], Time2)
+            insertResultsGame(listResults[3], listResults[2], Time4)
+            classificacao()
+            this.removeEventListener('click', setResult)
+            this.classList.add('btn-disabled')
+        })
+        buttonSaveResult[4].addEventListener('click', function setResult(){
+            let listResults = []
+            listResults.push(resultsGames[16].value)
+            listResults.push(resultsGames[17].value)
+            listResults.push(resultsGames[18].value)
+            listResults.push(resultsGames[19].value)
+
+            for(let i = 0; i<listResults.length; i++){
+                if(!listResults[i])return
+            }
+            if(buttonSaveResult[3].classList.contains('btn-disabled') == false){
+                return
+            }
+            for(let i = 16; i<20; i++){
+                resultsGames[i].setAttribute('readonly', 'readonly');
+            }
+            
+            insertResultsGame(listResults[0], listResults[1], Time3)
+            insertResultsGame(listResults[1], listResults[0], Time2)
+            insertResultsGame(listResults[2], listResults[3], Time1)
+            insertResultsGame(listResults[3], listResults[2], Time4)
+            classificacao()
+            this.removeEventListener('click', setResult)
+            this.classList.add('btn-disabled')
+        })
+        buttonSaveResult[5].addEventListener('click', function setResult(){
+            let listResults = []
+            listResults.push(resultsGames[20].value)
+            listResults.push(resultsGames[21].value)
+            listResults.push(resultsGames[22].value)
+            listResults.push(resultsGames[23].value)
+
+            for(let i = 0; i<listResults.length; i++){
+                if(!listResults[i])return
+            }
+            if(buttonSaveResult[4].classList.contains('btn-disabled') == false){
+                return
+            }
+            for(let i = 20; i<24; i++){
+                resultsGames[i].setAttribute('readonly', 'readonly');
+            }
+            
+            insertResultsGame(listResults[0], listResults[1], Time4)
+            insertResultsGame(listResults[1], listResults[0], Time3)
+            insertResultsGame(listResults[2], listResults[3], Time2)
+            insertResultsGame(listResults[3], listResults[2], Time1)
+            classificacao()
+            this.removeEventListener('click', setResult)
+            this.classList.add('btn-disabled')
+        })
+    }
+
+    jogo1 = JSON.parse(sessionStorage.getItem('RoundA1'))
+    jogo2 = JSON.parse(sessionStorage.getItem('RoundA2'))
+    jogo3 = JSON.parse(sessionStorage.getItem('RoundA3'))
+    jogo4 = JSON.parse(sessionStorage.getItem('RoundA4'))
+    jogo5 = JSON.parse(sessionStorage.getItem('RoundA5'))
+    jogo6 = JSON.parse(sessionStorage.getItem('RoundA6'))
+
+    setTimeout(addFunctionButton, 200)
 
     return(
         <div className="container-fases">
@@ -136,24 +481,48 @@ export function GrupoA({group}){
                                             </div>
 
                                             <div className="container-jogo-1">
-                                                <p className="information-jogo">quarta <span className="stadium">akron</span> 21:30</p>
+                                                <p className="information-jogo">quarta <span className="stadium">
+                                                    {jogo1 && jogo1[0].estadio}
+                                                </span> 21:30</p>
                                                 <p className="jogo-1">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo1 && jogo1[0].namePlacar}
+                                                            {jogo1 && <img src={jogo1[0].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo1 && <img src={jogo1[1].url} alt="" />}
+                                                            {jogo1 && jogo1[1].namePlacar}                    
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
 
                                             <div className="container-jogo-2">
-                                                <p className="information-jogo">quinta <span className="stadium">Nacional do Peru</span> 18:00</p>
+                                                <p className="information-jogo">quinta <span className="stadium">
+                                                    {jogo1 && jogo1[2].estadio}
+                                                </span> 18:00</p>
                                                 <p className="jogo-2">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo1 && jogo1[2].namePlacar}
+                                                            {jogo1 && <img src={jogo1[2].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo1 && <img src={jogo1[3].url} alt="" />}                    
+                                                            {jogo1 && jogo1[3].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
                                             <button className="btn-result-jogos">salvar</button>
@@ -168,24 +537,48 @@ export function GrupoA({group}){
                                             </div>
 
                                             <div className="container-jogo-1">
-                                                <p className="information-jogo">quarta <span className="stadium">akron</span> 21:30</p>
+                                                <p className="information-jogo">quarta <span className="stadium">
+                                                    {jogo2 && jogo2[0].estadio}
+                                                </span> 21:30</p>
                                                 <p className="jogo-1">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo2 && jogo2[0].namePlacar}
+                                                            {jogo2 && <img src={jogo2[0].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo2 && <img src={jogo2[1].url} alt="" />}                    
+                                                            {jogo2 && jogo2[1].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
 
                                             <div className="container-jogo-2">
-                                                <p className="information-jogo">quinta <span className="stadium">Nacional do Peru</span> 18:00</p>
+                                                <p className="information-jogo">quinta <span className="stadium">
+                                                    {jogo2 && jogo2[2].estadio}
+                                                </span> 18:00</p>
                                                 <p className="jogo-2">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo2 && jogo2[2].namePlacar}
+                                                            {jogo2 && <img src={jogo2[2].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo2 && <img src={jogo2[3].url} alt="" />}                    
+                                                            {jogo2 && jogo2[3].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
                                             <button className="btn-result-jogos">salvar</button>                                                
@@ -200,24 +593,48 @@ export function GrupoA({group}){
                                             </div>
 
                                             <div className="container-jogo-1">
-                                                <p className="information-jogo">quarta <span className="stadium">akron</span> 21:30</p>
+                                                <p className="information-jogo">quarta <span className="stadium">
+                                                    {jogo3 && jogo3[0].estadio}
+                                                </span> 21:30</p>
                                                 <p className="jogo-1">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo3 && jogo3[0].namePlacar}
+                                                            {jogo3 && <img src={jogo3[0].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo3 && <img src={jogo3[1].url} alt="" />}                    
+                                                            {jogo3 && jogo3[1].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
 
                                             <div className="container-jogo-2">
-                                                <p className="information-jogo">quinta <span className="stadium">Nacional do Peru</span> 18:00</p>
+                                                <p className="information-jogo">quinta <span className="stadium">
+                                                    {jogo3 && jogo3[2].estadio}
+                                                </span> 18:00</p>
                                                 <p className="jogo-2">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo3 && jogo3[2].namePlacar}
+                                                            {jogo3 && <img src={jogo3[2].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo3 && <img src={jogo3[3].url} alt="" />}                    
+                                                            {jogo3 && jogo3[3].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
                                             <button className="btn-result-jogos">salvar</button>
@@ -232,24 +649,48 @@ export function GrupoA({group}){
                                             </div>
                                                 
                                             <div className="container-jogo-1">
-                                                <p className="information-jogo">quarta <span className="stadium">akron</span> 21:30</p>
+                                                <p className="information-jogo">quarta <span className="stadium">
+                                                    {jogo4 && jogo4[0].estadio}
+                                                </span> 21:30</p>
                                                 <p className="jogo-1">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo4 && jogo4[0].namePlacar}
+                                                            {jogo4 && <img src={jogo4[0].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo4 && <img src={jogo4[1].url} alt="" />}                    
+                                                            {jogo4 && jogo4[1].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
 
                                             <div className="container-jogo-2">
-                                                <p className="information-jogo">quinta <span className="stadium">Nacional do Peru</span> 18:00</p>
+                                                <p className="information-jogo">quinta <span className="stadium">
+                                                    {jogo4 && jogo4[2].estadio}
+                                                </span> 18:00</p>
                                                 <p className="jogo-2">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo4 && jogo4[2].namePlacar}
+                                                            {jogo4 && <img src={jogo4[2].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo4 && <img src={jogo4[3].url} alt="" />}                    
+                                                            {jogo4 && jogo4[3].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
                                             <button className="btn-result-jogos">salvar</button>                                                
@@ -264,24 +705,48 @@ export function GrupoA({group}){
                                             </div>
                                                 
                                             <div className="container-jogo-1">
-                                                <p className="information-jogo">quarta <span className="stadium">akron</span> 21:30</p>
+                                                <p className="information-jogo">quarta <span className="stadium">
+                                                    {jogo5 && jogo5[0].estadio}
+                                                </span> 21:30</p>
                                                 <p className="jogo-1">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo5 && jogo5[0].namePlacar}
+                                                            {jogo5 && <img src={jogo5[0].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo5 && <img src={jogo5[1].url} alt="" />}                    
+                                                            {jogo5 && jogo5[1].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
 
                                             <div className="container-jogo-2">
-                                                <p className="information-jogo">quinta <span className="stadium">Nacional do Peru</span> 18:00</p>
+                                                <p className="information-jogo">quinta <span className="stadium">
+                                                    {jogo5 && jogo5[2].estadio}
+                                                </span> 18:00</p>
                                                 <p className="jogo-2">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo5 && jogo5[2].namePlacar}
+                                                            {jogo5 && <img src={jogo5[2].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo5 && <img src={jogo5[3].url} alt="" />}                    
+                                                            {jogo5 && jogo5[3].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
                                             <button className="btn-result-jogos">salvar</button>                                                
@@ -296,24 +761,48 @@ export function GrupoA({group}){
                                             </div>
                                                 
                                             <div className="container-jogo-1">
-                                                <p className="information-jogo">quarta <span className="stadium">akron</span> 21:30</p>
+                                                <p className="information-jogo">quarta <span className="stadium">
+                                                    {jogo6 && jogo6[0].estadio}
+                                                </span> 21:30</p>
                                                 <p className="jogo-1">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo6 && jogo6[0].namePlacar}
+                                                            {jogo6 && <img src={jogo6[0].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo6 && <img src={jogo6[1].url} alt="" />}                    
+                                                            {jogo6 && jogo6[1].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
 
                                             <div className="container-jogo-2">
-                                                <p className="information-jogo">quinta <span className="stadium">Nacional do Peru</span> 18:00</p>
+                                                <p className="information-jogo">quinta <span className="stadium">
+                                                    {jogo6 && jogo6[2].estadio}
+                                                </span> 18:00</p>
                                                 <p className="jogo-2">
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo6 && jogo6[2].namePlacar}
+                                                            {jogo6 && <img src={jogo6[2].url} alt="" />}                    
+                                                        </span>
+                                                    </span>
                                                     <input type="text" className="input-time-resultado" />
                                                     <span>X</span>
                                                     <input type="text" className="input-time-resultado" />
-                                                    <span className="jogo"></span>
+                                                    <span className="jogo">
+                                                        <span className="confronto">
+                                                            {jogo6 && <img src={jogo6[3].url} alt="" />}                    
+                                                            {jogo6 && jogo6[3].namePlacar}
+                                                        </span>
+                                                    </span>
                                                 </p>
                                             </div>
                                             <button className="btn-result-jogos">salvar</button>        

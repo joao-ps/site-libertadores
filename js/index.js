@@ -989,6 +989,8 @@ function positionTimes(grupo, pos1, pos2, pos3, pos4){
 }
 
 function insertResultsArray1(resultadoPro, resultadoContra, grup,infoTime){
+    //insertResultsArray1(resultJogos[0], resultJogos[1], GrupoA, grupoA[2].time);
+    
     let resultPro = resultadoPro;
     let resultContra = resultadoContra;
     let grupos = grup;
