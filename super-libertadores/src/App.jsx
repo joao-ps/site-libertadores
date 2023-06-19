@@ -6,6 +6,7 @@ import { Grupos } from './componentes/Grupos'
 import { PrimeiraFase } from './pages/primeiraFase'
 
 import { GetTimes } from './componentes/api/getTeams'
+import { FaseFinal } from './componentes/api/getTeams'
 import { Rotas } from './componentes/routes/Routes'
 
 import './styles/app.sass'
@@ -14,6 +15,8 @@ function App() {
     let previaSegundaFase = []
     let previaTerceiraFase = []
     let previaFaseDeGrupos = []
+    let previaOitavas = []
+    let previaQuartas = []
 
     function newPrevSegundaFase(newTeam, posArray){
       if(posArray == undefined){
@@ -40,6 +43,22 @@ function App() {
       }
       console.log(previaFaseDeGrupos)
     }
+    function newOitavas(newTeam, posArray){
+      if(posArray == undefined){
+        previaOitavas.push(newTeam)
+      }else{
+        previaOitavas[posArray] = newTeam
+      }
+      console.log(previaOitavas)
+    }
+    function newQuartas(newTeam, posArray){
+      if(posArray == undefined){
+        previaQuartas.push(newTeam)
+      }else{
+        previaQuartas[posArray] = newTeam
+      }
+      console.log(previaQuartas)
+    }
 
   return (
     <BrowserRouter>
@@ -51,6 +70,12 @@ function App() {
         newPrevFaseDeGrupos,
         previaFaseDeGrupos
     ]}>
+      <FaseFinal.Provider value={[
+        newOitavas,
+        previaOitavas,
+        newQuartas,
+        previaQuartas
+      ]}>
         <div className="container">
           <div className="fases-da-competicao">
 
@@ -58,6 +83,7 @@ function App() {
 
           </div>
         </div>
+        </FaseFinal.Provider>
       </GetTimes.Provider>
     </BrowserRouter>
   )

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
  // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,7 +10,16 @@ import '../styles/grupos.sass'
 
 import { Navigation } from "swiper";
 
+import { FaseFinal } from "../componentes/api/getTeams";
+
 export function GrupoD({group}){
+    let [
+        newOitavas,
+        previaOitavas,
+        newQuartas,
+        previaQuartas
+    ] = useContext(FaseFinal)
+    
     let Grupo = group
     const TimeD1 =
         {
@@ -23,7 +32,10 @@ export function GrupoD({group}){
             gp: 0,
             gc: 0,
             sg: 0,
-            placar: ''
+            placar: '',
+            pais: '',
+            estadio: '',
+            url: ''
         }
         const TimeD2 =
         {
@@ -36,7 +48,10 @@ export function GrupoD({group}){
             gp: 0,
             gc: 0,
             sg: 0,
-            placar: ''
+            placar: '',
+            pais: '',
+            estadio: '',
+            url: ''
         }
         const TimeD3 =
         {
@@ -49,7 +64,10 @@ export function GrupoD({group}){
             gp: 0,
             gc: 0,
             sg: 0,
-            placar: ''
+            placar: '',
+            pais: '',
+            estadio: '',
+            url: ''
         }
         const TimeD4 =
         {
@@ -62,7 +80,10 @@ export function GrupoD({group}){
             gp: 0,
             gc: 0,
             sg: 0,
-            placar: ''
+            placar: '',
+            pais: '',
+            estadio: '',
+            url: ''
         }
         let jogo1 = []
         let jogo2 = []
@@ -70,7 +91,8 @@ export function GrupoD({group}){
         let jogo4 = []
         let jogo5 = []
         let jogo6 = []
-        let tableD = []
+        let tableD
+        let rodada = 1
 
         if(Grupo != null){
             TimeD1.time = Grupo[0].time
@@ -81,6 +103,23 @@ export function GrupoD({group}){
             TimeD2.placar = Grupo[1].namePlacar
             TimeD3.placar = Grupo[2].namePlacar
             TimeD4.placar = Grupo[3].namePlacar
+            TimeD1.pais = Grupo[0].pais
+            TimeD2.pais = Grupo[1].pais
+            TimeD3.pais = Grupo[2].pais
+            TimeD4.pais = Grupo[3].pais
+            TimeD1.estadio = Grupo[0].estadio
+            TimeD2.estadio = Grupo[1].estadio
+            TimeD3.estadio = Grupo[2].estadio
+            TimeD4.estadio = Grupo[3].estadio
+            TimeD1.url = Grupo[0].url
+            TimeD2.url = Grupo[1].url
+            TimeD3.url = Grupo[2].url
+            TimeD4.url = Grupo[3].url
+            tableD = []
+            tableD[0] = TimeD4
+            tableD[1] = TimeD3
+            tableD[2] = TimeD2
+            tableD[3] = TimeD1
     
             //ROUND 1
             jogo1.push(Grupo[1])
@@ -131,11 +170,11 @@ export function GrupoD({group}){
             const tdGolsPro = document.querySelectorAll('.cedula-gols-pro')
             const tdGolsContra = document.querySelectorAll('.cedula-gols-contra')
             const tdSaldoGols  = document.querySelectorAll('.cedula-saldo-gols')
-            tableD = []
-            tableD[0] = TimeD1
-            tableD[1] = TimeD2
-            tableD[2] = TimeD3
-            tableD[3] = TimeD4
+            //tableD = []
+            //tableD[0] = TimeD1
+            //tableD[1] = TimeD2
+            //tableD[2] = TimeD3
+            //tableD[3] = TimeD4
 
             tableD.sort((a,b) => {
                 if(a.p > b.p ){
@@ -175,6 +214,19 @@ export function GrupoD({group}){
                 tdSaldoGols[i].innerText = tableD[d].sg
                 d--
             }
+
+            if(rodada == 6){
+                tableD[3].group = 'D'
+                tableD[3].position = 1
+                tableD[2].group = 'D'
+                tableD[2].position = 2
+    
+                newOitavas(tableD[3], 6)
+                newOitavas(tableD[2], 7)
+            }
+            rodada++
+
+            sessionStorage.setItem('tabelaD', JSON.stringify(tableD))
         }
 
         function insertResultsGame(resultadoPro, resultadoContra, Team){
@@ -361,6 +413,11 @@ export function GrupoD({group}){
         jogo4 = JSON.parse(sessionStorage.getItem('RoundD4'))
         jogo5 = JSON.parse(sessionStorage.getItem('RoundD5'))
         jogo6 = JSON.parse(sessionStorage.getItem('RoundD6'))
+        tableD = JSON.parse(sessionStorage.getItem('tabelaD')) 
+            != null ?
+                JSON.parse(sessionStorage.getItem('tabelaD')) 
+                    :
+                    tableD
 
         setTimeout(addFunctionButton, 200)
         
@@ -388,85 +445,317 @@ export function GrupoD({group}){
                             <td rowSpan={1} className="classificado">1</td>
                             <td className="cedula-time1">
                                 <abbr className="cedula-time">
-                                    {Grupo != null
+                                    {tableD != null
                                         ?
-                                            Grupo[0].time
+                                            tableD[3].time
                                         :
                                             ''
                                     }
                                 </abbr>
                             </td>
-                            <td className="cedula-pontos"><b>0</b></td>
-                            <td className="cedula-jogos">0</td>
-                            <td className="cedula-vitorias">0</td>
-                            <td className="cedula-empates">0</td>
-                            <td className="cedula-derrotas">0</td>
-                            <td className="cedula-gols-pro">0</td>
-                            <td className="cedula-gols-contra">0</td>
-                            <td className="cedula-saldo-gols">0</td>
+                            <td className="cedula-pontos">
+                                <b>
+                                    {tableD != null
+                                        ?
+                                            tableD[3].p
+                                        :
+                                            0
+                                    }    
+                                </b>
+                            </td>
+                            <td className="cedula-jogos">
+                                {tableD != null
+                                    ?
+                                        tableD[3].j
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-vitorias">
+                                {tableD != null
+                                    ?
+                                        tableD[3].v
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-empates">
+                                {tableD != null
+                                    ?
+                                        tableD[3].e
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-derrotas">
+                                {tableD != null
+                                    ?
+                                        tableD[3].d
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-gols-pro">
+                                {tableD != null
+                                    ?
+                                        tableD[3].gp
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-gols-contra">
+                                {tableD != null
+                                    ?
+                                        tableD[3].gc
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-saldo-gols">
+                                {tableD != null
+                                    ?
+                                        tableD[3].sg
+                                    :
+                                        0
+                                }    
+                            </td>
                         </tr>
                         <tr>
                             <td rowSpan={1} className="classificado">2</td>
                             <td className="cedula-time2">
                                 <abbr className="cedula-time">
-                                    {Grupo != null
+                                    {tableD != null
                                         ?
-                                            Grupo[1].time
+                                            tableD[2].time
                                         :
                                             ''
                                     }                                    
                                 </abbr>
                             </td>
-                            <td className="cedula-pontos"><b>0</b></td>
-                            <td className="cedula-jogos">0</td>
-                            <td className="cedula-vitorias">0</td>
-                            <td className="cedula-empates">0</td>
-                            <td className="cedula-derrotas">0</td>
-                            <td className="cedula-gols-pro">0</td>
-                            <td className="cedula-gols-contra">0</td>
-                            <td className="cedula-saldo-gols">0</td>
+                            <td className="cedula-pontos">
+                                <b>
+                                    {tableD != null
+                                        ?
+                                            tableD[2].p
+                                        :
+                                            0
+                                    }    
+                                </b>
+                            </td>
+                            <td className="cedula-jogos">
+                                {tableD != null
+                                    ?
+                                        tableD[2].j
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-vitorias">
+                                {tableD != null
+                                    ?
+                                        tableD[2].v
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-empates">
+                                {tableD != null
+                                    ?
+                                        tableD[2].e
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-derrotas">
+                                {tableD != null
+                                    ?
+                                        tableD[2].d
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-gols-pro">
+                                {tableD != null
+                                    ?
+                                        tableD[2].gp
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-gols-contra">
+                                {tableD != null
+                                    ?
+                                        tableD[2].gc
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-saldo-gols">
+                                {tableD != null
+                                    ?
+                                        tableD[2].sg
+                                    :
+                                        0
+                                }    
+                            </td>
                         </tr>
                         <tr>
                             <td rowSpan={1} className="sul-americana">3</td>
                             <td className="cedula-time3">
                                 <abbr className="cedula-time">
-                                    {Grupo != null
+                                    {tableD != null
                                         ?
-                                            Grupo[2].time
+                                            tableD[1].time
                                         :
                                             ''
-                                    }                                    
+                                    }                    
                                 </abbr>
                             </td>
-                            <td className="cedula-pontos"><b>0</b></td>
-                            <td className="cedula-jogos">0</td>
-                            <td className="cedula-vitorias">0</td>
-                            <td className="cedula-empates">0</td>
-                            <td className="cedula-derrotas">0</td>
-                            <td className="cedula-gols-pro">0</td>
-                            <td className="cedula-gols-contra">0</td>
-                            <td className="cedula-saldo-gols">0</td>
+                            <td className="cedula-pontos">
+                                <b>
+                                    {tableD != null
+                                        ?
+                                            tableD[1].p
+                                        :
+                                            0
+                                    }    
+                                </b>
+                            </td>
+                            <td className="cedula-jogos">
+                                {tableD != null
+                                    ?
+                                        tableD[1].j
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-vitorias">
+                                {tableD != null
+                                    ?
+                                        tableD[1].v
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-empates">
+                                {tableD != null
+                                    ?
+                                        tableD[1].e
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-derrotas">
+                                {tableD != null
+                                    ?
+                                        tableD[1].d
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-gols-pro">
+                                {tableD != null
+                                    ?
+                                        tableD[1].gp
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-gols-contra">
+                                {tableD != null
+                                    ?
+                                        tableD[1].gc
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-saldo-gols">
+                                {tableD != null
+                                    ?
+                                        tableD[1].sg
+                                    :
+                                        0
+                                }    
+                            </td>
                         </tr>
                         <tr>
                             <td rowSpan={1} className="eliminado">4</td>
                             <td className="cedula-time4">
                                 <abbr className="cedula-time">
-                                    {Grupo != null
+                                    {tableD != null
                                         ?
-                                            Grupo[3].time
+                                            tableD[0].time
                                         :
                                             ''
-                                    }                                    
+                                    }                     
                                 </abbr>
                             </td>
-                            <td className="cedula-pontos"><b>0</b></td>
-                            <td className="cedula-jogos">0</td>
-                            <td className="cedula-vitorias">0</td>
-                            <td className="cedula-empates">0</td>
-                            <td className="cedula-derrotas">0</td>
-                            <td className="cedula-gols-pro">0</td>
-                            <td className="cedula-gols-contra">0</td>
-                            <td className="cedula-saldo-gols">0</td>
+                            <td className="cedula-pontos">
+                                <b>
+                                    {tableD != null
+                                        ?
+                                            tableD[0].p
+                                        :
+                                            0
+                                    }    
+                                </b>
+                            </td>
+                            <td className="cedula-jogos">
+                                {tableD != null
+                                    ?
+                                        tableD[0].j
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-vitorias">
+                                {tableD != null
+                                    ?
+                                        tableD[0].v
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-empates">
+                                {tableD != null
+                                    ?
+                                        tableD[0].e
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-derrotas">
+                                {tableD != null
+                                    ?
+                                        tableD[0].d
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-gols-pro">
+                                {tableD != null
+                                    ?
+                                        tableD[0].gp
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-gols-contra">
+                                {tableD != null
+                                    ?
+                                        tableD[0].gc
+                                    :
+                                        0
+                                }    
+                            </td>
+                            <td className="cedula-saldo-gols">
+                                {tableD != null
+                                    ?
+                                        tableD[0].sg
+                                    :
+                                        0
+                                }    
+                            </td>
                         </tr>
                     </tbody>    
                 </table>

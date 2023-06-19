@@ -1156,7 +1156,7 @@ export function Grupos(){
 
     return(
         <>
-            <Header fases='fase de grupos' previousLink='/terceira-fase' nextLink=''/>
+            <Header fases='fase de grupos' previousLink='/terceira-fase' nextLink='/oitavas-de-final'/>
 
             <GrupoA group={grupo1}/>
 
