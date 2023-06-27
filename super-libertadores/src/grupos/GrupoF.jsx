@@ -92,7 +92,50 @@ export function GrupoF({group}){
         let jogo5 = []
         let jogo6 = []
         let tableF
-        let rodada = 1
+
+        let saveResultsF1
+        let saveResultsF2
+        let saveResultsF3
+        let saveResultsF4
+        let saveResultsF5
+        let saveResultsF6
+
+        saveResultsF1 = JSON.parse(sessionStorage.getItem('JgFSF-1'))
+        saveResultsF2 = JSON.parse(sessionStorage.getItem('JgFSF-2'))
+        saveResultsF3 = JSON.parse(sessionStorage.getItem('JgFSF-3'))
+        saveResultsF4 = JSON.parse(sessionStorage.getItem('JgFSF-4'))
+        saveResultsF5 = JSON.parse(sessionStorage.getItem('JgFSF-5'))
+        saveResultsF6 = JSON.parse(sessionStorage.getItem('JgFSF-6'))
+
+        let rodadasJogadasGF = 1
+
+        let rodada1Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF1'))
+        let rodada2Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF2'))
+        let rodada3Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF3'))
+        let rodada4Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF4'))
+        let rodada5Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF5'))
+        let rodada6Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF6'))
+
+        let rodada1Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF1'))
+        let rodada2Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF2'))
+        let rodada3Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF3'))
+        let rodada4Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF4'))
+        let rodada5Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF5'))
+        let rodada6Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF6'))
+
+        let rodada1Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF1'))
+        let rodada2Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF2'))
+        let rodada3Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF3'))
+        let rodada4Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF4'))
+        let rodada5Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF5'))
+        let rodada6Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF6'))
+
+        let rodada1Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF1'))
+        let rodada2Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF2'))
+        let rodada3Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF3'))
+        let rodada4Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF4'))
+        let rodada5Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF5'))
+        let rodada6Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF6'))
 
         if(Grupo != null){
             TimeF1.time = Grupo[0].time
@@ -156,7 +199,210 @@ export function GrupoF({group}){
             sessionStorage.setItem('RoundF6', JSON.stringify(jogo6))
         }
 
-        function classificacao(){
+        limparAtr(TimeF1)
+        limparAtr(TimeF2)
+        limparAtr(TimeF3)
+        limparAtr(TimeF4)
+
+        if(rodada1Time1 != null){
+      
+            for (let index = 2; index < 7; index++) {
+                switch (index) {
+                    case 2:
+                        if(rodada2Time1 != null){
+                            rodadasJogadasGF = 2
+                        }
+                        break;
+    
+                    case 3:
+                        if(rodada3Time1 != null){
+                            rodadasJogadasGF = 3
+                        }
+                        break;
+    
+                    case 4:
+                        if(rodada4Time1 != null){
+                            rodadasJogadasGF = 4
+                        }
+                        break;
+    
+                    case 5:
+                        if(rodada5Time1 != null){
+                            rodadasJogadasGF = 5
+                        }
+                        break;
+    
+                    case 6:
+                        if(rodada6Time1 != null){
+                            rodadasJogadasGF = 6
+                        }
+                        break;
+                }
+            }
+    
+            setTimeout(() => {
+                insertPontos(rodada1Time1,rodada2Time1,rodada3Time1,rodada4Time1,rodada5Time1,rodada6Time1,TimeF1, false)
+                insertPontos(rodada1Time2,rodada2Time2,rodada3Time2,rodada4Time2,rodada5Time2,rodada6Time2,TimeF2, false)
+                insertPontos(rodada1Time3,rodada2Time3,rodada3Time3,rodada4Time3,rodada5Time3,rodada6Time3,TimeF3, false)
+                insertPontos(rodada1Time4,rodada2Time4,rodada3Time4,rodada4Time4,rodada5Time4,rodada6Time4,TimeF4, true)
+            }, 100)
+        }
+
+        function limparAtr(Team){
+            let informacoesTime = Team
+    
+            informacoesTime.j = 0
+            informacoesTime.p = 0
+            informacoesTime.v = 0
+            informacoesTime.e = 0
+            informacoesTime.d = 0
+            informacoesTime.gp = 0
+            informacoesTime.gc = 0
+            informacoesTime.sg = 0 
+        }
+
+        function insertPontos(rod1,rod2,rod3,rod4,rod5,rod6, timeOficial, condicao){
+            let rodada1 = rod1
+            let rodada2 = rod2
+            let rodada3 = rod3
+            let rodada4 = rod4
+            let rodada5 = rod5
+            let rodada6 = rod6
+            let TeamSave = timeOficial
+            let jogos = 0
+            let pontos = 0
+            let vitorias = 0
+            let empates = 0
+            let derrotas = 0
+            let GP = 0
+            let GC = 0
+            let SG = 0
+    
+            switch (rodadasJogadasGF) {
+                case 1:
+                    jogos = 1
+                    vitorias = rodada1.v
+                    empates = rodada1.e
+                    derrotas = rodada1.d
+                    GP = rodada1.gp 
+                    GC = rodada1.gc 
+                    SG = GP - GC
+                    break;
+    
+                case 2:
+                    jogos = 2
+                    vitorias = rodada1.v + rodada2.v
+                    empates = rodada1.e + rodada2.e
+                    derrotas = rodada1.d + rodada2.d
+                    GP = rodada1.gp + rodada2.gp
+                    GC = rodada1.gc + rodada2.gc
+                    SG = GP - GC
+                    break;
+    
+                case 3:
+                    jogos = 3
+                    vitorias = rodada1.v + rodada2.v + rodada3.v
+                    empates = rodada1.e + rodada2.e + rodada3.e
+                    derrotas = rodada1.d + rodada2.d + rodada3.d
+                    GP = rodada1.gp + rodada2.gp + rodada3.gp
+                    GC = rodada1.gc + rodada2.gc + rodada3.gc
+                    SG = GP - GC
+                    break;
+    
+                case 4:
+                    jogos = 4
+                    vitorias = rodada1.v + rodada2.v + rodada3.v + rodada4.v
+                    empates = rodada1.e + rodada2.e + rodada3.e + rodada4.e
+                    derrotas = rodada1.d + rodada2.d + rodada3.d + rodada4.d
+                    GP = rodada1.gp + rodada2.gp + rodada3.gp + rodada4.gp
+                    GC = rodada1.gc + rodada2.gc + rodada3.gc + rodada4.gc
+                    SG = GP - GC
+                    break;
+    
+                case 5:
+                    jogos = 5
+                    vitorias = rodada1.v + rodada2.v + rodada3.v + rodada4.v + rodada5.v
+                    empates = rodada1.e + rodada2.e + rodada3.e + rodada4.e + rodada5.e
+                    derrotas = rodada1.d + rodada2.d + rodada3.d + rodada4.d + rodada5.d
+                    GP = rodada1.gp + rodada2.gp + rodada3.gp + rodada4.gp + rodada5.gp
+                    GC = rodada1.gc + rodada2.gc + rodada3.gc + rodada4.gc + rodada5.gc
+                    SG = GP - GC
+                    break;
+    
+                case 6:
+                    jogos = 6
+                    vitorias = rodada1.v + rodada2.v + rodada3.v + rodada4.v + rodada5.v + rodada6.v
+                    empates = rodada1.e + rodada2.e + rodada3.e + rodada4.e + rodada5.e + rodada6.e
+                    derrotas = rodada1.d + rodada2.d + rodada3.d + rodada4.d + rodada5.d + rodada6.d
+                    GP = rodada1.gp + rodada2.gp + rodada3.gp + rodada4.gp + rodada5.gp + rodada6.gp
+                    GC = rodada1.gc + rodada2.gc + rodada3.gc + rodada4.gc + rodada5.gc + rodada6.gc
+                    SG = GP - GC
+                    break;
+            }
+    
+            pontos = vitorias * 3 + empates
+            TeamSave.j = jogos
+            TeamSave.p = pontos
+            TeamSave.v = vitorias
+            TeamSave.e = empates
+            TeamSave.d = derrotas
+            TeamSave.gp = GP
+            TeamSave.gc = GC
+            TeamSave.sg = SG
+    
+            if(condicao != false){
+                let tdTime = document.querySelectorAll('.cedula-time')
+                let tdPontos = document.querySelectorAll('.cedula-pontos')
+                let tdJogos = document.querySelectorAll('.cedula-jogos')
+                let tdVitorias = document.querySelectorAll('.cedula-vitorias')
+                let tdEmpates = document.querySelectorAll('.cedula-empates')
+                let tdDerrotas = document.querySelectorAll('.cedula-derrotas')
+                let tdGolsPro = document.querySelectorAll('.cedula-gols-pro')
+                let tdGolsContra = document.querySelectorAll('.cedula-gols-contra')
+                let tdSaldoGols  = document.querySelectorAll('.cedula-saldo-gols')   
+                let tableF = []
+                tableF[0] = TimeF1
+                tableF[1] = TimeF2
+                tableF[2] = TimeF3
+                tableF[3] = TimeF4
+    
+                tableF.sort((a,b) => {
+                    if(a.p > b.p ){
+                        return 1
+                    }
+                    if(a.p == b.p ){
+                        if(a.sg > 0){
+                            if(a.sg > b.sg){
+                                return 1
+                            }
+                        }
+                        if(a.sg < 0){
+                            if(a.sg > b.sg){
+                                return 1
+                            }
+                        }
+                    }else{
+                        return -1
+                    }
+                })
+        
+                let f = 3
+                for(let i = 20;i<24;i++){
+                    tdTime[i].innerText = tableF[f].time
+                    tdPontos[i].innerText = tableF[f].p
+                    tdJogos[i].innerText = tableF[f].j
+                    tdVitorias[i].innerText = tableF[f].v
+                    tdEmpates[i].innerText = tableF[f].e
+                    tdDerrotas[i].innerText = tableF[f].d
+                    tdGolsPro[i].innerText = tableF[f].gp
+                    tdGolsContra[i].innerText = tableF[f].gc
+                    tdSaldoGols[i].innerText = tableF[f].sg
+                    f--
+                }
+            }
+        }
+
+        function classificacao(rodada){
             const tdTime = document.querySelectorAll('.cedula-time')
             const tdPontos = document.querySelectorAll('.cedula-pontos')
             const tdJogos = document.querySelectorAll('.cedula-jogos')
@@ -166,11 +412,17 @@ export function GrupoF({group}){
             const tdGolsPro = document.querySelectorAll('.cedula-gols-pro')
             const tdGolsContra = document.querySelectorAll('.cedula-gols-contra')
             const tdSaldoGols  = document.querySelectorAll('.cedula-saldo-gols')
+            rodadasJogadasGF = rodada
             //tableF = []
             //tableF[0] = TimeF1
             //tableF[1] = TimeF2
             //tableF[2] = TimeF3
             //tableF[3] = TimeF4
+
+            insertPontos(rodada1Time1,rodada2Time1,rodada3Time1,rodada4Time1,rodada5Time1,rodada6Time1,TimeF1, false)
+            insertPontos(rodada1Time2,rodada2Time2,rodada3Time2,rodada4Time2,rodada5Time2,rodada6Time2,TimeF2, false)
+            insertPontos(rodada1Time3,rodada2Time3,rodada3Time3,rodada4Time3,rodada5Time3,rodada6Time3,TimeF3, false)
+            insertPontos(rodada1Time4,rodada2Time4,rodada3Time4,rodada4Time4,rodada5Time4,rodada6Time4,TimeF4, false)
 
             tableF.sort((a,b) => {
                 if(a.p > b.p ){
@@ -211,7 +463,7 @@ export function GrupoF({group}){
                 f--
             }
 
-            if(rodada == 6){
+            if(rodadasJogadasGF == 6){
                 tableF[3].group = 'F'
                 tableF[3].position = 1
                 tableF[2].group = 'F'
@@ -220,9 +472,6 @@ export function GrupoF({group}){
                 newOitavas(tableF[3], 10)
                 newOitavas(tableF[2], 11)
             }
-            rodada++
-
-            sessionStorage.setItem('tabelaF', JSON.stringify(tableF))
         }
 
         function insertResultsGame(resultadoPro, resultadoContra, Team){
@@ -255,12 +504,17 @@ export function GrupoF({group}){
             let resultsGames = document.querySelectorAll('.input-time-resultado')
 
             buttonSaveResult[30].addEventListener('click', function setResult(){
+                let jogo = []
                 let listResults = []
                 listResults.push(resultsGames[120].value)
                 listResults.push(resultsGames[121].value)
                 listResults.push(resultsGames[122].value)
                 listResults.push(resultsGames[123].value)
     
+                if(saveResultsF1 != null){
+                    console.log('Resultadores já registrados')
+                    return
+                }
                 for(let i = 0; i<listResults.length; i++){
                     if(!listResults[i])return
                 }
@@ -268,136 +522,291 @@ export function GrupoF({group}){
                     resultsGames[i].setAttribute('readonly', 'readonly');
                 }
                 
+                jogo[0] = listResults[0]
+                jogo[1] = listResults[1]
+                jogo[2] = listResults[2]
+                jogo[3] = listResults[3]
+
+                sessionStorage.setItem('JgFSF-1', JSON.stringify(jogo))
+                saveResultsF1 = JSON.parse(sessionStorage.getItem('JgFSF-1'))
+                
+                limparAtr(TimeF1)
+                limparAtr(TimeF2)
+                limparAtr(TimeF3)
+                limparAtr(TimeF4)
                 insertResultsGame(listResults[0], listResults[1], TimeF2)
                 insertResultsGame(listResults[1], listResults[0], TimeF3)
                 insertResultsGame(listResults[2], listResults[3], TimeF1)
                 insertResultsGame(listResults[3], listResults[2], TimeF4)
-                classificacao()
+                sessionStorage.setItem('TIME1-RODF1', JSON.stringify(TimeF1))
+                rodada1Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF1'))
+                sessionStorage.setItem('TIME2-RODF1', JSON.stringify(TimeF2))
+                rodada1Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF1'))
+                sessionStorage.setItem('TIME3-RODF1', JSON.stringify(TimeF3))
+                rodada1Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF1'))
+                sessionStorage.setItem('TIME4-RODF1', JSON.stringify(TimeF4))
+                rodada1Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF1'))
+                classificacao(1)
                 this.removeEventListener('click', setResult)
                 this.classList.add('btn-disabled')
             })
             buttonSaveResult[31].addEventListener('click', function setResult(){
+                let jogo = []
                 let listResults = []
                 listResults.push(resultsGames[124].value)
                 listResults.push(resultsGames[125].value)
                 listResults.push(resultsGames[126].value)
                 listResults.push(resultsGames[127].value)
+
+                if(saveResultsF1 == undefined){
+                    console.log('Resultado do primeiro jogo não registrado')
+                    return
+                }
+                if(saveResultsF2 != null){
+                    console.log('Resultadores já registrados')
+                    return
+                }
     
                 for(let i = 0; i<listResults.length; i++){
                     if(!listResults[i])return
-                }
-                if(buttonSaveResult[30].classList.contains('btn-disabled') == false){
-                    return
                 }
                 for(let i = 124; i<128; i++){
                     resultsGames[i].setAttribute('readonly', 'readonly');
                 }
     
+                jogo[0] = Number(listResults[0])
+                jogo[1] = Number(listResults[1])
+                jogo[2] = Number(listResults[2])
+                jogo[3] = Number(listResults[3])
+
+                sessionStorage.setItem('JgFSF-2', JSON.stringify(jogo))
+                saveResultsF2 = JSON.parse(sessionStorage.getItem('JgFSF-2'))
+
+                limparAtr(TimeF1)
+                limparAtr(TimeF2)
+                limparAtr(TimeF3)
+                limparAtr(TimeF4)
                 insertResultsGame(listResults[0], listResults[1], TimeF4)
                 insertResultsGame(listResults[1], listResults[0], TimeF2)
                 insertResultsGame(listResults[2], listResults[3], TimeF3)
                 insertResultsGame(listResults[3], listResults[2], TimeF1)
-                classificacao()
+                sessionStorage.setItem('TIME1-RODF2', JSON.stringify(TimeF1))
+                rodada2Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF2'))
+                sessionStorage.setItem('TIME2-RODF2', JSON.stringify(TimeF2))
+                rodada2Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF2'))
+                sessionStorage.setItem('TIME3-RODF2', JSON.stringify(TimeF3))
+                rodada2Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF2'))
+                sessionStorage.setItem('TIME4-RODF2', JSON.stringify(TimeF4))
+                rodada2Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF2'))
+                classificacao(2)
                 this.removeEventListener('click', setResult)
                 this.classList.add('btn-disabled')
             })
             buttonSaveResult[32].addEventListener('click', function setResult(){
+                let jogo = []
                 let listResults = []
                 listResults.push(resultsGames[128].value)
                 listResults.push(resultsGames[129].value)
                 listResults.push(resultsGames[130].value)
                 listResults.push(resultsGames[131].value)
+
+                if(saveResultsF2 == undefined){
+                    console.log('Resultado do primeiro jogo não registrado')
+                    return
+                }
+                if(saveResultsF3 != null){
+                    console.log('Resultadores já registrados')
+                    return
+                }
     
                 for(let i = 0; i<listResults.length; i++){
                     if(!listResults[i])return
-                }
-                if(buttonSaveResult[31].classList.contains('btn-disabled') == false){
-                    return
                 }
                 for(let i = 128; i<132; i++){
                     resultsGames[i].setAttribute('readonly', 'readonly');
                 }
     
+                jogo[0] = Number(listResults[0])
+                jogo[1] = Number(listResults[1])
+                jogo[2] = Number(listResults[2])
+                jogo[3] = Number(listResults[3])
+
+                sessionStorage.setItem('JgFSF-3', JSON.stringify(jogo))
+                saveResultsF3 = JSON.parse(sessionStorage.getItem('JgFSF-3'))
+
+                limparAtr(TimeF1)
+                limparAtr(TimeF2)
+                limparAtr(TimeF3)
+                limparAtr(TimeF4)
                 insertResultsGame(listResults[0], listResults[1], TimeF2)
                 insertResultsGame(listResults[1], listResults[0], TimeF1)
                 insertResultsGame(listResults[2], listResults[3], TimeF4)
                 insertResultsGame(listResults[3], listResults[2], TimeF3)
-                classificacao()
+                sessionStorage.setItem('TIME1-RODF3', JSON.stringify(TimeF1))
+                rodada3Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF3'))
+                sessionStorage.setItem('TIME2-RODF3', JSON.stringify(TimeF2))
+                rodada3Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF3'))
+                sessionStorage.setItem('TIME3-RODF3', JSON.stringify(TimeF3))
+                rodada3Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF3'))
+                sessionStorage.setItem('TIME4-RODF3', JSON.stringify(TimeF4))
+                rodada3Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF3'))
+                classificacao(3)
                 this.removeEventListener('click', setResult)
                 this.classList.add('btn-disabled')
             })
             buttonSaveResult[33].addEventListener('click', function setResult(){
+                let jogo = []
                 let listResults = []
                 listResults.push(resultsGames[132].value)
                 listResults.push(resultsGames[133].value)
                 listResults.push(resultsGames[134].value)
                 listResults.push(resultsGames[135].value)
+
+                if(saveResultsF3 == undefined){
+                    console.log('Resultado do primeiro jogo não registrado')
+                    return
+                }
+                if(saveResultsF4 != null){
+                    console.log('Resultadores já registrados')
+                    return
+                }
     
                 for(let i = 0; i<listResults.length; i++){
                     if(!listResults[i])return
-                }
-                if(buttonSaveResult[32].classList.contains('btn-disabled') == false){
-                    return
                 }
                 for(let i = 132; i<136; i++){
                     resultsGames[i].setAttribute('readonly', 'readonly');
                 }
     
+                jogo[0] = Number(listResults[0])
+                jogo[1] = Number(listResults[1])
+                jogo[2] = Number(listResults[2])
+                jogo[3] = Number(listResults[3])
+
+                sessionStorage.setItem('JgFSF-4', JSON.stringify(jogo))
+                saveResultsF4 = JSON.parse(sessionStorage.getItem('JgFSF-4'))
+
+                limparAtr(TimeF1)
+                limparAtr(TimeF2)
+                limparAtr(TimeF3)
+                limparAtr(TimeF4)
                 insertResultsGame(listResults[0], listResults[1], TimeF3)
                 insertResultsGame(listResults[1], listResults[0], TimeF4)
                 insertResultsGame(listResults[2], listResults[3], TimeF1)
                 insertResultsGame(listResults[3], listResults[2], TimeF2)
-                classificacao()
+                sessionStorage.setItem('TIME1-RODF4', JSON.stringify(TimeF1))
+                rodada4Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF4'))
+                sessionStorage.setItem('TIME2-RODF4', JSON.stringify(TimeF2))
+                rodada4Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF4'))
+                sessionStorage.setItem('TIME3-RODF4', JSON.stringify(TimeF3))
+                rodada4Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF4'))
+                sessionStorage.setItem('TIME4-RODF4', JSON.stringify(TimeF4))
+                rodada4Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF4'))
+                classificacao(4)
                 this.removeEventListener('click', setResult)
                 this.classList.add('btn-disabled')
             })
             buttonSaveResult[34].addEventListener('click', function setResult(){
+                let jogo = []
                 let listResults = []
                 listResults.push(resultsGames[136].value)
                 listResults.push(resultsGames[137].value)
                 listResults.push(resultsGames[138].value)
                 listResults.push(resultsGames[139].value)
     
+                if(saveResultsF4 == undefined){
+                    console.log('Resultado do primeiro jogo não registrado')
+                    return
+                }
+                if(saveResultsF5 != null){
+                    console.log('Resultadores já registrados')
+                    return
+                }
+
                 for(let i = 0; i<listResults.length; i++){
                     if(!listResults[i])return
-                }
-                if(buttonSaveResult[33].classList.contains('btn-disabled') == false){
-                    return
                 }
                 for(let i = 136; i<140; i++){
                     resultsGames[i].setAttribute('readonly', 'readonly');
                 }
     
+                jogo[0] = Number(listResults[0])
+                jogo[1] = Number(listResults[1])
+                jogo[2] = Number(listResults[2])
+                jogo[3] = Number(listResults[3])
+
+                sessionStorage.setItem('JgFSF-5', JSON.stringify(jogo))
+                saveResultsF5 = JSON.parse(sessionStorage.getItem('JgFSF-5'))
+                
+                limparAtr(TimeF1)
+                limparAtr(TimeF2)
+                limparAtr(TimeF3)
+                limparAtr(TimeF4)
                 insertResultsGame(listResults[0], listResults[1], TimeF1)
                 insertResultsGame(listResults[1], listResults[0], TimeF3)
                 insertResultsGame(listResults[2], listResults[3], TimeF2)
                 insertResultsGame(listResults[3], listResults[2], TimeF4)
-                classificacao()
+                sessionStorage.setItem('TIME1-RODF5', JSON.stringify(TimeF1))
+                rodada5Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF5'))
+                sessionStorage.setItem('TIME2-RODF5', JSON.stringify(TimeF2))
+                rodada5Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF5'))
+                sessionStorage.setItem('TIME3-RODF5', JSON.stringify(TimeF3))
+                rodada5Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF5'))
+                sessionStorage.setItem('TIME4-RODF5', JSON.stringify(TimeF4))
+                rodada5Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF5'))
+                classificacao(5)
                 this.removeEventListener('click', setResult)
                 this.classList.add('btn-disabled')
             })
             buttonSaveResult[35].addEventListener('click', function setResult(){
+                let jogo = []
                 let listResults = []
                 listResults.push(resultsGames[140].value)
                 listResults.push(resultsGames[141].value)
                 listResults.push(resultsGames[142].value)
                 listResults.push(resultsGames[143].value)
+
+                if(saveResultsF5 == undefined){
+                    console.log('Resultado do primeiro jogo não registrado')
+                    return
+                }
+                if(saveResultsF6 != null){
+                    console.log('Resultadores já registrados')
+                    return
+                }
     
                 for(let i = 0; i<listResults.length; i++){
                     if(!listResults[i])return
-                }
-                if(buttonSaveResult[34].classList.contains('btn-disabled') == false){
-                    return
                 }
                 for(let i = 140; i<144; i++){
                     resultsGames[i].setAttribute('readonly', 'readonly');
                 }
     
+                jogo[0] = Number(listResults[0])
+                jogo[1] = Number(listResults[1])
+                jogo[2] = Number(listResults[2])
+                jogo[3] = Number(listResults[3])
+
+                sessionStorage.setItem('JgFSF-6', JSON.stringify(jogo))
+                saveResultsF6 = JSON.parse(sessionStorage.getItem('JgFSF-6'))
+
+                limparAtr(TimeF1)
+                limparAtr(TimeF2)
+                limparAtr(TimeF3)
+                limparAtr(TimeF4)
                 insertResultsGame(listResults[0], listResults[1], TimeF4)
                 insertResultsGame(listResults[1], listResults[0], TimeF1)
                 insertResultsGame(listResults[2], listResults[3], TimeF3)
                 insertResultsGame(listResults[3], listResults[2], TimeF2)
-                classificacao()
+                sessionStorage.setItem('TIME1-RODF6', JSON.stringify(TimeF1))
+                rodada6Time1 = JSON.parse(sessionStorage.getItem('TIME1-RODF6'))
+                sessionStorage.setItem('TIME2-RODF6', JSON.stringify(TimeF2))
+                rodada6Time2 = JSON.parse(sessionStorage.getItem('TIME2-RODF6'))
+                sessionStorage.setItem('TIME3-RODF6', JSON.stringify(TimeF3))
+                rodada6Time3 = JSON.parse(sessionStorage.getItem('TIME3-RODF6'))
+                sessionStorage.setItem('TIME4-RODF6', JSON.stringify(TimeF4))
+                rodada6Time4 = JSON.parse(sessionStorage.getItem('TIME4-RODF6'))
+                classificacao(6)
                 this.removeEventListener('click', setResult)
                 this.classList.add('btn-disabled')
             })
@@ -409,11 +818,6 @@ export function GrupoF({group}){
         jogo4 = JSON.parse(sessionStorage.getItem('RoundF4'))
         jogo5 = JSON.parse(sessionStorage.getItem('RoundF5'))
         jogo6 = JSON.parse(sessionStorage.getItem('RoundF6'))
-        tableF = JSON.parse(sessionStorage.getItem('tabelaF')) 
-            != null ?
-                JSON.parse(sessionStorage.getItem('tabelaF')) 
-                    :
-                    tableF
 
         setTimeout(addFunctionButton, 200)
 
@@ -780,9 +1184,31 @@ export function GrupoF({group}){
                                                             {jogo1 && <img src={jogo1[0].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF1 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF1[0]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF1 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF1[1]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo1 && <img src={jogo1[1].url} alt="" />}    
@@ -803,9 +1229,31 @@ export function GrupoF({group}){
                                                             {jogo1 && <img src={jogo1[2].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF1 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF1[2]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF1 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF1[3]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo1 && <img src={jogo1[3].url} alt="" />}    
@@ -836,9 +1284,31 @@ export function GrupoF({group}){
                                                             {jogo2 && <img src={jogo2[0].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF2 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF2[0]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF2 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF2[1]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo2 && <img src={jogo2[1].url} alt="" />}                    
@@ -859,9 +1329,31 @@ export function GrupoF({group}){
                                                             {jogo2 && <img src={jogo2[2].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF2 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF2[2]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF2 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF2[3]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo2 && <img src={jogo2[3].url} alt="" />}                    
@@ -892,9 +1384,31 @@ export function GrupoF({group}){
                                                             {jogo3 && <img src={jogo3[0].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF3 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF3[0]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF3 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF3[1]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo3 && <img src={jogo3[1].url} alt="" />}                    
@@ -915,9 +1429,31 @@ export function GrupoF({group}){
                                                             {jogo3 && <img src={jogo3[2].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF3 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF3[2]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF3 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF3[3]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo3 && <img src={jogo3[3].url} alt="" />}                    
@@ -948,9 +1484,31 @@ export function GrupoF({group}){
                                                             {jogo4 && <img src={jogo4[0].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF4 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF4[0]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF4 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF4[1]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo4 && <img src={jogo4[1].url} alt="" />}                    
@@ -971,9 +1529,31 @@ export function GrupoF({group}){
                                                             {jogo4 && <img src={jogo4[2].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF4 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF4[2]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF4 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF4[3]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo4 && <img src={jogo4[3].url} alt="" />}                    
@@ -1004,9 +1584,31 @@ export function GrupoF({group}){
                                                             {jogo5 && <img src={jogo5[0].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF5 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF5[0]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF5 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF5[1]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo5 && <img src={jogo5[1].url} alt="" />}                    
@@ -1027,9 +1629,31 @@ export function GrupoF({group}){
                                                             {jogo5 && <img src={jogo5[2].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF5 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF5[2]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF5 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF5[3]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo5 && <img src={jogo5[3].url} alt="" />}                    
@@ -1060,9 +1684,31 @@ export function GrupoF({group}){
                                                             {jogo6 && <img src={jogo6[0].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF6 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF6[0]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF6 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF6[1]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo6 && <img src={jogo6[1].url} alt="" />}                    
@@ -1083,9 +1729,31 @@ export function GrupoF({group}){
                                                             {jogo6 && <img src={jogo6[2].url} alt="" />}                    
                                                         </span>
                                                     </span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF6 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF6[2]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span>X</span>
-                                                    <input type="text" className="input-time-resultado" />
+                                                    {
+                                                        saveResultsF6 != null
+                                                            ?
+                                                                <input 
+                                                                    type="text" 
+                                                                    className="input-time-resultado" 
+                                                                    value={saveResultsF6[3]}
+                                                                    readOnly
+                                                                />
+                                                            :
+                                                                <input type="text" className="input-time-resultado" />
+                                                    }
                                                     <span className="jogo">
                                                         <span className="confronto">
                                                             {jogo6 && <img src={jogo6[3].url} alt="" />}                    
