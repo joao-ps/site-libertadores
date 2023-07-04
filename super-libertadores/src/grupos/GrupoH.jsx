@@ -17,7 +17,11 @@ export function GrupoH({group}){
         newOitavas,
         previaOitavas,
         newQuartas,
-        previaQuartas
+        previaQuartas,
+        newSemi,
+        previaSemi,
+        newFinal,
+        previaFinal
     ] = useContext(FaseFinal)
     
     let Grupo = group
@@ -417,11 +421,6 @@ export function GrupoH({group}){
             const tdGolsContra = document.querySelectorAll('.cedula-gols-contra')
             const tdSaldoGols  = document.querySelectorAll('.cedula-saldo-gols')
             rodadasJogadasGH = rodada
-            //tableH = []
-            //tableH[0] = TimeH1
-            //tableH[1] = TimeH2
-            //tableH[2] = TimeH3
-            //tableH[3] = TimeH4
 
             insertPontos(rodada1Time1,rodada2Time1,rodada3Time1,rodada4Time1,rodada5Time1,rodada6Time1,TimeH1, false)
             insertPontos(rodada1Time2,rodada2Time2,rodada3Time2,rodada4Time2,rodada5Time2,rodada6Time2,TimeH2, false)

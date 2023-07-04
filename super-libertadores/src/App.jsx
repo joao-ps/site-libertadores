@@ -17,6 +17,8 @@ function App() {
     let previaFaseDeGrupos = []
     let previaOitavas = []
     let previaQuartas = []
+    let previaSemi = []
+    let previaFinal = []
 
     function newPrevSegundaFase(newTeam, posArray){
       if(posArray == undefined){
@@ -59,6 +61,22 @@ function App() {
       }
       console.log(previaQuartas)
     }
+    function newSemi(newTeam, posArray){
+      if(posArray == undefined){
+        previaSemi.push(newTeam)
+      }else{
+        previaSemi[posArray] = newTeam
+      }
+      console.log(previaSemi)
+    }
+    function newFinal(newTeam, posArray){
+      if(posArray == undefined){
+        previaFinal.push(newTeam)
+      }else{
+        previaFinal[posArray] = newTeam
+      }
+      console.log(previaFinal)
+    }
 
   return (
     <BrowserRouter>
@@ -74,7 +92,11 @@ function App() {
         newOitavas,
         previaOitavas,
         newQuartas,
-        previaQuartas
+        previaQuartas,
+        newSemi,
+        previaSemi,
+        newFinal,
+        previaFinal
       ]}>
         <div className="container">
           <div className="fases-da-competicao">

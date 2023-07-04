@@ -17,7 +17,11 @@ export function GrupoE({group}){
         newOitavas,
         previaOitavas,
         newQuartas,
-        previaQuartas
+        previaQuartas,
+        newSemi,
+        previaSemi,
+        newFinal,
+        previaFinal
     ] = useContext(FaseFinal)
     
     let Grupo = group
