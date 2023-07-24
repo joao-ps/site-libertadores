@@ -375,18 +375,28 @@ export function GrupoH({group}){
                 tableH[3] = TimeH4
     
                 tableH.sort((a,b) => {
-                    if(a.p > b.p ){
+                    if(a.p > b.p){
                         return 1
-                    }
-                    if(a.p == b.p ){
-                        if(a.sg > 0){
+                    }else if(a.p == b.p){
+                        if(a.v > b.v){
+                            return 1
+                        }
+                        else if(a.v == b.v){
                             if(a.sg > b.sg){
                                 return 1
                             }
-                        }
-                        if(a.sg < 0){
-                            if(a.sg > b.sg){
-                                return 1
+                            else if(a.sg == b.sg){
+                                if(a.gp > b.gp){
+                                    return 1
+                                }else if(a.gp == b.gp){
+                                    if(a.d < b.d){
+                                        return 1
+                                    }else if(a.d == b.d){
+                                        if(a.gc < b.gc){
+                                            return 1
+                                        }
+                                    }
+                                }
                             }
                         }
                     }else{
@@ -428,23 +438,28 @@ export function GrupoH({group}){
             insertPontos(rodada1Time4,rodada2Time4,rodada3Time4,rodada4Time4,rodada5Time4,rodada6Time4,TimeH4, false)
 
             tableH.sort((a,b) => {
-                if(a.p > b.p ){
+                if(a.p > b.p){
                     return 1
-                }
-                if(a.p == b.p ){
-                    if(a.sg == b.sg){
-                        if(a.gp > b.gp){
-                            return 1
-                        }
+                }else if(a.p == b.p){
+                    if(a.v > b.v){
+                        return 1
                     }
-                    if(a.sg > 0){
+                    else if(a.v == b.v){
                         if(a.sg > b.sg){
                             return 1
                         }
-                    }
-                    if(a.sg < 0){
-                        if(a.sg > b.sg){
-                            return 1
+                        else if(a.sg == b.sg){
+                            if(a.gp > b.gp){
+                                return 1
+                            }else if(a.gp == b.gp){
+                                if(a.d < b.d){
+                                    return 1
+                                }else if(a.d == b.d){
+                                    if(a.gc < b.gc){
+                                        return 1
+                                    }
+                                }
+                            }
                         }
                     }
                 }else{

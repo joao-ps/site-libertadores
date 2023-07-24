@@ -39,6 +39,12 @@
     display: grid
     grid-template-columns: 5fr 4fr
 
+    @media screen and ( max-width:  1250px)
+        grid-template-columns: 6fr 4fr
+
+    @media screen and ( max-width:  1050px)
+        grid-template-columns: 1fr 
+
 .container-table-jogos abbr
     text-decoration: none
     
@@ -82,6 +88,10 @@ tbody td
     padding: 13px 0
     font-size: 1.7rem
     text-transform: capitalize
+
+    @media screen and ( max-width:  1250px)
+        padding: 15px 0
+        font-size: 1.5rem
             
 tbody td:nth-child(2)
     border-right: 1px solid #a2a2a2
@@ -128,6 +138,9 @@ tbody tr td.eliminado ~ td:nth-child(odd)
     border-top: 1px solid #a2a2a2
     border-bottom: 1px solid #a2a2a2
     padding: 7.7px 0
+
+    @media screen and ( max-width:  1250px)
+        padding: 9.5px 0
     
 .container-jogos-fase-grupo .container-translate-rodada
     width: 100%
@@ -153,6 +166,17 @@ tbody tr td.eliminado ~ td:nth-child(odd)
     padding: 23.5px 0
     border-bottom: 1px solid #cccccc91
 
+    @media screen and ( max-width:  1250px)
+        padding: 30px 0
+        //border-bottom: none
+
+    @media screen and ( max-width:  1050px)
+        padding: 20px 0
+        height: 118px
+
+    @media screen and ( max-width:  550px)
+        height: 118px
+
 .container-jogo-1,.container-jogo-2 p
     text-align: center
             
@@ -162,6 +186,9 @@ p.information-jogo
     color: #808080
     font-weight: 800
     padding-bottom: 10px
+
+    @media screen and ( max-width:  1050px)
+        padding: 7px 0
             
 span.stadium
     font-weight: 400

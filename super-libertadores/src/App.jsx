@@ -12,6 +12,12 @@ import { Rotas } from './componentes/routes/Routes'
 import './styles/app.sass'
 
 function App() {
+    function teste(){
+      console.log('Teste deu certo')
+    }
+
+    window.onresize = teste
+
     let previaSegundaFase = []
     let previaTerceiraFase = []
     let previaFaseDeGrupos = []

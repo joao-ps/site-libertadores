@@ -3,6 +3,8 @@ import { useContext } from "react"
 import { Header } from "../componentes/Header"
 import { FaseFinal } from "../componentes/api/getTeams"
 
+import '../styles/finalissima.sass'
+
 export function Final(){
     let [
         newOitavas,
@@ -43,12 +45,15 @@ export function Final(){
             jogo1[1] = Number(result2)
 
             sessionStorage.setItem('Final', JSON.stringify(jogo1))
-            saveResults1 = JSON.parse(sessionStorage.getItem('Final'))
+
+            if(jogo1[0] != jogo1[1]){
+                saveResults1 = JSON.parse(sessionStorage.getItem('Final'))
+            }
 
             resultsGames[0].setAttribute('readonly', 'readonly')
             resultsGames[1].setAttribute('readonly', 'readonly')
 
-            if(saveResults1[0] == saveResults1[1]){
+            if(jogo1[0] == jogo1[1]){
                 containerPenaltis[0].classList.add('on') 
             }
 
@@ -90,6 +95,30 @@ export function Final(){
         confronto.sort((a,b) => {
             if(a.p > b.p){
                 return 1
+            }else if(a.p == b.p){
+                if(a.v > b.v){
+                    return 1
+                }
+                else if(a.v == b.v){
+                    if(a.sg > b.sg){
+                        return 1
+                    }
+                    else if(a.sg == b.sg){
+                        if(a.gp > b.gp){
+                            return 1
+                        }else if(a.gp == b.gp){
+                            if(a.d < b.d){
+                                return 1
+                            }else if(a.d == b.d){
+                                if(a.gc < b.gc){
+                                    return 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }else{
+                return -1
             }
         })
 
@@ -113,16 +142,16 @@ export function Final(){
             <div className="fasesEliminatorias">
                 <h2>jogos</h2>
 
-                <div className="confrontos">
-                    <div className="confrontoUm">
-                        <div className="ida">
-                        <p className="information-jogo">sábado <span className="stadium">
+                <div className="containerConfronto">
+                    <div className="ultimoConfronto">
+                        <div className="final">
+                            <p className="lastGame">sábado <span className="stadium">
                                 {Estadio}
                             </span> 17:00</p>
-                            <p className='gameInformation'>
+                            <p className='information'>
                                 <span className='team'>
-                                    {confronto1 && confronto1[1].time}                        
-                                    {confronto1 && <img src={confronto1[1].url} alt="" />}                                           
+                                    {confronto1 && confronto1[1].time}                         
+                                    {confronto1 && <img src={confronto1[1].url} alt="" />}                                            
                                 </span>
                                 <span className="containerInput">
                                     {
@@ -130,12 +159,12 @@ export function Final(){
                                             ?
                                                 <input 
                                                     type="text" 
-                                                    className='input-time-resultado'
+                                                    className='inputFinal'
                                                     value={saveResults1[0]}
                                                     readOnly
                                                 />
                                             :
-                                                <input type="text" className='input-time-resultado'/>
+                                                <input type="text" className='inputFinal'/>
                                     }
                                 </span>
                                 <span>x</span>
@@ -145,21 +174,21 @@ export function Final(){
                                             ?
                                                 <input 
                                                     type="text" 
-                                                    className='input-time-resultado'
+                                                    className='inputFinal'
                                                     value={saveResults1[1]}
                                                     readOnly
                                                 />
                                             :
-                                                <input type="text" className='input-time-resultado'/>
+                                                <input type="text" className='inputFinal'/>
                                     }
                                 </span>
                                 <span className='team'>
                                     {confronto1 && <img src={confronto1[0].url} alt="" />}    
-                                    {confronto1 && confronto1[0].time}                                                               
+                                    {confronto1 && confronto1[0].time}
                                 </span>
                             </p>
 
-                            <div className="containerBtnSalvar">
+                            <div className="containerBtnSalvarFinal">
                                 <button className='button btnSalvarResultado'>salvar</button>
                             </div>
                         </div>

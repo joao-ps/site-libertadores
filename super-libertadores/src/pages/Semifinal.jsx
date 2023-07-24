@@ -132,15 +132,10 @@ export function Semifinal(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('JgSemi-2', JSON.stringify(jogo2))
-            saveResults2 = JSON.parse(sessionStorage.getItem('JgSemi-2'))
+            //saveResults2 = JSON.parse(sessionStorage.getItem('JgSemi-2'))
 
             resultsGames[2].setAttribute('readonly', 'readonly')
             resultsGames[3].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto1[1], saveResults1[1], saveResults2[0], saveResults1[0], saveResults2[1])
-            resultsUpdate(confronto1[0], saveResults1[0], saveResults2[1], saveResults1[1], saveResults2[0])
-            console.log(confronto1[0])
-            console.log(confronto1[1])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[0].value == resultsGames[2].value && resultsGames[1].value == resultsGames[3].value){
@@ -201,6 +196,11 @@ export function Semifinal(){
                 }
             }
 
+            if(previaFinal.length == 1){
+                resultsUpdate(confronto1[1], saveResults1[1], jogo2[0], saveResults1[0], jogo2[1])
+                resultsUpdate(confronto1[0], saveResults1[0], jogo2[1], saveResults1[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -252,13 +252,10 @@ export function Semifinal(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('JgSemi-4', JSON.stringify(jogo2))
-            saveResults4 = JSON.parse(sessionStorage.getItem('JgSemi-4'))
+            //saveResults4 = JSON.parse(sessionStorage.getItem('JgSemi-4'))
 
             resultsGames[6].setAttribute('readonly', 'readonly')
             resultsGames[7].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto2[1], saveResults3[1], saveResults4[0], saveResults3[0], saveResults4[1])
-            resultsUpdate(confronto2[0], saveResults3[0], saveResults4[1], saveResults3[1], saveResults4[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[4].value == resultsGames[6].value && resultsGames[5].value == resultsGames[7].value){
@@ -319,6 +316,11 @@ export function Semifinal(){
                 }
             }
 
+            if(previaFinal.length == 2){
+                resultsUpdate(confronto2[1], saveResults3[1], jogo2[0], saveResults3[0], jogo2[1])
+                resultsUpdate(confronto2[0], saveResults3[0], jogo2[1], saveResults3[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -330,6 +332,30 @@ export function Semifinal(){
         confronto.sort((a,b) => {
             if(a.p > b.p){
                 return 1
+            }else if(a.p == b.p){
+                if(a.v > b.v){
+                    return 1
+                }
+                else if(a.v == b.v){
+                    if(a.sg > b.sg){
+                        return 1
+                    }
+                    else if(a.sg == b.sg){
+                        if(a.gp > b.gp){
+                            return 1
+                        }else if(a.gp == b.gp){
+                            if(a.d < b.d){
+                                return 1
+                            }else if(a.d == b.d){
+                                if(a.gc < b.gc){
+                                    return 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }else{
+                return -1
             }
         })
 

@@ -256,6 +256,120 @@ export function GrupoA({group}){
         }, 100)
     }
 
+    function setTeamPage(newTeam, num, localizacao){
+        let confronto = document.querySelectorAll('.confronto')
+        let team = newTeam
+        let numero = num
+        let local = localizacao
+
+        //if(sessionStorage.getItem('RoundA1') != null){
+            if(local == 'ida'){
+                confronto[numero].innerHTML = `
+                    ${team.time}
+                    <img src=${team.url} alt="" />
+                `
+            }else{
+                confronto[numero].innerHTML = `
+                    <img src=${team.url} alt="" />
+                    ${team.time}
+                `
+            }
+        //}
+    }
+
+    function pageAlternatives(newTeam, num, localizacao){
+        let confronto = document.querySelectorAll('.confronto')
+        let team = newTeam
+        let numero = num
+        let local = localizacao
+
+        console.log('setTeamPage2')
+
+        //if(sessionStorage.getItem('RoundA1') != null){
+            if(local == 'ida'){
+                confronto[numero].innerHTML = `
+                    ${team.namePlacar}
+                    <img src=${team.url} alt="" />
+                `
+            }else{
+                confronto[numero].innerHTML = `
+                    <img src=${team.url} alt="" />
+                    ${team.namePlacar}
+                `
+            }
+        //}
+    }
+
+    function rezise(){
+                            
+        if(window.innerWidth < 1000){
+            setTeamPage(jogo1[0], 0, 'ida')
+            setTeamPage(jogo1[1], 1, 'volta')
+            setTeamPage(jogo1[2], 2, 'ida')
+            setTeamPage(jogo1[3], 3, 'volta')
+            setTeamPage(jogo2[0], 4, 'ida')
+            setTeamPage(jogo2[1], 5, 'volta')
+            setTeamPage(jogo2[2], 6, 'ida')
+            setTeamPage(jogo2[3], 7, 'volta')
+            setTeamPage(jogo3[0], 8, 'ida')
+            setTeamPage(jogo3[1], 9, 'volta')
+            setTeamPage(jogo3[2], 10, 'ida')
+            setTeamPage(jogo3[3], 11, 'volta')
+            setTeamPage(jogo4[0], 12, 'ida')
+            setTeamPage(jogo4[1], 13, 'volta')
+            setTeamPage(jogo4[2], 14, 'ida')
+            setTeamPage(jogo4[3], 15, 'volta')
+            setTeamPage(jogo5[0], 16, 'ida')
+            setTeamPage(jogo5[1], 17, 'volta')
+            setTeamPage(jogo5[2], 18, 'ida')
+            setTeamPage(jogo5[3], 19, 'volta')
+            setTeamPage(jogo6[0], 20, 'ida')
+            setTeamPage(jogo6[1], 21, 'volta')
+            setTeamPage(jogo6[2], 22, 'ida')
+            setTeamPage(jogo6[3], 23, 'volta')
+        }else{
+            pageAlternatives(jogo1[0], 0, 'ida')
+            pageAlternatives(jogo1[1], 1, 'volta')
+            pageAlternatives(jogo1[2], 2, 'ida')
+            pageAlternatives(jogo1[3], 3, 'volta')
+            pageAlternatives(jogo2[0], 4, 'ida')
+            pageAlternatives(jogo2[1], 5, 'volta')
+            pageAlternatives(jogo2[2], 6, 'ida')
+            pageAlternatives(jogo2[3], 7, 'volta')
+            pageAlternatives(jogo3[0], 8, 'ida')
+            pageAlternatives(jogo3[1], 9, 'volta')
+            pageAlternatives(jogo3[2], 10, 'ida')
+            pageAlternatives(jogo3[3], 11, 'volta')
+            pageAlternatives(jogo4[0], 12, 'ida')
+            pageAlternatives(jogo4[1], 13, 'volta')
+            pageAlternatives(jogo4[2], 14, 'ida')
+            pageAlternatives(jogo4[3], 15, 'volta')
+            pageAlternatives(jogo5[0], 16, 'ida')
+            pageAlternatives(jogo5[1], 17, 'volta')
+            pageAlternatives(jogo5[2], 18, 'ida')
+            pageAlternatives(jogo5[3], 19, 'volta')
+            pageAlternatives(jogo6[0], 20, 'ida')
+            pageAlternatives(jogo6[1], 21, 'volta')
+            pageAlternatives(jogo6[2], 22, 'ida')
+            pageAlternatives(jogo6[3], 23, 'volta')
+        }
+    }
+
+
+    function updateRezise(){
+        if(jogo1 != null){
+            rezise()
+        }
+    }
+
+    //window.onresize = updateReziseGA
+
+    //setTimeout(() => {
+    //    if(jogo1 != null){
+    //        rezise()
+    //    }
+    //}, 100);
+
     function limparAtr(Team){
         let informacoesTime = Team
 
@@ -375,18 +489,20 @@ export function GrupoA({group}){
             tableA[3] = Time4
 
             tableA.sort((a,b) => {
-                if(a.p > b.p ){
+                if(a.p > b.p){
                     return 1
-                }
-                if(a.p == b.p ){
-                    if(a.sg > 0){
+                }else if(a.p == b.p){
+                    if(a.v > b.v){
+                        return 1
+                    }
+                    else if(a.v == b.v){
                         if(a.sg > b.sg){
                             return 1
                         }
-                    }
-                    if(a.sg < 0){
-                        if(a.sg > b.sg){
-                            return 1
+                        else if(a.sg == b.sg){
+                            if(a.gp > b.gp){
+                                return 1
+                            }
                         }
                     }
                 }else{
@@ -433,18 +549,20 @@ export function GrupoA({group}){
         //loadingTeam()
         
         tableA.sort((a,b) => {
-            if(a.p > b.p ){
+            if(a.p > b.p){
                 return 1
-            }
-            if(a.p == b.p ){
-                if(a.sg > 0){
+            }else if(a.p == b.p){
+                if(a.v > b.v){
+                    return 1
+                }
+                else if(a.v == b.v){
                     if(a.sg > b.sg){
                         return 1
                     }
-                }
-                if(a.sg < 0){
-                    if(a.sg > b.sg){
-                        return 1
+                    else if(a.sg == b.sg){
+                        if(a.gp > b.gp){
+                            return 1
+                        }
                     }
                 }
             }else{

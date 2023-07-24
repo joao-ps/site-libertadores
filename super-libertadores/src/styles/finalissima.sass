@@ -1,0 +1,88 @@
+.containerConfronto
+    height: 50vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 20px 0
+
+.containerConfronto p.lastGame
+    position: absolute
+    top: 15px
+    width: 100%
+    display: block
+    text-align: center
+
+.ultimoConfronto
+    position: relative
+    height: 35vh
+    display: grid
+    align-content: center
+    grid-template-columns: 1fr
+    border: 1px solid #a2a2a2
+
+.final
+    display: grid
+    grid-template-columns: 1fr
+    padding: 5px 0
+
+.final .lastGame
+    font-size: 1.4rem
+    text-transform: uppercase
+    color: #808080
+    font-weight: 800
+
+.information
+    height: 15vh
+    position: relative
+    display: grid
+    grid-template-columns: 4fr .5fr .5fr .5fr 4fr
+    align-items: center
+    justify-content: center
+    //border: 1px solid black
+
+.information .containerInput:nth-child(2)
+    display: grid
+    justify-content: end
+.information .containerInput:nth-child(4)
+    display: grid
+    justify-content: start
+
+.information .team
+    display: grid
+    grid-template-columns: auto auto
+    justify-content: flex-start
+    gap: 0 30px
+    align-items: center 
+    font-size: 3rem
+    text-transform: capitalize
+
+.information .team img
+    width: 50px
+    height: 35px
+
+.information .team:nth-child(1) 
+    display: grid
+    justify-content: end
+
+.information span:nth-child(3)
+    font-size: 2rem
+    text-align: center
+
+.inputFinal
+    height: 27px
+    width: 27px
+    outline: none
+    border: 1px solid black
+    border-radius: 4px
+    text-align: center
+
+.containerBtnSalvarFinal
+    width: 100%
+    position: absolute
+    bottom: 15px
+    display: flex
+    justify-content: center
+
+.containerBtnSalvarFinal .btnSalvarResultado
+    padding: 5px 15px
+    

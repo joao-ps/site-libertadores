@@ -148,13 +148,10 @@ export function Quartas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg4-2', JSON.stringify(jogo2))
-            saveResults2 = JSON.parse(sessionStorage.getItem('Jg4-2'))
+            //saveResults2 = JSON.parse(sessionStorage.getItem('Jg4-2'))
 
             resultsGames[2].setAttribute('readonly', 'readonly')
             resultsGames[3].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto1[1], saveResults1[1], saveResults2[0], saveResults1[0], saveResults2[1])
-            resultsUpdate(confronto1[0], saveResults1[0], saveResults2[1], saveResults1[1], saveResults2[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[0].value == resultsGames[2].value && resultsGames[1].value == resultsGames[3].value){
@@ -215,6 +212,11 @@ export function Quartas(){
                 }
             }
 
+            if(previaSemi.length == 1){
+                resultsUpdate(confronto1[1], saveResults1[1], jogo2[0], saveResults1[0], jogo2[1])
+                resultsUpdate(confronto1[0], saveResults1[0], jogo2[1], saveResults1[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -266,13 +268,10 @@ export function Quartas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg4-4', JSON.stringify(jogo2))
-            saveResults4 = JSON.parse(sessionStorage.getItem('Jg4-4'))
+            //saveResults4 = JSON.parse(sessionStorage.getItem('Jg4-4'))
 
             resultsGames[6].setAttribute('readonly', 'readonly')
             resultsGames[7].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto2[1], saveResults3[1], saveResults4[0], saveResults3[0], saveResults4[1])
-            resultsUpdate(confronto2[0], saveResults3[0], saveResults4[1], saveResults3[1], saveResults4[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[4].value == resultsGames[6].value && resultsGames[5].value == resultsGames[7].value){
@@ -333,6 +332,11 @@ export function Quartas(){
                 }
             }
 
+            if(previaSemi.length == 2){
+                resultsUpdate(confronto2[1], saveResults3[1], jogo2[0], saveResults3[0], jogo2[1])
+                resultsUpdate(confronto2[0], saveResults3[0], jogo2[1], saveResults3[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -384,13 +388,10 @@ export function Quartas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg4-6', JSON.stringify(jogo2))
-            saveResults6 = JSON.parse(sessionStorage.getItem('Jg4-6'))
+            //saveResults6 = JSON.parse(sessionStorage.getItem('Jg4-6'))
 
             resultsGames[10].setAttribute('readonly', 'readonly')
             resultsGames[11].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto3[1], saveResults5[1], saveResults6[0], saveResults5[0], saveResults6[1])
-            resultsUpdate(confronto3[0], saveResults5[0], saveResults6[1], saveResults5[1], saveResults6[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[8].value == resultsGames[10].value && resultsGames[9].value == resultsGames[11].value){
@@ -451,6 +452,11 @@ export function Quartas(){
                 }
             }
 
+            if(previaSemi.length == 3){
+                resultsUpdate(confronto3[1], saveResults5[1], jogo2[0], saveResults5[0], jogo2[1])
+                resultsUpdate(confronto3[0], saveResults5[0], jogo2[1], saveResults5[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -502,13 +508,10 @@ export function Quartas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg4-8', JSON.stringify(jogo2))
-            saveResults8 = JSON.parse(sessionStorage.getItem('Jg4-8'))
+            //saveResults8 = JSON.parse(sessionStorage.getItem('Jg4-8'))
 
             resultsGames[14].setAttribute('readonly', 'readonly')
             resultsGames[15].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto4[1], saveResults7[1], saveResults8[0], saveResults7[0], saveResults8[1])
-            resultsUpdate(confronto4[0], saveResults7[0], saveResults8[1], saveResults7[1], saveResults8[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[12].value == resultsGames[14].value && resultsGames[13].value == resultsGames[15].value){
@@ -569,6 +572,11 @@ export function Quartas(){
                 }
             }
 
+            if(previaSemi.length == 4){
+                resultsUpdate(confronto4[1], saveResults7[1], jogo2[0], saveResults7[0], jogo2[1])
+                resultsUpdate(confronto4[0], saveResults7[0], jogo2[1], saveResults7[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -580,6 +588,28 @@ export function Quartas(){
         confronto.sort((a,b) => {
             if(a.p > b.p){
                 return 1
+            }else if(a.p == b.p){
+                if(a.v > b.v){
+                    return 1
+                }
+                else if(a.v == b.v){
+                    if(a.sg > b.sg){
+                        return 1
+                    }
+                    else if(a.sg == b.sg){
+                        if(a.gp > b.gp){
+                            return 1
+                        }else if(a.gp == b.gp){
+                            if(a.d < b.d){
+                                return 1
+                            }else if(a.d == b.d){
+                                if(a.gc < b.gc){
+                                    return 1
+                                }
+                            }
+                        }
+                    }
+                }
             }else{
                 return -1
             }

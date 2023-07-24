@@ -8,6 +8,96 @@ import { GetTimes } from '../componentes/api/getTeams'
 import { json } from 'react-router-dom'
 
 export function PrimeiraFase(){
+    function bigScreen(newTeam, num, localizacao){
+        let confronto = document.querySelectorAll('.FaseUm')
+        let team = newTeam
+        let numero = num
+        let local = localizacao
+
+        if(local == 'ida'){
+            confronto[numero].innerHTML = `
+                ${team.time}
+                <img src=${team.url} alt="" />
+            `
+        }else{
+            confronto[numero].innerHTML = `
+                <img src=${team.url} alt="" />
+                ${team.time}
+            `
+        }
+    }
+    function smallScreen(newTeam, num, localizacao){
+        let confronto = document.querySelectorAll('.FaseUm')
+        let team = newTeam
+        let numero = num
+        let local = localizacao
+        
+        if(local == 'ida'){
+            confronto[numero].innerHTML = `
+                ${team.namePlacar}
+                <img src=${team.url} alt="" />
+            `
+        }else{
+            confronto[numero].innerHTML = `
+                <img src=${team.url} alt="" />
+                ${team.namePlacar}
+            `
+        }
+    }
+
+    function responsivePage(){
+        let time1 = JSON.parse(sessionStorage.getItem('Time1'))
+        let time2 = JSON.parse(sessionStorage.getItem('Time2'))
+        let time3 = JSON.parse(sessionStorage.getItem('Time3'))
+        let time4 = JSON.parse(sessionStorage.getItem('Time4'))
+        let time5 = JSON.parse(sessionStorage.getItem('Time5'))
+        let time6 = JSON.parse(sessionStorage.getItem('Time6'))
+        
+        if(JSON.parse(sessionStorage.getItem('Time1')) != null){
+            if(window.innerWidth < 801){
+                smallScreen(time1, 0, 'ida')
+                smallScreen(time2, 1, 'volta')
+                smallScreen(time2, 2, 'ida')
+                smallScreen(time1, 3, 'volta')
+                smallScreen(time3, 4, 'ida')
+                smallScreen(time4, 5, 'volta')
+                smallScreen(time4, 6, 'ida')
+                smallScreen(time3, 7, 'volta')
+                smallScreen(time5, 8, 'ida')
+                smallScreen(time6, 9, 'volta')
+                smallScreen(time6, 10, 'ida')
+                smallScreen(time5, 11, 'volta')
+            }else{
+                bigScreen(time1, 0, 'ida')
+                bigScreen(time2, 1, 'volta')
+                bigScreen(time2, 2, 'ida')
+                bigScreen(time1, 3, 'volta')
+                bigScreen(time3, 4, 'ida')
+                bigScreen(time4, 5, 'volta')
+                bigScreen(time4, 6, 'ida')
+                bigScreen(time3, 7, 'volta')
+                bigScreen(time5, 8, 'ida')
+                bigScreen(time6, 9, 'volta')
+                bigScreen(time6, 10, 'ida')
+                bigScreen(time5, 11, 'volta')
+            }
+        }
+    }
+
+    window.onresize = updateResponsive
+
+    function updateResponsive(){
+        let confronto = document.querySelectorAll('.FaseUm')
+        
+        if(confronto.length > 1){
+            responsivePage()    
+        }
+    }
+
+    setTimeout(() => {
+        updateResponsive()    
+    }, 100)
+
     let [
         newPrevSegundaFase,
         previaSegundaFase,
@@ -220,47 +310,50 @@ export function PrimeiraFase(){
 
             switch (v) {
                 case 0:
-                    spanTeam[0].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[0].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[3].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[3].innerHTML += primeiraFase[numAleatorio].time
-                    stadium[0].innerText += primeiraFase[numAleatorio].estadio
+                    //spanTeam[0].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[0].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[3].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[3].innerHTML += primeiraFase[numAleatorio].time
+                    //stadium[0].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto1.push(primeiraFase[numAleatorio])
                     sessionStorage.setItem('Time1', JSON.stringify(confronto1[0]))
                     primeiraFase.splice(numAleatorio, 1)   
+//                    responsivePage()    
                     break;
 
                 case 1:
-                    spanTeam[1].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[1].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[2].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[2].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    stadium[1].innerText += primeiraFase[numAleatorio].estadio
+                    //spanTeam[1].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[1].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[2].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[2].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //stadium[1].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto1.push(primeiraFase[numAleatorio])
                     sessionStorage.setItem('Time2', JSON.stringify(confronto1[1]))
                     primeiraFase.splice(numAleatorio, 1)        
+  //                  responsivePage()    
                     break;
 
                 case 2:
-                    spanTeam[4].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[4].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[7].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[7].innerHTML += primeiraFase[numAleatorio].time
-                    stadium[2].innerText += primeiraFase[numAleatorio].estadio
+                    //spanTeam[4].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[4].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[7].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[7].innerHTML += primeiraFase[numAleatorio].time
+                    //stadium[2].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto2.push(primeiraFase[numAleatorio])
                     sessionStorage.setItem('Time3', JSON.stringify(confronto2[0]))
                     primeiraFase.splice(numAleatorio, 1)        
+    //                responsivePage()    
                     break;
 
                 case 3:
-                    spanTeam[5].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[5].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[6].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[6].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    stadium[3].innerText += primeiraFase[numAleatorio].estadio
+                    //spanTeam[5].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[5].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[6].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[6].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //stadium[3].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto2.push(primeiraFase[numAleatorio])
                     sessionStorage.setItem('Time4', JSON.stringify(confronto2[1]))
@@ -268,11 +361,11 @@ export function PrimeiraFase(){
                     break;
 
                 case 4:
-                    spanTeam[8].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[8].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[11].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[11].innerHTML += primeiraFase[numAleatorio].time
-                    stadium[4].innerText += primeiraFase[numAleatorio].estadio
+                    //spanTeam[8].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[8].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[11].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[11].innerHTML += primeiraFase[numAleatorio].time
+                    //stadium[4].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto3.push(primeiraFase[numAleatorio])
                     sessionStorage.setItem('Time5', JSON.stringify(confronto3[0]))
@@ -280,15 +373,16 @@ export function PrimeiraFase(){
                     break;
 
                 case 5:
-                    spanTeam[9].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    spanTeam[9].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[10].innerHTML += primeiraFase[numAleatorio].time
-                    spanTeam[10].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
-                    stadium[5].innerText += primeiraFase[numAleatorio].estadio
+                    //spanTeam[9].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //spanTeam[9].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[10].innerHTML += primeiraFase[numAleatorio].time
+                    //spanTeam[10].innerHTML += `<img src=${primeiraFase[numAleatorio].url} alt="" />`
+                    //stadium[5].innerText += primeiraFase[numAleatorio].estadio
 
                     confronto3.push(primeiraFase[numAleatorio])
                     sessionStorage.setItem('Time6', JSON.stringify(confronto3[1]))
                     primeiraFase.splice(numAleatorio, 1)        
+                    responsivePage()    
                     break;
             }
         }
@@ -762,9 +856,9 @@ export function PrimeiraFase(){
                         <div className="ida">
                             <p className="information-jogo">terça <span className="stadium">{infoTeam1 && infoTeam1.estadio}</span> 19:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {infoTeam1 && infoTeam1.time}                    
-                                    {infoTeam1 && <img src={infoTeam1.url} alt="" />}
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam1 && infoTeam1.time}                    
+                                    {infoTeam1 && <img src={infoTeam1.url} alt="" />} */}
                                 </span>
                                 <span className="containerInput">
                                     {saveResults1 ? 
@@ -791,9 +885,9 @@ export function PrimeiraFase(){
                                         <input type="text" className='input-time-resultado'/>
                                     }
                                 </span>
-                                <span className='team'>
-                                    {infoTeam2 && <img src={infoTeam2.url} alt="" />}
-                                    {infoTeam2 && infoTeam2.time}                    
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam2 && <img src={infoTeam2.url} alt="" />}
+                                    {infoTeam2 && infoTeam2.time}                     */}
                                 </span> 
                             </p>                                
                             
@@ -805,9 +899,9 @@ export function PrimeiraFase(){
                         <div className="volta">
                             <p className="information-jogo">quarta <span className="stadium">{infoTeam2 && infoTeam2.estadio}</span> 21:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {infoTeam2 && infoTeam2.time}                    
-                                    {infoTeam2 && <img src={infoTeam2.url} alt="" />}
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam2 && infoTeam2.time}                     */}
+                                    {/* {infoTeam2 && <img src={infoTeam2.url} alt="" />} */}
                                 </span>
                                 <span className="containerInput">
                                     {saveResults2 ? 
@@ -834,9 +928,9 @@ export function PrimeiraFase(){
                                         <input type="text" className='input-time-resultado'/>
                                     }
                                 </span>
-                                <span className='team'>
-                                    {infoTeam1 && <img src={infoTeam1.url} alt="" />}
-                                    {infoTeam1 && infoTeam1.time}                    
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam1 && <img src={infoTeam1.url} alt="" />}
+                                    {infoTeam1 && infoTeam1.time}                     */}
                                 </span>
                             </p> 
 
@@ -866,9 +960,9 @@ export function PrimeiraFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{infoTeam3 && infoTeam3.estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {infoTeam3 && infoTeam3.time}                    
-                                    {infoTeam3 && <img src={infoTeam3.url} alt="" />}
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam3 && infoTeam3.time}                    
+                                    {infoTeam3 && <img src={infoTeam3.url} alt="" />} */}
                                 </span>
                                 <span className="containerInput">
                                     {saveResults3 ? 
@@ -895,9 +989,9 @@ export function PrimeiraFase(){
                                         <input type="text" className='input-time-resultado'/>
                                     }
                                 </span>
-                                <span className='team'>
-                                    {infoTeam4 && <img src={infoTeam4.url} alt="" />}
-                                    {infoTeam4 && infoTeam4.time}                    
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam4 && <img src={infoTeam4.url} alt="" />}
+                                    {infoTeam4 && infoTeam4.time}                     */}
                                 </span> 
                             </p>     
 
@@ -909,9 +1003,9 @@ export function PrimeiraFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{infoTeam4 && infoTeam4.estadio}</span> 20:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {infoTeam4 && infoTeam4.time}                    
-                                    {infoTeam4 && <img src={infoTeam4.url} alt="" />}
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam4 && infoTeam4.time}                     */}
+                                    {/* {infoTeam4 && <img src={infoTeam4.url} alt="" />} */}
                                 </span>
                                 <span className="containerInput">
                                     {saveResults4 ? 
@@ -938,9 +1032,9 @@ export function PrimeiraFase(){
                                         <input type="text" className='input-time-resultado'/>
                                     }
                                 </span>
-                                <span className='team'>
-                                    {infoTeam3 && <img src={infoTeam3.url} alt="" />}
-                                    {infoTeam3 && infoTeam3.time}                    
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam3 && <img src={infoTeam3.url} alt="" />}
+                                    {infoTeam3 && infoTeam3.time}                     */}
                                 </span> 
                             </p>  
 
@@ -970,9 +1064,9 @@ export function PrimeiraFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{infoTeam5 && infoTeam5.estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {infoTeam5 && infoTeam5.time}                    
-                                    {infoTeam5 && <img src={infoTeam5.url} alt="" />}
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam5 && infoTeam5.time}                    
+                                    {infoTeam5 && <img src={infoTeam5.url} alt="" />} */}
                                 </span>
                                 <span className="containerInput">
                                     {saveResults5 ? 
@@ -999,9 +1093,9 @@ export function PrimeiraFase(){
                                         <input type="text" className='input-time-resultado'/>
                                     }
                                 </span>
-                                <span className='team'>
-                                    {infoTeam6 && <img src={infoTeam6.url} alt="" />}
-                                    {infoTeam6 && infoTeam6.time}                    
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam6 && <img src={infoTeam6.url} alt="" />}
+                                    {infoTeam6 && infoTeam6.time}                     */}
                                 </span> 
                             </p>
 
@@ -1013,9 +1107,9 @@ export function PrimeiraFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{infoTeam6 && infoTeam6.estadio}</span> 20:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {infoTeam6 && infoTeam6.time}                    
-                                    {infoTeam6 && <img src={infoTeam6.url} alt="" />}
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam6 && infoTeam6.time}                    
+                                    {infoTeam6 && <img src={infoTeam6.url} alt="" />} */}
                                 </span>
                                 <span className="containerInput">
                                     {saveResults6 ? 
@@ -1042,9 +1136,9 @@ export function PrimeiraFase(){
                                         <input type="text" className='input-time-resultado'/>
                                     }
                                 </span>
-                                <span className='team'>
-                                    {infoTeam5 && <img src={infoTeam5.url} alt="" />}
-                                    {infoTeam5 && infoTeam5.time}                    
+                                <span className='team FaseUm'>
+                                    {/* {infoTeam5 && <img src={infoTeam5.url} alt="" />}
+                                    {infoTeam5 && infoTeam5.time}                     */}
                                 </span> 
                             </p>
 

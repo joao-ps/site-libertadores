@@ -7,6 +7,138 @@ import '../styles/eliminatoria.sass'
 import { json } from "react-router-dom"
 
 export function SegundaFase(){
+    function bigScreen(newTeam, num, localizacao){
+        let confronto = document.querySelectorAll('.FaseDois')
+        let team = newTeam
+        let numero = num
+        let local = localizacao
+
+        if(local == 'ida'){
+            confronto[numero].innerHTML = `
+                ${team.time}
+                <img src=${team.url} alt="" />
+            `
+        }else{
+            confronto[numero].innerHTML = `
+                <img src=${team.url} alt="" />
+                ${team.time}
+            `
+        }
+    }
+    function smallScreen(newTeam, num, localizacao){
+        let confronto = document.querySelectorAll('.FaseDois')
+        let team = newTeam
+        let numero = num
+        let local = localizacao
+        
+        if(local == 'ida'){
+            confronto[numero].innerHTML = `
+                ${team.namePlacar}
+                <img src=${team.url} alt="" />
+            `
+        }else{
+            confronto[numero].innerHTML = `
+                <img src=${team.url} alt="" />
+                ${team.namePlacar}
+            `
+        }
+    }
+
+    function responsivePage(){
+        let chave1 = JSON.parse(sessionStorage.getItem('chave1'))
+        let chave2 = JSON.parse(sessionStorage.getItem('chave2'))
+        let chave3 = JSON.parse(sessionStorage.getItem('chave3'))
+        let chave4 = JSON.parse(sessionStorage.getItem('chave4'))
+        let chave5 = JSON.parse(sessionStorage.getItem('chave5'))
+        let chave6 = JSON.parse(sessionStorage.getItem('chave6'))
+        let chave7 = JSON.parse(sessionStorage.getItem('chave7'))
+        let chave8 = JSON.parse(sessionStorage.getItem('chave8'))
+
+        if(JSON.parse(sessionStorage.getItem('chave1')) != null){
+            if(window.innerWidth < 801){
+                smallScreen(chave1[0], 0, 'ida')
+                smallScreen(chave1[1], 1, 'volta')
+                smallScreen(chave1[1], 2, 'ida')
+                smallScreen(chave1[0], 3, 'volta')
+                smallScreen(chave2[0], 4, 'ida')
+                smallScreen(chave2[1], 5, 'volta')
+                smallScreen(chave2[1], 6, 'ida')
+                smallScreen(chave2[0], 7, 'volta')
+                smallScreen(chave3[0], 8, 'ida')
+                smallScreen(chave3[1], 9, 'volta')
+                smallScreen(chave3[1], 10, 'ida')
+                smallScreen(chave3[0], 11, 'volta')
+                smallScreen(chave4[0], 12, 'ida')
+                smallScreen(chave4[1], 13, 'volta')
+                smallScreen(chave4[1], 14, 'ida')
+                smallScreen(chave4[0], 15, 'volta')
+                smallScreen(chave5[0], 16, 'ida')
+                smallScreen(chave5[1], 17, 'volta')
+                smallScreen(chave5[1], 18, 'ida')
+                smallScreen(chave5[0], 19, 'volta')
+                smallScreen(chave6[0], 20, 'ida')
+                smallScreen(chave6[1], 21, 'volta')
+                smallScreen(chave6[1], 22, 'ida')
+                smallScreen(chave6[0], 23, 'volta')
+                smallScreen(chave7[0], 24, 'ida')
+                smallScreen(chave7[1], 25, 'volta')
+                smallScreen(chave7[1], 26, 'ida')
+                smallScreen(chave7[0], 27, 'volta')
+                smallScreen(chave8[0], 28, 'ida')
+                smallScreen(chave8[1], 29, 'volta')
+                smallScreen(chave8[1], 30, 'ida')
+                smallScreen(chave8[0], 31, 'volta')
+            }else{
+                bigScreen(chave1[0], 0, 'ida')
+                bigScreen(chave1[1], 1, 'volta')
+                bigScreen(chave1[1], 2, 'ida')
+                bigScreen(chave1[0], 3, 'volta')
+                bigScreen(chave2[0], 4, 'ida')
+                bigScreen(chave2[1], 5, 'volta')
+                bigScreen(chave2[1], 6, 'ida')
+                bigScreen(chave2[0], 7, 'volta')
+                bigScreen(chave3[0], 8, 'ida')
+                bigScreen(chave3[1], 9, 'volta')
+                bigScreen(chave3[1], 10, 'ida')
+                bigScreen(chave3[0], 11, 'volta')
+                bigScreen(chave4[0], 12, 'ida')
+                bigScreen(chave4[1], 13, 'volta')
+                bigScreen(chave4[1], 14, 'ida')
+                bigScreen(chave4[0], 15, 'volta')
+                bigScreen(chave5[0], 16, 'ida')
+                bigScreen(chave5[1], 17, 'volta')
+                bigScreen(chave5[1], 18, 'ida')
+                bigScreen(chave5[0], 19, 'volta')
+                bigScreen(chave6[0], 20, 'ida')
+                bigScreen(chave6[1], 21, 'volta')
+                bigScreen(chave6[1], 22, 'ida')
+                bigScreen(chave6[0], 23, 'volta')
+                bigScreen(chave7[0], 24, 'ida')
+                bigScreen(chave7[1], 25, 'volta')
+                bigScreen(chave7[1], 26, 'ida')
+                bigScreen(chave7[0], 27, 'volta')
+                bigScreen(chave8[0], 28, 'ida')
+                bigScreen(chave8[1], 29, 'volta')
+                bigScreen(chave8[1], 30, 'ida')
+                bigScreen(chave8[0], 31, 'volta')
+            }
+        }
+    }
+
+    window.onresize = updateResponsiveF2
+
+    function updateResponsiveF2(){
+        let confronto = document.querySelectorAll('.FaseDois')
+        
+        if(confronto.length > 1){
+            responsivePage()    
+        }
+    }
+
+    setTimeout(() => {
+        updateResponsiveF2()    
+    }, 100)
+    //JSON.parse(sessionStorage.getItem('chave1'))
     let [
         newPrevSegundaFase,
         previaSegundaFase,
@@ -1210,9 +1342,9 @@ export function SegundaFase(){
                         <div className="ida">
                             <p className="information-jogo">terça <span className="stadium">{confronto1 && confronto1[0].estadio}</span> 19:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto1 && confronto1[0].time}                                                                   
-                                    {confronto1 && <img src={confronto1[0].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto1 && confronto1[0].time}                                                                    */}
+                                    {/* {confronto1 && <img src={confronto1[0].url} alt="" />} */}
                                 </span>
                                 {saveResults1 != null 
                                     ? 
@@ -1241,9 +1373,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto1 && <img src={confronto1[1].url} alt="" />}
-                                    {confronto1 && confronto1[1].time}                                                                   
+                                <span className='team FaseDois'>
+                                    {/* {confronto1 && <img src={confronto1[1].url} alt="" />}
+                                    {confronto1 && confronto1[1].time}                                                                    */}
                                 </span> 
                             </p>                                
                         
@@ -1255,9 +1387,9 @@ export function SegundaFase(){
                         <div className="volta">
                             <p className="information-jogo">quarta <span className="stadium">{confronto1 && confronto1[1].estadio}</span> 21:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto1 && confronto1[1].time}                                                                                                                  
-                                    {confronto1 && <img src={confronto1[1].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto1 && confronto1[1].time}                                                                                                                  
+                                    {confronto1 && <img src={confronto1[1].url} alt="" />} */}
                                 </span>
                                 {saveResults2 != null
                                     ?
@@ -1286,9 +1418,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto1 && <img src={confronto1[0].url} alt="" />}
-                                    {confronto1 && confronto1[0].time}                                                                    
+                                <span className='team FaseDois'>
+                                    {/* {confronto1 && <img src={confronto1[0].url} alt="" />}
+                                    {confronto1 && confronto1[0].time}                                                                     */}
                                 </span>
                             </p> 
 
@@ -1329,9 +1461,9 @@ export function SegundaFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{confronto2 && confronto2[0].estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto2 && confronto2[0].time}
-                                    {confronto2 && <img src={confronto2[0].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto2 && confronto2[0].time}
+                                    {confronto2 && <img src={confronto2[0].url} alt="" />} */}
                                 </span>
                                 {saveResults3 != null 
                                     ? 
@@ -1360,9 +1492,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto2 && <img src={confronto2[1].url} alt="" />}
-                                    {confronto2 && confronto2[1].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto2 && <img src={confronto2[1].url} alt="" />}
+                                    {confronto2 && confronto2[1].time} */}
                                 </span> 
                             </p>     
 
@@ -1374,9 +1506,9 @@ export function SegundaFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{confronto2 && confronto2[1].estadio}</span> 20:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto2 && confronto2[1].time}
-                                    {confronto2 && <img src={confronto2[1].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto2 && confronto2[1].time}
+                                    {confronto2 && <img src={confronto2[1].url} alt="" />} */}
                                 </span>
                                 {saveResults4 != null 
                                     ? 
@@ -1405,9 +1537,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto2 && <img src={confronto2[0].url} alt="" />}
-                                    {confronto2 && confronto2[0].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto2 && <img src={confronto2[0].url} alt="" />}
+                                    {confronto2 && confronto2[0].time} */}
                                 </span> 
                             </p>  
 
@@ -1448,9 +1580,9 @@ export function SegundaFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{confronto3 && confronto3[0].estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto3 && confronto3[0].time}
-                                    {confronto3 && <img src={confronto3[0].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto3 && confronto3[0].time}
+                                    {confronto3 && <img src={confronto3[0].url} alt="" />} */}
                                 </span>
                                 {saveResults5 != null 
                                     ? 
@@ -1479,9 +1611,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto3 && <img src={confronto3[1].url} alt="" />}
-                                    {confronto3 && confronto3[1].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto3 && <img src={confronto3[1].url} alt="" />}
+                                    {confronto3 && confronto3[1].time} */}
                                 </span> 
                             </p>
 
@@ -1493,9 +1625,9 @@ export function SegundaFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{confronto3 && confronto3[1].estadio}</span> 20:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto3 && confronto3[1].time}
-                                    {confronto3 && <img src={confronto3[1].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto3 && confronto3[1].time}
+                                    {confronto3 && <img src={confronto3[1].url} alt="" />} */}
                                 </span>
                                 {saveResults6 != null 
                                     ? 
@@ -1524,9 +1656,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto3 && <img src={confronto3[0].url} alt="" />}
-                                    {confronto3 && confronto3[0].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto3 && <img src={confronto3[0].url} alt="" />}
+                                    {confronto3 && confronto3[0].time} */}
                                 </span> 
                             </p>  
 
@@ -1567,9 +1699,9 @@ export function SegundaFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{confronto4 && confronto4[0].estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto4 && confronto4[0].time}
-                                    {confronto4 && <img src={confronto4[0].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto4 && confronto4[0].time}
+                                    {confronto4 && <img src={confronto4[0].url} alt="" />} */}
                                 </span>
                                 {saveResults7 != null 
                                     ? 
@@ -1598,9 +1730,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto4 && <img src={confronto4[1].url} alt="" />}
-                                    {confronto4 && confronto4[1].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto4 && <img src={confronto4[1].url} alt="" />}
+                                    {confronto4 && confronto4[1].time} */}
                                 </span> 
                             </p>
 
@@ -1612,9 +1744,9 @@ export function SegundaFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{confronto4 && confronto4[1].estadio}</span> 20:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto4 && confronto4[1].time}
-                                    {confronto4 && <img src={confronto4[1].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto4 && confronto4[1].time}
+                                    {confronto4 && <img src={confronto4[1].url} alt="" />} */}
                                 </span>
                                 {saveResults8 != null 
                                     ? 
@@ -1643,9 +1775,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto4 && <img src={confronto4[0].url} alt="" />}
-                                    {confronto4 && confronto4[0].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto4 && <img src={confronto4[0].url} alt="" />}
+                                    {confronto4 && confronto4[0].time} */}
                                 </span> 
                             </p>  
 
@@ -1686,9 +1818,9 @@ export function SegundaFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{confronto5 && confronto5[0].estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto5 && confronto5[0].time}
-                                    {confronto5 && <img src={confronto5[0].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto5 && confronto5[0].time}
+                                    {confronto5 && <img src={confronto5[0].url} alt="" />} */}
                                 </span>
                                 {saveResults9 != null 
                                     ? 
@@ -1717,9 +1849,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto5 && <img src={confronto5[1].url} alt="" />}
-                                    {confronto5 && confronto5[1].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto5 && <img src={confronto5[1].url} alt="" />}
+                                    {confronto5 && confronto5[1].time} */}
                                 </span> 
                             </p>
 
@@ -1731,9 +1863,9 @@ export function SegundaFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{confronto5 && confronto5[1].estadio}</span> 20:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto5 && confronto5[1].time}
-                                    {confronto5 && <img src={confronto5[1].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto5 && confronto5[1].time}
+                                    {confronto5 && <img src={confronto5[1].url} alt="" />} */}
                                 </span>
                                 {saveResults10 != null 
                                     ? 
@@ -1762,9 +1894,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto5 && <img src={confronto5[0].url} alt="" />}
-                                    {confronto5 && confronto5[0].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto5 && <img src={confronto5[0].url} alt="" />}
+                                    {confronto5 && confronto5[0].time} */}
                                 </span> 
                             </p>  
 
@@ -1805,9 +1937,9 @@ export function SegundaFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{confronto6 && confronto6[0].estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto6 && confronto6[0].time}
-                                    {confronto6 && <img src={confronto6[0].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto6 && confronto6[0].time}
+                                    {confronto6 && <img src={confronto6[0].url} alt="" />} */}
                                 </span>
                                 {saveResults11 != null 
                                     ? 
@@ -1836,9 +1968,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto6 && <img src={confronto6[1].url} alt="" />}
-                                    {confronto6 && confronto6[1].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto6 && <img src={confronto6[1].url} alt="" />}
+                                    {confronto6 && confronto6[1].time} */}
                                 </span> 
                             </p>
 
@@ -1850,9 +1982,9 @@ export function SegundaFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{confronto6 && confronto6[1].estadio}</span> 20:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto6 && confronto6[1].time}
-                                    {confronto6 && <img src={confronto6[1].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto6 && confronto6[1].time}
+                                    {confronto6 && <img src={confronto6[1].url} alt="" />} */}
                                 </span>
                                 {saveResults12 != null 
                                     ? 
@@ -1881,9 +2013,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto6 && <img src={confronto6[0].url} alt="" />}
-                                    {confronto6 && confronto6[0].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto6 && <img src={confronto6[0].url} alt="" />}
+                                    {confronto6 && confronto6[0].time} */}
                                 </span> 
                             </p>  
 
@@ -1924,9 +2056,9 @@ export function SegundaFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{confronto7 && confronto7[0].estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto7 && confronto7[0].time}
-                                    {confronto7 && <img src={confronto7[0].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto7 && confronto7[0].time}
+                                    {confronto7 && <img src={confronto7[0].url} alt="" />} */}
                                 </span>
                                 {saveResults13 != null 
                                     ? 
@@ -1955,9 +2087,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto7 && <img src={confronto7[1].url} alt="" />}
-                                    {confronto7 && confronto7[1].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto7 && <img src={confronto7[1].url} alt="" />}
+                                    {confronto7 && confronto7[1].time} */}
                                 </span> 
                             </p>
 
@@ -1969,9 +2101,9 @@ export function SegundaFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{confronto7 && confronto7[1].estadio}</span> 20:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto7 && confronto7[1].time}
-                                    {confronto7 && <img src={confronto7[1].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto7 && confronto7[1].time}
+                                    {confronto7 && <img src={confronto7[1].url} alt="" />} */}
                                 </span>
                                 {saveResults14 != null 
                                     ? 
@@ -2000,9 +2132,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto7 && <img src={confronto7[0].url} alt="" />}
-                                    {confronto7 && confronto7[0].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto7 && <img src={confronto7[0].url} alt="" />}
+                                    {confronto7 && confronto7[0].time} */}
                                 </span> 
                             </p>  
 
@@ -2043,9 +2175,9 @@ export function SegundaFase(){
                         <div className="ida">
                             <p className="information-jogo">quarta <span className="stadium">{confronto8 && confronto8[0].estadio}</span> 21:30</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto8 && confronto8[0].time}
-                                    {confronto8 && <img src={confronto8[0].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto8 && confronto8[0].time}
+                                    {confronto8 && <img src={confronto8[0].url} alt="" />} */}
                                 </span>
                                 {saveResults15 != null 
                                     ? 
@@ -2074,9 +2206,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto8 && <img src={confronto8[1].url} alt="" />}
-                                    {confronto8 && confronto8[1].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto8 && <img src={confronto8[1].url} alt="" />}
+                                    {confronto8 && confronto8[1].time} */}
                                 </span> 
                             </p>
 
@@ -2088,9 +2220,9 @@ export function SegundaFase(){
                         <div className="volta">
                             <p className="information-jogo">quinta <span className="stadium">{confronto8 && confronto8[1].estadio}</span> 20:00</p>
                             <p className='gameInformation'>
-                                <span className='team'>
-                                    {confronto8 && confronto8[1].time}
-                                    {confronto8 && <img src={confronto8[1].url} alt="" />}
+                                <span className='team FaseDois'>
+                                    {/* {confronto8 && confronto8[1].time}
+                                    {confronto8 && <img src={confronto8[1].url} alt="" />} */}
                                 </span>
                                 {saveResults16 != null 
                                     ? 
@@ -2119,9 +2251,9 @@ export function SegundaFase(){
                                     :
                                         <span className="containerInput"><input type="text" className='input-time-resultado'/></span>
                                 }
-                                <span className='team'>
-                                    {confronto8 && <img src={confronto8[0].url} alt="" />}
-                                    {confronto8 && confronto8[0].time}
+                                <span className='team FaseDois'>
+                                    {/* {confronto8 && <img src={confronto8[0].url} alt="" />}
+                                    {confronto8 && confronto8[0].time} */}
                                 </span> 
                             </p>  
 

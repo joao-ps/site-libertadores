@@ -177,15 +177,10 @@ export function Oitavas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg8-2', JSON.stringify(jogo2))
-            saveResults2 = JSON.parse(sessionStorage.getItem('Jg8-2'))
+            //saveResults2 = JSON.parse(sessionStorage.getItem('Jg8-2'))
 
             resultsGames[2].setAttribute('readonly', 'readonly')
             resultsGames[3].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto1[0], saveResults1[1], saveResults2[0], saveResults1[0], saveResults2[1])
-            resultsUpdate(confronto1[1], saveResults1[0], saveResults2[1], saveResults1[1], saveResults2[0])
-            console.log(confronto1[0])
-            console.log(confronto1[1])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[0].value == resultsGames[2].value && resultsGames[1].value == resultsGames[3].value){
@@ -246,6 +241,11 @@ export function Oitavas(){
                 }
             }
 
+            if(previaQuartas.length == 1){
+                resultsUpdate(confronto1[0], saveResults1[1], jogo2[0], saveResults1[0], jogo2[1])
+                resultsUpdate(confronto1[1], saveResults1[0], jogo2[1], saveResults1[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -297,13 +297,10 @@ export function Oitavas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg8-4', JSON.stringify(jogo2))
-            saveResults4 = JSON.parse(sessionStorage.getItem('Jg8-4'))
+            //saveResults4 = JSON.parse(sessionStorage.getItem('Jg8-4'))
 
             resultsGames[6].setAttribute('readonly', 'readonly')
             resultsGames[7].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto2[0], saveResults3[1], saveResults4[0], saveResults3[0], saveResults4[1])
-            resultsUpdate(confronto2[1], saveResults3[0], saveResults4[1], saveResults3[1], saveResults4[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[4].value == resultsGames[6].value && resultsGames[5].value == resultsGames[7].value){
@@ -364,6 +361,12 @@ export function Oitavas(){
                 }
             }
 
+            if(previaQuartas.length == 2){
+                console.log('PREVIA DAS QUARTAS')
+                resultsUpdate(confronto2[0], saveResults3[1], jogo2[0], saveResults3[0], jogo2[1])
+                resultsUpdate(confronto2[1], saveResults3[0], jogo2[1], saveResults3[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -415,13 +418,10 @@ export function Oitavas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg8-6', JSON.stringify(jogo2))
-            saveResults6 = JSON.parse(sessionStorage.getItem('Jg8-6'))
+            //saveResults6 = JSON.parse(sessionStorage.getItem('Jg8-6'))
 
             resultsGames[10].setAttribute('readonly', 'readonly')
             resultsGames[11].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto3[0], saveResults5[1], saveResults6[0], saveResults5[0], saveResults6[1])
-            resultsUpdate(confronto3[1], saveResults5[0], saveResults6[1], saveResults5[1], saveResults6[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[8].value == resultsGames[10].value && resultsGames[9].value == resultsGames[11].value){
@@ -482,6 +482,11 @@ export function Oitavas(){
                 }
             }
 
+            if(previaQuartas.length == 3){
+                resultsUpdate(confronto3[0], saveResults5[1], jogo2[0], saveResults5[0], jogo2[1])
+                resultsUpdate(confronto3[1], saveResults5[0], jogo2[1], saveResults5[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -533,13 +538,10 @@ export function Oitavas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg8-8', JSON.stringify(jogo2))
-            saveResults8 = JSON.parse(sessionStorage.getItem('Jg8-8'))
+            //saveResults8 = JSON.parse(sessionStorage.getItem('Jg8-8'))
 
             resultsGames[14].setAttribute('readonly', 'readonly')
             resultsGames[15].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto4[0], saveResults7[1], saveResults8[0], saveResults7[0], saveResults8[1])
-            resultsUpdate(confronto4[1], saveResults7[0], saveResults8[1], saveResults7[1], saveResults8[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[12].value == resultsGames[14].value && resultsGames[13].value == resultsGames[15].value){
@@ -600,6 +602,11 @@ export function Oitavas(){
                 }
             }
 
+            if(previaQuartas.length == 4){
+                resultsUpdate(confronto4[0], saveResults7[1], jogo2[0], saveResults7[0], jogo2[1])
+                resultsUpdate(confronto4[1], saveResults7[0], jogo2[1], saveResults7[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -651,13 +658,10 @@ export function Oitavas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg8-10', JSON.stringify(jogo2))
-            saveResults10 = JSON.parse(sessionStorage.getItem('Jg8-10'))
+            //saveResults10 = JSON.parse(sessionStorage.getItem('Jg8-10'))
 
             resultsGames[18].setAttribute('readonly', 'readonly')
             resultsGames[19].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto5[0], saveResults9[1], saveResults10[0], saveResults9[0], saveResults10[1])
-            resultsUpdate(confronto5[1], saveResults9[0], saveResults10[1], saveResults9[1], saveResults10[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[16].value == resultsGames[18].value && resultsGames[17].value == resultsGames[19].value){
@@ -718,6 +722,11 @@ export function Oitavas(){
                 }
             }
 
+            if(previaQuartas.length == 5){
+                resultsUpdate(confronto5[0], saveResults9[1], jogo2[0], saveResults9[0], jogo2[1])
+                resultsUpdate(confronto5[1], saveResults9[0], jogo2[1], saveResults9[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -769,13 +778,10 @@ export function Oitavas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg8-12', JSON.stringify(jogo2))
-            saveResults12 = JSON.parse(sessionStorage.getItem('Jg8-12'))
+            //saveResults12 = JSON.parse(sessionStorage.getItem('Jg8-12'))
 
             resultsGames[22].setAttribute('readonly', 'readonly')
             resultsGames[23].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto6[0], saveResults11[1], saveResults12[0], saveResults11[0], saveResults12[1])
-            resultsUpdate(confronto6[1], saveResults11[0], saveResults12[1], saveResults11[1], saveResults12[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[20].value == resultsGames[22].value && resultsGames[21].value == resultsGames[23].value){
@@ -836,6 +842,11 @@ export function Oitavas(){
                 }
             }
 
+            if(previaQuartas.length == 6){
+                resultsUpdate(confronto6[0], saveResults11[1], jogo2[0], saveResults11[0], jogo2[1])
+                resultsUpdate(confronto6[1], saveResults11[0], jogo2[1], saveResults11[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -887,13 +898,10 @@ export function Oitavas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg8-14', JSON.stringify(jogo2))
-            saveResults14 = JSON.parse(sessionStorage.getItem('Jg8-14'))
+            //saveResults14 = JSON.parse(sessionStorage.getItem('Jg8-14'))
 
             resultsGames[26].setAttribute('readonly', 'readonly')
             resultsGames[27].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto7[0], saveResults13[1], saveResults14[0], saveResults13[0], saveResults14[1])
-            resultsUpdate(confronto7[1], saveResults13[0], saveResults14[1], saveResults13[1], saveResults14[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[24].value == resultsGames[26].value && resultsGames[25].value == resultsGames[27].value){
@@ -954,6 +962,11 @@ export function Oitavas(){
                 }
             }
 
+            if(previaQuartas.length == 7){
+                resultsUpdate(confronto7[0], saveResults13[1], jogo2[0], saveResults13[0], jogo2[1])
+                resultsUpdate(confronto7[1], saveResults13[0], jogo2[1], saveResults13[1], jogo2[0])
+            }
+
             this.classList.add('btn-disabled')
             this.removeEventListener('click', setResult)
         })
@@ -1005,13 +1018,10 @@ export function Oitavas(){
             jogo2[1] = Number(result2)
 
             sessionStorage.setItem('Jg8-16', JSON.stringify(jogo2))
-            saveResults16 = JSON.parse(sessionStorage.getItem('Jg8-16'))
+            //saveResults16 = JSON.parse(sessionStorage.getItem('Jg8-16'))
 
             resultsGames[30].setAttribute('readonly', 'readonly')
             resultsGames[31].setAttribute('readonly', 'readonly')
-
-            resultsUpdate(confronto8[0], saveResults15[1], saveResults16[0], saveResults15[0], saveResults16[1])
-            resultsUpdate(confronto8[1], saveResults15[0], saveResults16[1], saveResults15[1], saveResults16[0])
 
             if(acumuladoGols1 == acumuladoGols2){
                 if(resultsGames[28].value == resultsGames[30].value && resultsGames[29].value == resultsGames[31].value){
@@ -1070,6 +1080,11 @@ export function Oitavas(){
 
                     newQuartas(confronto8[0], 7)
                 }
+            }
+
+            if(previaQuartas.length == 8){
+                resultsUpdate(confronto8[0], saveResults15[1], jogo2[0], saveResults15[0], jogo2[1])
+                resultsUpdate(confronto8[1], saveResults15[0], jogo2[1], saveResults15[1], jogo2[0])
             }
 
             this.classList.add('btn-disabled')
@@ -1285,7 +1300,7 @@ export function Oitavas(){
 
                     if(
                         confronto7[1].pais == confronto7[0].pais 
-                            ||
+                            &&
                             confronto7[1].group == confronto7[0].group
                     ){
                         console.log(`CHAVE 7`)
@@ -1377,7 +1392,7 @@ export function Oitavas(){
 
                     if(
                         confronto8[1].pais == confronto8[0].pais 
-                            ||
+                            &&
                             confronto8[1].group == confronto8[0].group
                     ){
                         console.log(`CHAVE 8`)
