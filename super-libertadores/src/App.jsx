@@ -12,26 +12,53 @@ import { Rotas } from './componentes/routes/Routes'
 import './styles/app.sass'
 
 function App() {
-    function teste(){
-      console.log('Teste deu certo')
-    }
-
-    window.onresize = teste
-
+    let previaConcacaf = []
+    let previaPlayoffs = []
+    let previaPrimeiraFase = []
     let previaSegundaFase = []
     let previaTerceiraFase = []
-    let previaFaseDeGrupos = []
+    //let previaFaseDeGrupos = []
+    let pote1 = []
+    let pote2 = []
+    let pote3 = []
+    let pote4 = []    
     let previaOitavas = []
     let previaQuartas = []
     let previaSemi = []
     let previaFinal = []
 
+    function newPrevConcacaf(newTeam, posArray){
+      if(posArray == undefined){
+        previaConcacaf.push(newTeam)
+      }else{
+        previaConcacaf[posArray] = newTeam
+      }
+      console.log(previaConcacaf)
+    }
+    function newPrevPlayoffs(newTeam, posArray){
+      if(posArray == undefined){
+        previaPlayoffs.push(newTeam)
+      }else{
+        previaPlayoffs[posArray] = newTeam
+      }
+      console.log(previaPlayoffs)
+    }
+    function newPrevPrimeiraFase(newTeam, posArray){
+      if(posArray == undefined){
+        previaPrimeiraFase.push(newTeam)
+      }else{
+        previaPrimeiraFase[posArray] = newTeam
+      }
+      console.log('PRIMEIRA FASE')
+      console.log(previaPrimeiraFase)
+    }
     function newPrevSegundaFase(newTeam, posArray){
       if(posArray == undefined){
         previaSegundaFase.push(newTeam)
       }else{
         previaSegundaFase[posArray] = newTeam
       }
+      console.log(previaSegundaFase)
     }
     function newPrevTerceiraFaseFase(newTeam, posArray){
       if(posArray == undefined){
@@ -42,14 +69,40 @@ function App() {
       }
       console.log(previaTerceiraFase)
     }
-    function newPrevFaseDeGrupos(newTeam, posArray){
-      if(posArray == undefined){
-        previaFaseDeGrupos.push(newTeam)
-        console.log(newTeam)
+    function newPrevFaseDeGrupos(newTeam, posArray, pote){
+      if(pote == 1){
+        if(posArray == undefined){
+          pote1.push(newTeam)
+        }else{
+          pote1[posArray] = newTeam
+        }
+      }else if(pote == 2){
+        if(posArray == undefined){
+          pote2.push(newTeam)
+        }else{
+          pote2[posArray] = newTeam
+        }
+      }else if(pote == 3){
+        if(posArray == undefined){
+          pote3.push(newTeam)
+        }else{
+          pote3[posArray] = newTeam
+        }
       }else{
-        previaFaseDeGrupos[posArray] = newTeam
+        if(posArray == undefined){
+          pote4.push(newTeam)
+        }else{
+          pote4[posArray] = newTeam
+        }
       }
-      console.log(previaFaseDeGrupos)
+      console.log('pote1')
+      console.log(pote1)
+      console.log('pote2')
+      console.log(pote2)
+      console.log('pote3')
+      console.log(pote3)
+      console.log('pote4')
+      console.log(pote4)
     }
     function newOitavas(newTeam, posArray){
       if(posArray == undefined){
@@ -87,12 +140,21 @@ function App() {
   return (
     <BrowserRouter>
       <GetTimes.Provider value={[
+        newPrevConcacaf,
+        previaConcacaf,
+        newPrevPlayoffs,
+        previaPlayoffs,
+        newPrevPrimeiraFase,
+        previaPrimeiraFase,
         newPrevSegundaFase,
         previaSegundaFase,
         newPrevTerceiraFaseFase,
         previaTerceiraFase,
         newPrevFaseDeGrupos,
-        previaFaseDeGrupos
+        pote1,
+        pote2,
+        pote3,
+        pote4
     ]}>
       <FaseFinal.Provider value={[
         newOitavas,

@@ -382,7 +382,6 @@ export function PrimeiraFase(){
                     confronto3.push(primeiraFase[numAleatorio])
                     sessionStorage.setItem('Time6', JSON.stringify(confronto3[1]))
                     primeiraFase.splice(numAleatorio, 1)        
-                    responsivePage()    
                     break;
             }
         }
@@ -814,39 +813,40 @@ export function PrimeiraFase(){
     }
     
     async function defineFirstPhase(){
-        if(sessionStorage.getItem('valueBtn') == null){
+        //if(sessionStorage.getItem('valueBtn') == null){
             await carregarTimes()
+            console.log(previaFaseDeGrupos)
 
-            addTeams(paraguai, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
-            addTeams(peru, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
-            addTeams(uruguai, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
-            addTeams(venezuela, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
-            addTeams(bolivia, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
-            addTeams(equador, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
-            addTeams(brasil, 7, 5, 2, false)  //5 DIRETAS 2 SEGUNDA
-            addTeams(argentina, 6, 5, 1, false) //5 DIRETAS 1 SEGUNDA
-            addTeams(colombia, 4, 2, 2, false) //2 DIRETAS 2 SEGUNDA
-            addTeams(chile, 4, 2, 2, false) //2 DIRETAS 2 SEGUNDA 
+            //addTeams(paraguai, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
+            //addTeams(peru, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
+            //addTeams(uruguai, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
+            //addTeams(venezuela, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
+            //addTeams(bolivia, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
+            //addTeams(equador, 4, 2, 1, true) //2 DIRETAS 1 SEGUNDA 1 PRIMEIRA
+            //addTeams(brasil, 7, 5, 2, false)  //5 DIRETAS 2 SEGUNDA
+            //addTeams(argentina, 6, 5, 1, false) //5 DIRETAS 1 SEGUNDA
+            //addTeams(colombia, 4, 2, 2, false) //2 DIRETAS 2 SEGUNDA
+            //addTeams(chile, 4, 2, 2, false) //2 DIRETAS 2 SEGUNDA 
+//
+            //sortClashes()
+//
+            //addEventButton()
+        //}        
 
-            sortClashes()
+        //if(sessionStorage.getItem('valueBtn') == 1){
+        //    alert('Sorteio já concluido')
+        //    return
+        //}
 
-            addEventButton()
-        }        
-
-        if(sessionStorage.getItem('valueBtn') == 1){
-            alert('Sorteio já concluido')
-            return
-        }
-
-        if(ligado == 0){
-            ligado++
-            sessionStorage.setItem('valueBtn', ligado)
-        }
+        //if(ligado == 0){
+        //    ligado++
+        //    sessionStorage.setItem('valueBtn', ligado)
+        //}
     }
 
     return(
         <>
-            <Header fases='primeira fase' previousLink='' nextLink='/segunda-fase'/>
+            <Header fases='primeira fase' previousLink='/playoffs' nextLink='/segunda-fase'/>
 
             <div className="fasesEliminatorias">
                 <h2>jogos</h2>
@@ -857,8 +857,7 @@ export function PrimeiraFase(){
                             <p className="information-jogo">terça <span className="stadium">{infoTeam1 && infoTeam1.estadio}</span> 19:30</p>
                             <p className='gameInformation'>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam1 && infoTeam1.time}                    
-                                    {infoTeam1 && <img src={infoTeam1.url} alt="" />} */}
+                                    
                                 </span>
                                 <span className="containerInput">
                                     {saveResults1 ? 
@@ -886,8 +885,7 @@ export function PrimeiraFase(){
                                     }
                                 </span>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam2 && <img src={infoTeam2.url} alt="" />}
-                                    {infoTeam2 && infoTeam2.time}                     */}
+                                    
                                 </span> 
                             </p>                                
                             
@@ -900,8 +898,7 @@ export function PrimeiraFase(){
                             <p className="information-jogo">quarta <span className="stadium">{infoTeam2 && infoTeam2.estadio}</span> 21:00</p>
                             <p className='gameInformation'>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam2 && infoTeam2.time}                     */}
-                                    {/* {infoTeam2 && <img src={infoTeam2.url} alt="" />} */}
+                                    
                                 </span>
                                 <span className="containerInput">
                                     {saveResults2 ? 
@@ -929,8 +926,7 @@ export function PrimeiraFase(){
                                     }
                                 </span>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam1 && <img src={infoTeam1.url} alt="" />}
-                                    {infoTeam1 && infoTeam1.time}                     */}
+                                    
                                 </span>
                             </p> 
 
@@ -961,8 +957,7 @@ export function PrimeiraFase(){
                             <p className="information-jogo">quarta <span className="stadium">{infoTeam3 && infoTeam3.estadio}</span> 21:30</p>
                             <p className='gameInformation'>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam3 && infoTeam3.time}                    
-                                    {infoTeam3 && <img src={infoTeam3.url} alt="" />} */}
+                                    
                                 </span>
                                 <span className="containerInput">
                                     {saveResults3 ? 
@@ -990,8 +985,7 @@ export function PrimeiraFase(){
                                     }
                                 </span>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam4 && <img src={infoTeam4.url} alt="" />}
-                                    {infoTeam4 && infoTeam4.time}                     */}
+                                    
                                 </span> 
                             </p>     
 
@@ -1004,8 +998,7 @@ export function PrimeiraFase(){
                             <p className="information-jogo">quinta <span className="stadium">{infoTeam4 && infoTeam4.estadio}</span> 20:00</p>
                             <p className='gameInformation'>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam4 && infoTeam4.time}                     */}
-                                    {/* {infoTeam4 && <img src={infoTeam4.url} alt="" />} */}
+                                    
                                 </span>
                                 <span className="containerInput">
                                     {saveResults4 ? 
@@ -1033,8 +1026,7 @@ export function PrimeiraFase(){
                                     }
                                 </span>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam3 && <img src={infoTeam3.url} alt="" />}
-                                    {infoTeam3 && infoTeam3.time}                     */}
+                                    
                                 </span> 
                             </p>  
 
@@ -1065,8 +1057,7 @@ export function PrimeiraFase(){
                             <p className="information-jogo">quarta <span className="stadium">{infoTeam5 && infoTeam5.estadio}</span> 21:30</p>
                             <p className='gameInformation'>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam5 && infoTeam5.time}                    
-                                    {infoTeam5 && <img src={infoTeam5.url} alt="" />} */}
+                                    
                                 </span>
                                 <span className="containerInput">
                                     {saveResults5 ? 
@@ -1094,8 +1085,7 @@ export function PrimeiraFase(){
                                     }
                                 </span>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam6 && <img src={infoTeam6.url} alt="" />}
-                                    {infoTeam6 && infoTeam6.time}                     */}
+                                    
                                 </span> 
                             </p>
 
@@ -1108,8 +1098,7 @@ export function PrimeiraFase(){
                             <p className="information-jogo">quinta <span className="stadium">{infoTeam6 && infoTeam6.estadio}</span> 20:30</p>
                             <p className='gameInformation'>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam6 && infoTeam6.time}                    
-                                    {infoTeam6 && <img src={infoTeam6.url} alt="" />} */}
+                                    
                                 </span>
                                 <span className="containerInput">
                                     {saveResults6 ? 
@@ -1137,8 +1126,7 @@ export function PrimeiraFase(){
                                     }
                                 </span>
                                 <span className='team FaseUm'>
-                                    {/* {infoTeam5 && <img src={infoTeam5.url} alt="" />}
-                                    {infoTeam5 && infoTeam5.time}                     */}
+                                    
                                 </span> 
                             </p>
 
